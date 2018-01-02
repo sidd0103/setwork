@@ -5,6 +5,7 @@
     <link href='css/materialize.css' rel="stylesheet">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/materialize.js"></script>
+    <script src="https://use.fontawesome.com/470f638731.js"></script>
     <!--WORKING FILES-->
     <link href='css/index.css' rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
@@ -12,6 +13,8 @@
     <script src="js/init.js"></script>
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+
     <!--RESPONSIVE-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -28,34 +31,71 @@
             <div class="login-content">
                 <div class="pic-area">
                     <div class="waves-effect z-depth-1 profile">
-                        <div class="z-depth-1 prof-pic"></div>
-                        <div class="stats">
-                            <div class="z-depth-1 rating">4.8/5</div>
-                            <div class="z-depth-1 wallet">$542</div>
+                        <div class="info">
+                            <div class="z-depth-1 prof-pic"></div>
+                            <div class="stats">
+                                <div class="z-depth-1 rating">4.8/5</div>
+                                <div class="z-depth-1 wallet">$542</div>
+                            </div>
                         </div>
+                        <div class="name">Steve Randall</div>
                     </div>
                 </div>
             </div>
         
         </div>
 
-        <li><a href="#!">HOME</a></li>
-        <li><a href="#!">PINBOARD</a></li>
-        <li><a href="#!">EXPLORE</a></li>
-        <li><a href="#!">FOLLOWING</a></li>
+        <li><a href="#!"><i class="material-icons">home</i>PINBOARD</a></li>
+        <li><a href="#!"><i class="material-icons">explore</i>EXPLORE</a></li>
+        <li><a href="#!"><i class="material-icons">group</i>FOLLOWING</a></li>
 
     </ul>
     <!--MAIN-->
     <div class="content">
+        <div class="pageTitle">PINBOARD</div>
         <div class="dash-container">
+           
+            
             <div class="z-depth-1 post">
                 <div class="post-content">
-                    <div class="z-depth-2 title">Lawn Mowing</div>
-                    <div class="z-depth-1 job-summary">
+                    <div class="z-depth-1 title">Dog Sitting</div>
+                    <div class="job-detail z-depth-1 job-summary">
                         <label>Summary</label>
-                        <div>Basically, you will mow a lawn in my yard until there is no grass left.  You can use the lawnmower in my garage.  </div>
+                        <div class="summary">My dog Rocky doesn't like being alone.  While I'm gone, please watch him. </div>
                     </div>
-                
+                    <div class="job-attributes">
+                        <div class="job-detail z-depth-1">
+                            <label>You'll be working for</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 user-pic"></div>
+                                <div class="data">Bob McFarland</div>
+                            </div>
+                        </div>
+                        <div class="job-detail z-depth-1 job-location">
+                            <label>Location</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">location_on</i></div>
+                                <div class="truncate data">83 West Portola, Los Altos</div>
+                            </div>
+
+                        </div>
+                        <div class="job-detail z-depth-1 job-location">
+                            <label>Date/Time</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">date_range</i></div>
+                                <div class="truncate data">Saturday, 3-5pm<div class="material-icons z-depth-1 t-type">repeat</div></div>
+                            </div>
+
+                        </div>
+
+                        <div class="job-detail z-depth-1 job-payment">
+                            <label>Salary</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">attach_money</i></div>
+                                <div class="truncate data">$15<div class="z-depth-1 p-type">fixed</div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="angle"></div>
                 <div class="controls">
@@ -71,34 +111,113 @@
                 </div>
             </div>
             <div class="z-depth-1 post">
-                <div class="angle"></div>
-                <div class="controls">
-                    <div id="rem" data-tooltip="Delete It" class="tooltipped actn-btn w">
-                        <i class="material-icons">delete</i>
+                <div class="post-content">
+                    <div class="z-depth-1 title">Raking</div>
+                    <div class="job-detail z-depth-1 job-summary">
+                        <label>Summary</label>
+                        <div class="summary">I would like someone to rake the leaves in my backyard. </div>
                     </div>
-                    <div id="save" data-tooltip="Save It" class="tooltipped actn-btn save">
-                        <i class="material-icons">save</i>
-                    </div>
-                    <div id="take" data-tooltip="Take It" class="tooltipped actn-btn take">
-                        <i class="material-icons">check</i>
-                    </div>
-                </div>
-            </div>
-            <div style="height: 500" class="z-depth-1 post">
-                <div class="angle"></div>
-                <div class="controls">
-                    <div id="rem" data-tooltip="Delete It" class="tooltipped actn-btn w">
-                        <i class="material-icons">delete</i>
-                    </div>
-                    <div id="save" data-tooltip="Save It" class="tooltipped actn-btn save">
-                        <i class="material-icons">save</i>
-                    </div>
-                    <div id="take" data-tooltip="Take It" class="tooltipped actn-btn take">
-                        <i class="material-icons">check</i>
-                    </div>
-                </div>
-            </div>
+                    <div class="job-attributes">
+                        <div class="job-detail z-depth-1">
+                            <label>You'll be working for</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 user-pic"></div>
+                                <div class="data">Bob McFarland</div>
+                            </div>
+                        </div>
+                        <div class="job-detail z-depth-1 job-location">
+                            <label>Location</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">location_on</i></div>
+                                <div class="truncate data">83 West Portola, Los Altos</div>
+                            </div>
 
+                        </div>
+                        <div class="job-detail z-depth-1 job-location">
+                            <label>Date/Time</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">date_range</i></div>
+                                <div class="truncate data">Saturday, 3-5pm<div class="material-icons z-depth-1 t-type">repeat</div></div>
+                            </div>
+
+                        </div>
+
+                        <div class="job-detail z-depth-1 job-payment">
+                            <label>Salary</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">attach_money</i></div>
+                                <div class="truncate data">$15<div class="z-depth-1 p-type">fixed</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="angle"></div>
+                <div class="controls">
+                    <div id="rem" data-tooltip="Delete It" class="tooltipped  actn-btn w">
+                        <i class="material-icons">delete</i>
+                    </div>
+                    <div id="save" data-tooltip="Save It" class="tooltipped actn-btn save">
+                        <i class="material-icons">save</i>
+                    </div>
+                    <div id="take" data-tooltip="Take It" class="tooltipped actn-btn take">
+                        <i class="material-icons">check</i>
+                    </div>
+                </div>
+            </div>
+            <div class="z-depth-1 post">
+                <div class="post-content">
+                    <div class="z-depth-1 title">Lawn Mowing</div>
+                    <div class="job-detail z-depth-1 job-summary">
+                        <label>Summary</label>
+                        <div class="summary">Standard Lawnmowing in my front lawn.</div>
+                    </div>
+                    <div class="job-attributes">
+                        <div class="job-detail z-depth-1">
+                            <label>You'll be working for</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 user-pic"></div>
+                                <div class="data">Bob McFarland</div>
+                            </div>
+                        </div>
+                        <div class="job-detail z-depth-1 job-location">
+                            <label>Location</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">location_on</i></div>
+                                <div class="truncate data">83 West Portola, Los Altos</div>
+                            </div>
+
+                        </div>
+                        <div class="job-detail z-depth-1 job-location">
+                            <label>Date/Time</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">date_range</i></div>
+                                <div class="truncate data">Saturday, 3-5pm<div class="material-icons z-depth-1 t-type">repeat</div></div>
+                            </div>
+
+                        </div>
+
+                        <div class="job-detail z-depth-1 job-payment">
+                            <label>Salary</label>
+                            <div class="more-info-box">
+                                <div class="z-depth-1 icon"><i class="red-text material-icons">attach_money</i></div>
+                                <div class="truncate data">$15<div class="z-depth-1 p-type">fixed</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="angle"></div>
+                <div class="controls">
+                    <div id="rem" data-tooltip="Delete It" class="tooltipped  actn-btn w">
+                        <i class="material-icons">delete</i>
+                    </div>
+                    <div id="save" data-tooltip="Save It" class="tooltipped actn-btn save">
+                        <i class="material-icons">save</i>
+                    </div>
+                    <div id="take" data-tooltip="Take It" class="tooltipped actn-btn take">
+                        <i class="material-icons">check</i>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
