@@ -1,0 +1,264 @@
+/*shadows*/
+.upshadow-1 {
+    -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.insetshadow-1 {
+    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.insetshadow-2 {
+    box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+/*fonts*/
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/material-icons.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'summer';
+  src: url(../fonts/SummerHearts-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'adamcg';
+  src: url(../fonts/ADAM.CG.otf) format('opentype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/*OVERHEAD-BAR*/
+.overhead-bar {
+    height: 80;
+    width: 900;
+    top: -60;
+    transform: skewY(-4deg);
+    position: relative;
+    background-color: white;
+    z-index: 1000;
+    position: fixed;
+}
+.bar-content {
+    transform: skewY(4deg);
+    position: absolute;
+    font-weight: 300;
+    font-size: 20;
+    bottom:5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: adamcg;
+    margin-left: 15;
+    color: e53935;
+}
+.logo {
+    margin-top: 1;
+    height: 40;
+    margin-right: 5;
+}
+/*MAIN*/
+div.main {
+    min-height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: block;
+
+    background-color: whitesmoke;
+    background-image: url(../media/bg.jpeg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+div.main .content {
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 5;
+    position: relative;
+    margin-top: 100;
+    display: flex;
+    min-height: 300;
+}
+.content .catch-phrase {
+    width: 500;
+}
+.catch-phrase .m {
+    font-size: 80;;
+    line-height: 110%;
+    font-family: adamcg;
+    color: e53935;
+    text-shadow: 0 0 20px black;
+}
+.catch-phrase .s {
+    font-size: 40;
+    font-family: adamcg;
+    color: white;
+    font-weight: 
+
+}
+.darker-layer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+.login-container {
+    width: 50%;
+    padding: 40;
+    display: flex;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.login-box {
+    width: 100%;
+    display: block;
+    position: relative;
+    background-image: url(../media/crossword.png);
+    height: 380;
+}
+.signin {
+    height: 50%;
+    width: 100%;
+    padding: 30;
+}
+.signin .header {
+    font-family: adamcg;
+    color: e53935;
+    font-size: 20;
+}
+.signin .form-container {
+    display: flex;
+}
+.signin .input-container {
+    width: 50%;
+    height: 89;
+}
+.signin .input-container input{
+    margin-bottom: 0;
+    font-weight: 300;
+}
+.signin .submit-btn-container {
+    height: 89;
+    width: 50%;
+    padding-top: 10;
+    padding-right: 0;
+    padding-left: 15;
+
+}
+.submit-btn-container .button {
+    width: 100%;
+    color: white;
+    font-family: adamcg;
+    max-width: 150;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(229,57,53,.3);
+}
+.signup {
+    height: 50%;
+    width: 100%;
+    display: flex;
+}
+.signup > div {
+    padding: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.signup .employee {
+    width: 50%;
+    background-color: rgba(0,0,0,.01);
+    height: 100%;
+}
+.signup .employer {
+    width: 50%;
+    background-color: rgba(0,0,0,.03);
+    height: 100%;
+}
+.l {
+    color: e53935;
+    font-size: 20;
+    font-family: adamcg;
+    font-weight: 300;
+}
+.ls {
+    font-weight: 300;
+}
+
+
+@media only screen and (max-width: 1115px) {
+    div.main .content {
+        display: block;
+    }
+    .content .catch-phrase {
+        margin: 0 auto;
+        text-align: center;
+    }
+     .catch-phrase .m {
+        font-size: 60;
+    }
+    .catch-phrase .s {
+        font-size: 30;
+    }
+    .login-container {
+        margin: 0 auto;
+        margin-top: 40;
+        width: auto;
+        max-width: 580;
+        margin-bottom: 100;
+        display: block;
+    }
+    .login, .signup {
+        width: auto;
+    }
+}
+@media only screen and (max-width: 750px) {
+     .catch-phrase .m {
+        font-size: 10vw
+    }
+    .catch-phrase .s {
+        font-size: 4vw
+    }
+    .content .catch-phrase {
+        max-width: 400;
+        width: auto;
+        padding: 30;
+        display: block;
+        height: auto;
+    }
+    .l {
+        font-size: 15;
+    }
+    .login-container {
+        max-width: 480;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .catch-phrase .s {
+        max-width: 260;
+        display: block;
+        margin: 0 auto;
+    }
+}
