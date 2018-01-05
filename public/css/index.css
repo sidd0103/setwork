@@ -56,20 +56,23 @@
     position: fixed;
 }
 .bar-content {
-    transform: skewY(4deg);
-    position: absolute;
+    position: fixed;
     font-weight: 300;
     font-size: 20;
-    bottom:5;
+    width: 100%;
+    z-index: 1000;
     cursor: pointer;
     display: flex;
-    align-items: center;
     font-family: adamcg;
+    align-items: center;
     margin-left: 15;
+    height: 47;
     color: e53935;
 }
+.bar-content b {
+    margin-bottom: 5;
+}
 .logo {
-    margin-top: 1;
     height: 40;
     margin-right: 5;
 }
@@ -174,7 +177,7 @@ div.main .content {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: rgba(229,57,53,.3);
+    background-color: rgba(229,57,53,.6);
 }
 .signup {
     height: 50%;

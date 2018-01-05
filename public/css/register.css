@@ -56,17 +56,21 @@
     position: fixed;
 }
 .bar-content {
-    transform: skewY(4deg);
-    position: absolute;
+    position: fixed;
     font-weight: 300;
     font-size: 20;
-    bottom:5;
+    width: 100%;
+    z-index: 1000;
     cursor: pointer;
     display: flex;
-    align-items: center;
     font-family: adamcg;
+    align-items: center;
     margin-left: 15;
+    height: 47;
     color: e53935;
+}
+.bar-content b {
+    margin-bottom: 5;
 }
 .logo {
     height: 40;
@@ -172,5 +176,13 @@ div.main {
         margin-bottom: 20;
         flex-direction: column;
         
+    }
+    .page-title {
+        font-weight: 700;
+        font-size: 6.5vw;
+        margin-bottom: 10;
+    }
+    .sheet .header {
+        font-size: 20;
     }
 }

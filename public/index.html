@@ -6,8 +6,24 @@
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/materialize.js"></script>
     <script src="https://use.fontawesome.com/470f638731.js"></script>
+    <!--FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDvX1VuLtsPGl3v0WqtClzWguwAbTknjg4",
+            authDomain: "sapharii-dev.firebaseapp.com",
+            databaseURL: "https://sapharii-dev.firebaseio.com",
+            projectId: "sapharii-dev",
+            storageBucket: "sapharii-dev.appspot.com",
+            messagingSenderId: "335004895276"
+        };
+        firebase.initializeApp(config);
+    </script>
     <!--WORKING FILES-->
-    <link href='css/landing.css' rel="stylesheet">
+    <link href='css/index.css' rel="stylesheet">
+    <script src="js/app-auth.js"></script>
+    <script src="js/index-controller.js"></script>
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
@@ -19,16 +35,15 @@
 
 <body>
     <!--OVERHEAD-BAR-->
-    <div class="z-depth-1 overhead-bar">
-        <div class="bar-content"><img class="logo" src="media/logo.png"><b>SAPHARII</b></div>
-    </div>
+    <div class="z-depth-1 overhead-bar"></div>
+    <div class="bar-content"><img class="logo" src="media/logo.png"><b>SAPHARII</b></div>
     <!--MAIN-->
     <div class="main">
         <div class="darker-layer"></div>
         <div class="content">
             <div class="catch-phrase">
                 <div class="m">Got work problems?</div>
-                <div class="s flow-text">At SAPHARII, we can both find you work and offer you jobs.</div>
+                <div class="s flow-text">At SAPHARII, we can find you work and offer you jobs.</div>
             </div>
             <div class="login-container">
                 <div class="z-depth-3 login-box">
@@ -36,20 +51,20 @@
                         <div class="header">WELCOME BACK</div>
                         <div class="form-container">
                             <div class="input-container">
-                                <input placeholder="USERNAME" id="uid" type="text" class="validate">
+                                <input placeholder="EMAIL" id="uid" type="text" class="validate">
                                 <input placeholder="PASSWORD" id="pass" type="password" class="validate">
                             </div>
                             <div class="submit-btn-container">
-                                <div class="waves-effect button">SIGNIN</div>
+                                <div id="signin-btn" class="waves-effect button">SIGNIN</div>
                             </div>
                         </div>
                     </div>
                     <div class="signup">
-                        <div class="waves-effect employee">
+                        <div class="signup-btn waves-effect employee">
                             <div class="l">employees</div>
                             <div class="ls">Signup here.</div>
                         </div>
-                        <div class="waves-effect employer">
+                        <div class="signup-btn waves-effect employer">
                             <div class="l">employers</div>
                             <div class="ls">Signup here.</div>
                         </div>   
