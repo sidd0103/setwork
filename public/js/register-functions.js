@@ -1,9 +1,7 @@
 function getType() {
-    try {
-        var type = window.location.hash.substr(1);
-    }
-    catch (err) {
-        var type = "employee";
+    var type = window.location.hash.substr(1);
+    if (type.length == 0) {
+        type = "employee";
     }
     return type.toUpperCase();
 }
@@ -48,7 +46,9 @@ function submitForm() {
     if (success == false) {
         return false;
     }
+    //check username availability
+    verifyUsername();
     //if all goes well, create an account
     var name = payload.fname + ' ' + payload.lname;
-    createAccount(payload.email, payload.pass, payload.uid, name);
+    createAccount(payload.email, payload.pass, name);
 }

@@ -190,15 +190,9 @@ div.main .content {
     flex-direction: column;
     justify-content: center;
 }
-.signup .employee {
-    width: 50%;
-    background-color: rgba(0,0,0,.01);
-    height: 100%;
-}
-.signup .employer {
-    width: 50%;
+.signup-btn {
     background-color: rgba(0,0,0,.03);
-    height: 100%;
+    width: 100%;
 }
 .l {
     color: e53935;
@@ -250,9 +244,6 @@ div.main .content {
         padding: 30;
         display: block;
         height: auto;
-    }
-    .l {
-        font-size: 15;
     }
     .login-container {
         max-width: 480;

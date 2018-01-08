@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    var type = getType();
-    var types = ['EMPLOYEE','EMPLOYER']
-    $('.type').text(type);
-    
+    //when this is clicked, go back home
+    $('.bar-content').on('click',function(){
+        document.location.href = 'index.html';
+    });
     //when the type is clicked, change the type.
     $('.type').on('mousedown',function(){
         var index = types.indexOf($(this).text());

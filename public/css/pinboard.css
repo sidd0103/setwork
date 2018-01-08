@@ -178,7 +178,7 @@ div.content {
 }
 /*page title*/
 .pageTitle {
-    max-width: 800;
+    max-width: 1200;
     margin: 0 auto;
     padding: 50;
     font-size: 40;
@@ -190,9 +190,9 @@ div.content {
 }
 /*DASH*/
 .dash-container {
-    column-count: 2;
+    column-count: 3;
     padding: 50;
-    max-width: 800;
+    max-width: 1200;
     margin: 0 auto;
 }
 /*POSTS*/

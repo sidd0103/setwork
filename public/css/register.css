@@ -59,7 +59,6 @@
     position: fixed;
     font-weight: 300;
     font-size: 20;
-    width: 100%;
     z-index: 1000;
     cursor: pointer;
     display: flex;
@@ -136,8 +135,7 @@ div.main {
     display: flex;
 }
 #email {
-    margin-right: 4%;
-    width: 48%;
+    width: 100%;
 }
 #uid {
     width: 48%;
