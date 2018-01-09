@@ -46,8 +46,6 @@ function submitForm() {
     if (success == false) {
         return false;
     }
-    //check username availability
-    verifyUsername();
     //if all goes well, create an account
     var name = payload.fname + ' ' + payload.lname;
     createAccount(payload.email, payload.pass, name);

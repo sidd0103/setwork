@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(function(usertemp) {
 
 function createAccount(email, pass, name) {
     firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(){
-        addDBAccount(email, pass, name, type);
+        addDBAccount(email, pass, name);
     }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
