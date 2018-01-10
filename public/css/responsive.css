@@ -51,6 +51,9 @@
     .logo {
         visibility: hidden;
     }
+    .nav-open {
+        visibility: visible!important;
+    }
     /*page changes*/
     .main .page-container {
         padding: 0;
@@ -155,5 +158,11 @@
         font-weight: 400;
         font-size: 18;
         margin-bottom: 0;
+    }
+    .review .title {
+        font-size: 15;
+    }
+    .review .rating {
+        font-size: 11;
     }
 }

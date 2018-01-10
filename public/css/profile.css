@@ -44,108 +44,8 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/*OVERHEAD-BAR*/
-.overhead-bar {
-    height: 80;
-    width: 900;
-    top: -60;
-    transform: skewY(-4deg);
-    position: relative;
-    background-color: white;
-    z-index: 1000;
-    position: fixed;
-}
-.bar-content {
-    position: fixed;
-    font-weight: 300;
-    font-size: 20;
-    z-index: 1000;
-    cursor: pointer;
-    display: flex;
-    font-family: adamcg;
-    align-items: center;
-    margin-left: 15;
-    height: 47;
-    color: e53935;
-}
-.bar-content b {
-    margin-bottom: 5;
-}
-.logo {
-    height: 40;
-    margin-right: 5;
-}
 /*nav-bar*/
-.side-nav {
 
-}
-.nav-open  {
-    position: fixed;
-    background-color: #e53935;
-    margin-left: 14;
-    border-radius: 30px;
-    z-index: 300;
-    margin-top: 7;
-    z-index: 1000;
-    padding: 6;
-    color: white;
-}
-.login-section {
-    height: 220;
-    background-color: bisque;
-    transform: skewY(4deg);
-    margin-bottom: 20;
-    background-color: white;
-    overflow: hidden;
-    border-bottom: #e0e0e0 solid 1px
-   
-}
-.login-content {
-    height: 198;
-    margin-top: 32;
-    display: flex;
-    width: 100%;
-    transform: skewY(-4deg);
-}
-.blue-part {
-    color: #00022c;
-}
-.pic-area {
-    height: 100%;
-    width: 100%;
-    padding: 30;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.profile {
-    width: 100%;
-    padding: 15;
-    background-color: white;
-}
-.profile .info {
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-.profile .name {
-    font-weight: 300;
-    padding: 5;
-    font-size: 13;
-    margin-top:6;
-    color: e53935;
-    margin-right: 10;
-    margin-left: 10;
-}
-.prof-pic {
-    height: 70;
-    width: 70;
-    border-radius: 80px;
-    background-image: url(../media/user.jpg);
-    background-size: cover;
-    border: 3px solid white;
-    
-}
 /*stats*/
 .stats {
     margin-left: 15;
@@ -486,16 +386,17 @@ div.main {
     margin: 0 auto;
     border-radius: 0px;
     margin-bottom: 20;
-    background-color: e53935
+    padding-bottom: 40;
     border: 1px solid #eee;
 }
 .review .title {
     font-size: 18;
+    font-weight: 300;
     display: flex;
     align-items: center;
 }
 .title .content {
-    font-weight: 400;
+    font-weight: 300;
 }
 .content .author {
     font-size: 14;
@@ -508,17 +409,19 @@ div.main {
     height: 50;
     background-color: white;
     color: e53935;
-    font-weight: 900;
     font-size: 14;
+    font-weight: 400;
     display: flex;
+    border: 1px solid #eee;
     align-items: center;
     justify-content: center;
 }
 .review-text {
     padding: 15;
+    padding-left: 0;
     margin-top: 10;
     font-weight: 300;
-    border: 1px solid #eee;
+   
 }
 
 /*nav close*/

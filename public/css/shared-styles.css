@@ -1,0 +1,128 @@
+/*OVERHEAD-BAR*/
+.overhead-bar {
+    height: 80;
+    width: 900;
+    top: -60;
+    transform: skewY(-4deg);
+    position: relative;
+    background-color: white;
+    z-index: 998;
+    position: fixed;
+}
+.logo {
+    position: fixed;
+    z-index: 999;
+    top: 4;
+    left: 15;
+}
+.logo {
+    height: 40;
+    margin-right: 5;
+    cursor: pointer;
+}
+.logo-text {
+    z-index: 999;
+    position: fixed;
+    font-family: adamcg;
+    color: e53935;
+    left: 60;
+    font-weight: 900;
+    top: 6;
+    font-size: 20;
+    cursor: pointer;
+}
+/*nav-bar*/
+.side-nav {
+    z-index: 997;
+}
+.nav-open  {
+    position: fixed;
+    background-color: #e53935;
+    margin-left: 14;
+    border-radius: 30px;
+    z-index: 300;
+    margin-top: 6;
+    visibility: hidden;
+    z-index: 1000;
+    padding: 6;
+    color: white;
+}
+.login-section {
+    height: 220;
+    background-color: bisque;
+    transform: skewY(4deg);
+    margin-bottom: 20;
+    background-color: white;
+    overflow: hidden;
+    border-bottom: #e0e0e0 solid 1px
+   
+}
+.login-content {
+    height: 198;
+    margin-top: 32;
+    display: flex;
+    width: 100%;
+    transform: skewY(-4deg);
+}
+.blue-part {
+    color: #00022c;
+}
+.pic-area {
+    height: 100%;
+    width: 100%;
+    padding: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile {
+    width: 100%;
+    padding: 15;
+    background-color: white;
+}
+.profile .info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.profile .name {
+    font-weight: 300;
+    padding: 5;
+    font-size: 13;
+    margin-top:6;
+    color: e53935;
+    margin-right: 10;
+    margin-left: 10;
+}
+.prof-pic {
+    height: 70;
+    width: 70;
+    border-radius: 80px;
+    background-image: url(../media/user.jpg);
+    background-size: cover;
+    border: 3px solid white;
+    
+}
+/*stats*/
+.stats {
+    margin-left: 15;
+    width: calc(100% - 95px);
+    color: e53935;
+}
+.rating {
+    font-weight: 300;
+    font-size: 13;
+    padding-left: 5;
+    padding-right: 5;
+    padding-top: 4;
+    padding-bottom: 4;
+}
+.wallet {
+    margin-top: 5;
+    font-weight: 300;
+    font-size: 13;
+    padding-left: 5;
+    padding-right: 5;
+    padding-top: 4;
+    padding-bottom: 4;
+}

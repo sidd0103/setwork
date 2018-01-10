@@ -8,6 +8,8 @@
     <script src="https://use.fontawesome.com/470f638731.js"></script>
     <!--WORKING FILES-->
     <link href='css/pinboard.css' rel="stylesheet">
+    <link href='css/shared-styles.css' rel="stylesheet">
+    <script src="js/links.js"></script>
     <link href="css/responsive.css" rel="stylesheet">
     <script src="js/pinboard-controller.js"></script>
     <script src="js/init.js"></script>
@@ -23,9 +25,9 @@
 
 <body>
     <!--OVERHEAD-BAR-->
-    <div class="z-depth-1 overhead-bar">
-        <div class="bar-content"><img class="logo" src="media/logo.png"><b>SAPHARII</b></div>
-    </div>
+   <div class="z-depth-1 overhead-bar"></div>
+    <img data-to="index.html" class="link logo" src="media/logo.png">
+    <div data-to="index.html" class="link logo-text">SAPHARII</div>
     <!--SIDENAV-->
     <a data-activates="slide-out" class="waves-effect waves-light z-depth-3 nav-open"><i class="material-icons">menu</i></a>
     <ul id="slide-out" class="side-nav fixed">
