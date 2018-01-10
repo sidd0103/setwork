@@ -1,8 +1,9 @@
 /*nav close*/
-@media only screen and (max-width: 995px) {
+@media only screen and (max-width: 992px) {
     div.content {
         padding-left: 0;
     }
+    
 }
 /*column collapse*/
 @media only screen and (max-width: 1400px) {
@@ -17,5 +18,142 @@
 @media only screen and (max-width: 700px) {
     .dash-container {
         column-count: 1;
+    }
+}
+/*profile responsiveness*/
+@media only screen and (max-width: 1000px) {
+    .profile-pic {
+        height: 100;
+        width: 100;
+        border: 5px solid white;
+    }
+    .name-info {
+        width: calc(100% - 110px);
+    }
+}
+@media only screen and (max-width: 750px) {
+    .name-info .name {
+        font-size: 6vw;
+        margin-bottom: 8;
+    }
+    .name-info .uid {
+        margin-bottom: 8;
+        font-size: 5vw;
+    }
+}
+@media only screen and (max-width: 500px) {
+    /*dash responsive*/
+    .dash-container {
+        padding-left: 0;
+        padding-bottom: 0;
+        padding-right: 0;
+    }
+    .logo {
+        visibility: hidden;
+    }
+    /*page changes*/
+    .main .page-container {
+        padding: 0;
+    }
+    /*page changes*/
+     .header-page {
+        padding: 30;
+        padding-top: 40;
+        z-index: 500;
+        position: relative;
+    }
+    
+    .stats-page {
+        margin-top: 0;
+        position: relative;
+        align-items: center;
+        padding: 30;
+    }
+    .info-page {
+        margin-bottom: 0;
+        -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
+        position: relative;
+        
+        margin-top: 0;
+    }
+    /*other changes*/
+    .pageTitle {
+        padding-left: 40;
+    }
+    .name-info {
+        margin-left: 10;
+        width: calc(100% - 85px);
+    }
+    /*info-tile changes*/
+    .info-point {
+        overflow: hidden!important;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-right: 10;
+        text-overflow: ellipsis;
+    }
+    .info-point .data {
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 11;
+        padding-right: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .profile-pic {
+        height: 75;
+        width: 75;
+        border: 5px solid white;
+    }
+    .stat {
+        align-items: center;
+        width: 100%;
+        margin: 5;
+        max-width: 190;
+    }
+    .info-slide {
+        flex-direction: column;
+        column-count: 1!important;
+        padding: 30!important;
+        height: auto!important;
+    }
+    .divider {
+        height: 1;
+        width: 100%;
+        margin-top: 25;
+        margin-bottom: 25;
+    }
+    .quick-stats {
+        width: 100%;
+    }
+    .activity-area {
+        width: 100%;
+    }
+    .info-section .name {
+        font-size: 18;
+    }
+    .contact-point {
+        font-size: 14;
+    }
+    .name-info {
+        margin-left: -75;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .name-info .actn-btn {
+        margin-left: 85;
+        width: auto;
+        margin-top: 20;
+    }
+    .name-info .name {
+        margin-top: 20;
+        font-size: 20;
+        margin-bottom: -20;
+    }
+    .name-info .uid {
+        font-weight: 400;
+        font-size: 18;
+        margin-bottom: 0;
     }
 }
