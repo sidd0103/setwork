@@ -1,43 +1,43 @@
-[debug] [2018-01-10T18:54:24.329Z] ----------------------------------------------------------------------
-[debug] [2018-01-10T18:54:24.332Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sidbi\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
-[debug] [2018-01-10T18:54:24.333Z] CLI Version:   3.15.2
-[debug] [2018-01-10T18:54:24.333Z] Platform:      win32
-[debug] [2018-01-10T18:54:24.333Z] Node Version:  v6.11.0
-[debug] [2018-01-10T18:54:24.333Z] Time:          Wed Jan 10 2018 10:54:24 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:24.333Z] ----------------------------------------------------------------------
+[debug] [2018-01-11T17:01:41.733Z] ----------------------------------------------------------------------
+[debug] [2018-01-11T17:01:41.738Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sidbi\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-01-11T17:01:41.739Z] CLI Version:   3.15.2
+[debug] [2018-01-11T17:01:41.739Z] Platform:      win32
+[debug] [2018-01-11T17:01:41.739Z] Node Version:  v6.11.0
+[debug] [2018-01-11T17:01:41.740Z] Time:          Thu Jan 11 2018 09:01:41 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:41.741Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-01-10T18:54:24.361Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-01-10T18:54:24.361Z] > authorizing via signed-in user
-[debug] [2018-01-10T18:54:24.364Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
-[debug] [2018-01-10T18:54:24.364Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/qTwv9rWeHPeLOwbjziq2JdNRsOb3v7_oqSsWVw1Zgu8',
+[debug] [2018-01-11T17:01:41.784Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-11T17:01:41.784Z] > authorizing via signed-in user
+[debug] [2018-01-11T17:01:41.788Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-01-11T17:01:41.788Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/qTwv9rWeHPeLOwbjziq2JdNRsOb3v7_oqSsWVw1Zgu8',
   client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
   client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
   grant_type: 'refresh_token',
   scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
- Wed Jan 10 2018 10:54:24 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:24.532Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-10T18:54:24.548Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/sapharii-dev  
- Wed Jan 10 2018 10:54:24 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:24.915Z] <<< HTTP RESPONSE 200
-[debug] [2018-01-10T18:54:24.916Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/sapharii-dev/tokens  
- Wed Jan 10 2018 10:54:24 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:25.517Z] <<< HTTP RESPONSE 200
+ Thu Jan 11 2018 09:01:41 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:41.976Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-11T17:01:41.984Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/sapharii-dev  
+ Thu Jan 11 2018 09:01:41 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:42.567Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-11T17:01:42.568Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/sapharii-dev/tokens  
+ Thu Jan 11 2018 09:01:42 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:43.156Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'sapharii-dev'...
 [info] 
 [info] i  deploying database, functions, hosting
 [info] i  database: checking rules syntax...
-[debug] [2018-01-10T18:54:25.877Z] >>> HTTP REQUEST PUT https://sapharii-dev.firebaseio.com/.settings/rules.json?dryRun=true {
+[debug] [2018-01-11T17:01:43.542Z] >>> HTTP REQUEST PUT https://sapharii-dev.firebaseio.com/.settings/rules.json?dryRun=true {
   "rules": {
     ".read": "auth != null",
     ".write": "auth != null"
   }
 }
  
- Wed Jan 10 2018 10:54:25 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:26.179Z] <<< HTTP RESPONSE 200
+ Thu Jan 11 2018 09:01:43 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:43.846Z] <<< HTTP RESPONSE 200
 [info] +  database: rules syntax for database sapharii-dev is valid
-[debug] [2018-01-10T18:54:26.183Z] > [functions] package.json contents: {
+[debug] [2018-01-11T17:01:43.854Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "dependencies": {
@@ -48,16 +48,17 @@
 }
 [info] i  functions: ensuring necessary APIs are enabled...
 [info] i  runtimeconfig: ensuring necessary APIs are enabled...
-[debug] [2018-01-10T18:54:26.185Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/sapharii-dev?view=CONSUMER_VIEW  
- Wed Jan 10 2018 10:54:26 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:26.185Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/sapharii-dev?view=CONSUMER_VIEW  
- Wed Jan 10 2018 10:54:26 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:26.953Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-11T17:01:43.857Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/cloudfunctions.googleapis.com/projectSettings/sapharii-dev?view=CONSUMER_VIEW  
+ Thu Jan 11 2018 09:01:43 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:43.858Z] >>> HTTP REQUEST GET https://servicemanagement.googleapis.com/v1/services/runtimeconfig.googleapis.com/projectSettings/sapharii-dev?view=CONSUMER_VIEW  
+ Thu Jan 11 2018 09:01:43 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:44.527Z] <<< HTTP RESPONSE 200
 [info] +  runtimeconfig: all necessary APIs are enabled
-[debug] [2018-01-10T18:54:26.963Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-11T17:01:44.530Z] <<< HTTP RESPONSE 200
 [info] +  functions: all necessary APIs are enabled
-[debug] [2018-01-10T18:54:26.966Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/sapharii-dev  
- Wed Jan 10 2018 10:54:26 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:26.967Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/sapharii-dev/apiKeys  
- Wed Jan 10 2018 10:54:26 GMT-0800 (Pacific Standard Time)
-[debug] [2018-01-10T18:54:27.565Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-11T17:01:44.531Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/sapharii-dev  
+ Thu Jan 11 2018 09:01:44 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:44.532Z] >>> HTTP REQUEST GET https://apikeys.googleapis.com/v1/projects/sapharii-dev/apiKeys  
+ Thu Jan 11 2018 09:01:44 GMT-0800 (Pacific Standard Time)
+[debug] [2018-01-11T17:01:44.924Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-11T17:01:45.072Z] <<< HTTP RESPONSE 200

@@ -26,14 +26,20 @@
     font-family: adamcg;
     color: e53935;
     left: 60;
+    height: 40;
+    display: flex;
+    align-items: center;
     font-weight: 900;
-    top: 6;
+    top: 1;
     font-size: 20;
     cursor: pointer;
 }
 /*nav-bar*/
 .side-nav {
     z-index: 997;
+}
+#sidenav-overlay {
+    z-index: 996!important;
 }
 .nav-open  {
     position: fixed;
