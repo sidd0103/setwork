@@ -4,10 +4,12 @@
           box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .insetshadow-1 {
-    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .insetshadow-2 {
-    box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 /*fonts*/
@@ -89,6 +91,8 @@ div.main {
 /*header-page*/
 .header-page {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 40;
     margin-top: 30;
@@ -110,22 +114,37 @@ div.main {
 .profile-pic .switch-icon {
     font-size: 50;
     opacity: 0;
+    -webkit-transition: opacity .4s;
+    -o-transition: opacity .4s;
     transition: opacity .4s;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: rgba(0,0,0,.3);
     color: white;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-shadow: 1px 1px 5px black;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
 }
 .name-info {
     margin-left: 30;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: calc(100% - 310px);
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .header-page .uid {
     font-size: 40;
@@ -138,10 +157,14 @@ div.main {
     font-size: 45;
 }
 .actn-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 145;
     height: 35;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 70px;
     margin-top: -5;
     background-color: white;
@@ -150,9 +173,15 @@ div.main {
     font-weight: 300;
 }
 .actn-btn > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
 }
 .actn-btn .friend-request {
@@ -169,8 +198,12 @@ div.main {
 /*stats-page*/
 .stats-page {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding: 40;
     margin-top: 30;
     background-color: e53935;
@@ -182,6 +215,8 @@ div.main {
     padding-left: 20;
     font-weight: 300;
     width: 170;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border-radius: 30px;
     background-color: white;
@@ -202,9 +237,15 @@ div.main {
     width: 100%;
 }
 .info-slide#activity {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 290;
     padding: 30;
 
@@ -248,8 +289,10 @@ div.main {
 }
 .info-slide#resume {
     padding: 40;
-    column-gap:10px;
-    column-count: 2;
+    -webkit-column-gap:10px;
+            column-gap:10px;
+    -webkit-column-count: 2;
+            column-count: 2;
 }
 #resume .info-section {
     padding: 25;
@@ -267,9 +310,14 @@ div.main {
     font-weight: 300;
 }
 .contact-point {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .contact-point i {
     font-size: 16;
@@ -307,10 +355,17 @@ div.main {
     margin-top: 13;
 }
 .collapsible-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-weight: 300;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 .folder-icon {
     font-size: 17!important;
@@ -319,10 +374,13 @@ div.main {
 }
 .info-point {
     margin-bottom: 5;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border-radius: 30px;
     overflow: hidden;
-    align-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
 }
 .info-point i {
     padding: 5;
@@ -336,8 +394,12 @@ div.main {
     padding: 5;
     font-size: 13;
     padding-top: 6;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-right: 20;
     margin-left: auto;
 }
@@ -375,7 +437,8 @@ div.main {
 }
 .info-slide#testimonials {
     padding: 40;
-    column-gap: 0px;
+    -webkit-column-gap: 0px;
+            column-gap: 0px;
 }
 .review {
     padding: 20;
@@ -392,8 +455,12 @@ div.main {
 .review .title {
     font-size: 18;
     font-weight: 300;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .title .content {
     font-weight: 300;
@@ -411,10 +478,16 @@ div.main {
     color: e53935;
     font-size: 14;
     font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     border: 1px solid #eee;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .review-text {
     padding: 15;

@@ -1,3 +1,13 @@
+//controller
+$(document).ready(function(){
+    init();
+    $('.pic-area .profile').click(function(){
+        window.location.href = 'profile.html#me';
+    });
+})
+
+
+//functions
 function init() {
     $('.nav-open').sideNav({
         menuWidth: 250, // Default is 300

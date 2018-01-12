@@ -3,12 +3,19 @@
     div.content {
         padding-left: 0;
     }
+    .nav-open {
+        visibility: visible!important;
+    }
+    .logo {
+        visibility: hidden;
+    }
     
 }
 /*column collapse*/
 @media only screen and (max-width: 1400px) {
     .dash-container {
-        column-count: 2;
+        -webkit-column-count: 2;
+                column-count: 2;
         max-width: 800;
     }
     .pageTitle {
@@ -17,7 +24,8 @@
 }
 @media only screen and (max-width: 700px) {
     .dash-container {
-        column-count: 1;
+        -webkit-column-count: 1;
+                column-count: 1;
     }
 }
 /*profile responsiveness*/
@@ -48,12 +56,6 @@
         padding-bottom: 0;
         padding-right: 0;
     }
-    .logo {
-        visibility: hidden;
-    }
-    .nav-open {
-        visibility: visible!important;
-    }
     /*page changes*/
     .main .page-container {
         padding: 0;
@@ -69,7 +71,9 @@
     .stats-page {
         margin-top: 0;
         position: relative;
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         padding: 30;
     }
     .info-page {
@@ -94,7 +98,8 @@
         white-space: nowrap;
         overflow: hidden;
         padding-right: 10;
-        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
     }
     .info-point .data {
         white-space: nowrap;
@@ -102,7 +107,8 @@
         font-size: 11;
         padding-right: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        -o-text-overflow: ellipsis;
+           text-overflow: ellipsis;
     }
     .profile-pic {
         height: 75;
@@ -110,14 +116,20 @@
         border: 5px solid white;
     }
     .stat {
-        align-items: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
         width: 100%;
         margin: 5;
         max-width: 190;
     }
     .info-slide {
-        flex-direction: column;
-        column-count: 1!important;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-column-count: 1!important;
+                column-count: 1!important;
         padding: 30!important;
         height: auto!important;
     }
@@ -142,7 +154,10 @@
     .name-info {
         margin-left: -75;
         width: 100%;
-        flex-direction: column-reverse;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+            -ms-flex-direction: column-reverse;
+                flex-direction: column-reverse;
     }
     .name-info .actn-btn {
         margin-left: 85;

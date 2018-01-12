@@ -4,10 +4,12 @@
           box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .insetshadow-1 {
-    box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .insetshadow-2 {
-    box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 /*fonts*/
@@ -62,6 +64,8 @@ div.main .content {
     z-index: 5;
     position: relative;
     margin-top: 100;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     min-height: 300;
 }
@@ -94,6 +98,8 @@ div.main .content {
 .login-container {
     width: 50%;
     padding: 40;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding-top: 0;
     padding-bottom: 0;
@@ -116,6 +122,8 @@ div.main .content {
     font-size: 20;
 }
 .signin .form-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .signin .input-container {
@@ -140,22 +148,37 @@ div.main .content {
     font-family: adamcg;
     max-width: 150;
     margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
     background-color: rgba(229,57,53,.6);
 }
 .signup {
     height: 50%;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .signup > div {
     padding: 30;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .signup-btn {
     background-color: rgba(0,0,0,.03);

@@ -3,7 +3,9 @@
     height: 80;
     width: 900;
     top: -60;
-    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+        -ms-transform: skewY(-4deg);
+            transform: skewY(-4deg);
     position: relative;
     background-color: white;
     z-index: 998;
@@ -27,8 +29,12 @@
     color: e53935;
     left: 60;
     height: 40;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-weight: 900;
     top: 1;
     font-size: 20;
@@ -56,7 +62,9 @@
 .login-section {
     height: 220;
     background-color: bisque;
-    transform: skewY(4deg);
+    -webkit-transform: skewY(4deg);
+        -ms-transform: skewY(4deg);
+            transform: skewY(4deg);
     margin-bottom: 20;
     background-color: white;
     overflow: hidden;
@@ -66,9 +74,13 @@
 .login-content {
     height: 198;
     margin-top: 32;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: 100%;
-    transform: skewY(-4deg);
+    -webkit-transform: skewY(-4deg);
+        -ms-transform: skewY(-4deg);
+            transform: skewY(-4deg);
 }
 .blue-part {
     color: #00022c;
@@ -77,9 +89,15 @@
     height: 100%;
     width: 100%;
     padding: 30;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .profile {
     width: 100%;
@@ -87,8 +105,12 @@
     background-color: white;
 }
 .profile .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: 100%;
 }
 .profile .name {
