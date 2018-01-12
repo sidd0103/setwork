@@ -3,12 +3,21 @@
     div.content {
         padding-left: 0;
     }
+<<<<<<< HEAD
     .nav-open {
         visibility: visible!important;
     }
     .logo {
         visibility: hidden;
     }
+=======
+    .logo {
+        visibility: hidden;
+    }
+    .nav-open {
+        visibility: visible!important;
+    }
+>>>>>>> 3383b53fddeae0dd71503c55af38b14def6a7b46
     
 }
 /*column collapse*/
