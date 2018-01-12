@@ -3,6 +3,12 @@
     div.content {
         padding-left: 0;
     }
+    .logo {
+        visibility: hidden;
+    }
+    .nav-open {
+        visibility: visible!important;
+    }
     
 }
 /*column collapse*/
@@ -47,12 +53,6 @@
         padding-left: 0;
         padding-bottom: 0;
         padding-right: 0;
-    }
-    .logo {
-        visibility: hidden;
-    }
-    .nav-open {
-        visibility: visible!important;
     }
     /*page changes*/
     .main .page-container {

@@ -119,6 +119,7 @@
     font-weight: 300;
     font-size: 13;
     padding-left: 5;
+    border: 1px solid #eee;
     padding-right: 5;
     padding-top: 4;
     padding-bottom: 4;
@@ -126,9 +127,13 @@
 .wallet {
     margin-top: 5;
     font-weight: 300;
+    border: 1px solid #eee;
     font-size: 13;
     padding-left: 5;
     padding-right: 5;
     padding-top: 4;
     padding-bottom: 4;
+}
+.pic-area .name {
+    border: 1px solid #eee;
 }
