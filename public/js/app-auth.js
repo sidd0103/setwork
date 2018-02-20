@@ -1,20 +1,32 @@
 //authentication observer
 var user;
 var loggedIn;
+var loginLockedURIs = ['profile'];
 firebase.auth().onAuthStateChanged(function(usertemp) {
     if (usertemp) {
         // User is signed in.
         user = usertemp;
         loggedIn = true;
-        // ...
+        handleLoginLockedPages(loggedIn);
     } else {
         // User is signed out.
-        // ...
+        // if the user is in a login locked section of the website, send them to the login screen
         user = null;
         loggedIn = false;
+        handleLoginLockedPages(loggedIn);
     }
 });
-
+//this function is very important: It allows us to render pages only if the user is logged in.
+function handleLoginLockedPages(loggedInBool) {
+  if (window.location.href.includes('profile.html')) {
+    if (loggedInBool == true) {
+      renderPage();
+    }
+    else {
+      window.location.href = 'index.html'
+    }
+  }
+}
 function createAccount(email, pass, name) {
     firebase.auth().createUserWithEmailAndPassword(email, pass).then(function(){
         addDBAccount(email, pass, name);
@@ -34,9 +46,12 @@ function addDBAccount(email, pass, name) {
         console.log(errorMessage);
     }).then(function(){
         var postData = {
-            name: name,
+            userStats: {
+              name : name,
+              uidFirebase : user.uid
+            },
         };
-        //Create a user profile on the database and add the username. 
+        //Create a user profile on the database and add the username.
         var updates = {};
         updates['/users/' + user.uid] = postData;
 

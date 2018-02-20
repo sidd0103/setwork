@@ -31,11 +31,11 @@ $(document).ready(function(){
             $(otherPassElement).removeClass('valid').addClass('invalid');
         }
     })
-    //when the submit form button is clicked, 
+    //when the submit form button is clicked,
     $('.submit-btn').on('mousedown',function(){
         submitForm();
     })
-    
+
 })
 
 

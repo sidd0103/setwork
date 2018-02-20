@@ -3,21 +3,18 @@
     div.content {
         padding-left: 0;
     }
-<<<<<<< HEAD
     .nav-open {
         visibility: visible!important;
     }
     .logo {
         visibility: hidden;
     }
-=======
     .logo {
         visibility: hidden;
     }
     .nav-open {
         visibility: visible!important;
     }
->>>>>>> 3383b53fddeae0dd71503c55af38b14def6a7b46
     
 }
 /*column collapse*/
@@ -57,6 +54,10 @@
         margin-bottom: 8;
         font-size: 5vw;
     }
+    .name-info  input {
+        z-index: 500;
+        height: 3rem;
+    }
 }
 @media only screen and (max-width: 500px) {
     /*dash responsive*/
@@ -72,11 +73,11 @@
     /*page changes*/
      .header-page {
         padding: 30;
-        padding-top: 40;
+        padding-top: 70;
+        margin-top: 0;
         z-index: 500;
         position: relative;
     }
-    
     .stats-page {
         margin-top: 0;
         position: relative;

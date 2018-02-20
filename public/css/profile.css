@@ -11,7 +11,12 @@
     -webkit-box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
             box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
+body {
+    font-family: 'Poppins', sans-serif;
 
+
+
+}
 /*fonts*/
 /* fallback */
 @font-face {
@@ -77,9 +82,11 @@ div.main {
     width: 100%;
     padding-left: 250;
     overflow: auto;
+    background-image: url(../media/pexels-photo-696680.jpeg);
+    background-size: cover;
     display: block;
-    background-image: url(../media/crossword.png);
-    background-color: whitesmoke;   
+    
+
 }
 .main .page-container {
     margin: 0 auto;
@@ -146,9 +153,13 @@ div.main {
         -ms-flex-pack: center;
             justify-content: center;
 }
+.name-info  input {
+  z-index: 500;
+    height: auto;
+}
 .header-page .uid {
     font-size: 40;
-    font-weight: 200;
+    font-weight: 400;
     color: e53935;
 }
 .header-page .name {
@@ -171,6 +182,11 @@ div.main {
     overflow: hidden;
     color: white;
     font-weight: 300;
+}
+.actn-btn .editOrSaveProfileText {
+    width: 100%;
+    background-color: e53935;
+    height: 100%;
 }
 .actn-btn > div {
     display: -webkit-box;
@@ -260,7 +276,7 @@ div.main {
     padding-right: 20;
     padding-left: 20;
     border: 1px solid #eee;
-    border-bottom: 0px 
+    border-bottom: 0px
 }
 .divider {
     height: 100%;
@@ -278,7 +294,7 @@ div.main {
     padding-right: 20;
     padding-left: 20;
     border: 1px solid #eee;
-    border-bottom: 0px 
+    border-bottom: 0px
 }
 .last.activity-stat, .last.info-stat {
     border: 1px solid #eee;
@@ -494,7 +510,7 @@ div.main {
     padding-left: 0;
     margin-top: 10;
     font-weight: 300;
-   
+
 }
 
 /*nav close*/

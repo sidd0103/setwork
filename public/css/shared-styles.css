@@ -102,7 +102,9 @@
 .profile {
     width: 100%;
     padding: 15;
-    background-color: white;
+    background-image: url(../media/lightbg2.jpeg);
+    background-position: bottom;
+
 }
 .profile .info {
     display: -webkit-box;
@@ -135,30 +137,28 @@
 .stats {
     margin-left: 15;
     width: calc(100% - 95px);
-    color: e53935;
+    color: white;
 }
 .rating {
-    font-weight: 300;
+    font-weight: 700;
     font-size: 13;
     padding-left: 5;
-    border: 1px solid #eee;
     padding-right: 5;
+    border-bottom: 1px
     padding-top: 4;
     padding-bottom: 4;
 }
 .wallet {
     margin-top: 5;
-    font-weight: 300;
-    border: 1px solid #eee;
+    font-weight: 700;
     font-size: 13;
     padding-left: 5;
     padding-right: 5;
     padding-top: 4;
     padding-bottom: 4;
-<<<<<<< HEAD
-=======
 }
 .pic-area .name {
-    border: 1px solid #eee;
->>>>>>> 3383b53fddeae0dd71503c55af38b14def6a7b46
+    color: white;
+    font-weight: 700;
+    
 }

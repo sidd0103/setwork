@@ -28,11 +28,12 @@
     <script src="js/index.js"></script>
     <!--FONTS-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700" rel="stylesheet">
+    <link href="https://blokkfont-losgordos.netdna-ssl.com/v2/blokkfont.css" rel="stylesheet" type="text/css">
     <!--PROGRESSIVE-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="media/logo.png" rel=icon>
-    <title>Sapharii | Login</title>
+    <title>Sapharii | Find a Job in Seconds</title>
 </head>
 
 <body>
@@ -42,36 +43,192 @@
     <div data-to="index.html" class="link logo-text">SAPHARII</div>
     <!--MAIN-->
     <div class="main">
-        <div class="darker-layer"></div>
-        <div class="content">
-            <div class="catch-phrase">
-                <div class="m">Got work problems?</div>
-                <div class="s flow-text">At SAPHARII, we can find you work and offer you jobs.</div>
-            </div>
-            <div class="login-container">
-                <div class="z-depth-3 login-box">
-                    <div class="signin">
-                        <div class="header">WELCOME BACK</div>
-                        <div class="form-container">
-                            <div class="input-container">
-                                <input placeholder="EMAIL" id="email" type="text" class="validate">
-                                <input placeholder="PASSWORD" id="pass" type="password" class="validate">
+        <div class="header">
+            <div class="darker-layer"></div>
+            <div class="slant"></div>
+            <div class="center-box">
+                <div class="header-message">
+                    <div class="l">Success Awaits.</div>
+                    <div class="s">Find work within your neighborhood in seconds.</div>
+                </div>
+                <div class="z-depth-1 login-box">
+                    <div class="text-header">Register today.</div>
+                    <div class="register">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first_name" type="text" class="validate">
+                                <label for="first_name">First Name</label>
                             </div>
-                            <div class="submit-btn-container">
-                                <div id="signin-btn" class="waves-effect button">SIGNIN</div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="email" type="email" class="validate">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="pass" type="password" class="validate">
+                                <label for="pass">Password</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="vpass" type="password" class="validate">
+                                <label for="vpass">Verify Password</label>
+                            </div>
+                        </div>
+                        <div id="register" class="z-depth-1 waves-effect submit-btn">Register <i class="material-icons">send</i></div>
+                    </div>
+                    <div class="login">
+                        <div class="login-slant"></div>
+                        <div class="text-header">Login today.</div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email-login" type="email" class="validate">
+                                <label for="email-login">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input id="pass-login" type="password" class="validate">
+                                <label for="pass-login">Password</label>
+                            </div>
+                        </div>
+                        <div id="login" class="z-depth-1 waves-effect submit-btn">Login <i class="material-icons">send</i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="description">
+            <div class="header-desc">
+                <div class=l>Employers, Employees, we've got you covered. </div>
+                <div class="s">Sapharii aims to revolutionize the job finding process by providing a platform where employers and employees can interact in a seemless manner.</div>
+            </div>
+        </section>
+        <section class="universal">
+            <div class="content">
+                <div class="z-depth-1 thumb">
+                    <div class="left-side">
+                        <div class="l">Calling all neighborhood heros and money making machines.</div>
+                        <div class="s">Welcome to a platform where you can find easy, local work, and make a quick buck while also benefiting your community. </div>
+                    </div>
+                    <div class="red-bg"></div>
+                    <div class="right-slant"></div>
+                    <div class="right-side">
+                        <div class="l">Delivering mowed lawns, clean garages, and walked dogs.</div>
+                        <div class="s">Welcome to a platform where finding employment for the jobs you don't have time for can happen in seconds.</div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="how">
+            <div class="slant-top"></div>
+            <div class="content">
+                <div class="how-header">Get ready for rapid, convinient, job completion.</div>
+                <div class="sub"></div>
+                <div class="card-container">
+                    <div class="info-card">
+                        <div class="picture"></div>
+                        <div>
+                            <div class="icon">1</div>
+                            <div class="ctnt">
+                                <div class="l">Regular people post jobs.</div>
+                                <div class="s">Regular people post jobs they would like to get done, but don't have time for. They allocate a wage, a location, and description for the job. </div>
                             </div>
                         </div>
                     </div>
-                    <div class="signup">
-                        <div class="signup-btn waves-effect">
-                            <div class="l">lets get started</div>
-                            <div class="ls">Signup here.</div>
-                        </div>  
+                    <div class="info-card">
+                        <div class="picture type2"></div>
+                        <div>
+                            <div class="icon">2</div>
+                            <div class="ctnt">
+                                <div class="l">Sapharii curates employers.</div>
+                                <div class="s">Sapharii matches employers of backgrounds pretaining to the job description and adds it to their feed.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div>
+                            <div class="icon">3</div>
+                            <div class="ctnt">
+                                <div class="l">Employees discover those jobs.</div>
+                                <div class="s">Individuals looking for jobs get to choose which ones they would like to complete from their feed. Employers are notified of their new employees.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div>
+                            <div class="icon">4</div>
+                            <div class="ctnt">
+                                <div class="l">Jobs are completed rapidly.</div>
+                                <div class="s">Sending the same job to hundreds of employers, jobs get completed very fast. Transactions are completly handled by Sapharii.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            
             </div>
-        </div>
+        </section>
+        <section class="accountType">
+            <div class="top-slant"></div>
+            <div class="content">
+                <div class="split-view">
+                    <div class="left-view">
+                        <div class="ready-header">One account, two modes</div>
+                        <div class="s">Sapharii allows anyone to be both an employer or employee. Switch between a hiring mode or a working mode from one account to get the most out of the platform.</div>
+                        <div class="ready-header down">Productivity at our heart</div>
+                        <div class="s">Sapharii's intuitive user interface allows you to find work and hire employees in a matter of seconds. Jump in and explore a personalized feed waiting for you.</div>
+                    </div>
+                    <div class="right-view">
+                        <div class="example">
+                            <div class="waves-light waves-effect switchbtn">Work Mode</div>
+                            <div class="ex1">
+                                <div class="post">
+                                    <div class="header-text">Lawn Mowing</div>
+                                    <div class="sub-text">Mow the lawn of my garden until all the grass is low.</div>
+                                </div>
+                                <div class="post">
+                                    <div class="header-text">Clean Garage</div>
+                                    <div class="sub-text">Clean my garage of all the garbage in it. </div>
+                                </div>
+                            </div>
+                            <div class="ex2 ">
+                                <div class="post">
+                                    <div class="header-text">Lawn Mowing</div>
+                                    <div class="sub-text">Mow the lawn of my garden until all the grass is low.</div>
+                                </div>
+                                <div class="post">
+                                    <div class="header-text">Clean Garage</div>
+                                    <div class="sub-text">Clean my garage of all the garbage in it. </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="sowhat">
+            <div class="top-slant"></div>
+            <div class="content">
+                <div class="split-view">
+                    <div class="left-view">
+                        <div class="sowhat-header">We're ready. Are you?</div>
+                        <div class="s">Let's get productive. </div>
+                    </div>
+                    <div class="right-view">
+                        <div class="hoverUp getstartedbtn"><i class="material-icons">check</i>
+                            <div>Get Started</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer">
+            <div class="content">
+                <div>© Sapharii 2018</div>
+            </div>
+        
+        </section>
     </div>
 </body>
 

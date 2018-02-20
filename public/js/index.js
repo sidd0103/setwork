@@ -7,6 +7,25 @@ $(document).ready(function(){
     $('.signup-btn').click(function(){
         document.location.href = "register.html";
     });
+    //example animation
+    var animStates = ['second',''];
+    var animText = ['Hire Mode','Work Mode'];
+    var counter = 0;
+    function animationFunction(){
+        $('.example').addClass(animStates[counter % animStates.length]);
+        $('.example').removeClass(animStates[(counter - 1) % animStates.length]);
+        $('.switchbtn').text(animText[counter % animStates.length]);
+        counter ++;
+    }
+    var flipAnimation = setInterval(animationFunction,3000);
+    $('.switchbtn').mousedown(function(){
+        counter ++;
+        $('.example').addClass(animStates[counter % animStates.length]);
+        $('.example').removeClass(animStates[(counter - 1) % animStates.length]);
+        $('.switchbtn').text(animText[counter % animStates.length]);
+        clearInterval(flipAnimation);
+        flipAnimation = setInterval(animationFunction,3000);
+    });
 });
 
 //functions
