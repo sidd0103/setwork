@@ -13,14 +13,13 @@
 }
 .logo {
     position: fixed;
-    z-index: 999;
+    z-index: 998;
     top: 4;
     left: 15;
 }
 .logo {
     height: 40;
     margin-right: 5;
-    cursor: pointer;
 }
 .logo-text {
     z-index: 999;
@@ -28,6 +27,7 @@
     font-family: adamcg;
     color: e53935;
     left: 60;
+    margin-top: 3;
     height: 40;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -70,95 +70,4 @@
     overflow: hidden;
     border-bottom: #e0e0e0 solid 1px
    
-}
-.login-content {
-    height: 198;
-    margin-top: 32;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    width: 100%;
-    -webkit-transform: skewY(-4deg);
-        -ms-transform: skewY(-4deg);
-            transform: skewY(-4deg);
-}
-.blue-part {
-    color: #00022c;
-}
-.pic-area {
-    height: 100%;
-    width: 100%;
-    padding: 30;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-.profile {
-    width: 100%;
-    padding: 15;
-    background-image: url(../media/lightbg2.jpeg);
-    background-position: bottom;
-
-}
-.profile .info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 100%;
-}
-.profile .name {
-    font-weight: 300;
-    padding: 5;
-    font-size: 13;
-    margin-top:6;
-    color: e53935;
-    margin-right: 10;
-    margin-left: 10;
-}
-.prof-pic {
-    height: 70;
-    width: 70;
-    border-radius: 80px;
-    background-image: url(../media/user.jpg);
-    background-size: cover;
-    border: 3px solid white;
-    
-}
-/*stats*/
-.stats {
-    margin-left: 15;
-    width: calc(100% - 95px);
-    color: white;
-}
-.rating {
-    font-weight: 700;
-    font-size: 13;
-    padding-left: 5;
-    padding-right: 5;
-    border-bottom: 1px
-    padding-top: 4;
-    padding-bottom: 4;
-}
-.wallet {
-    margin-top: 5;
-    font-weight: 700;
-    font-size: 13;
-    padding-left: 5;
-    padding-right: 5;
-    padding-top: 4;
-    padding-bottom: 4;
-}
-.pic-area .name {
-    color: white;
-    font-weight: 700;
-    
 }

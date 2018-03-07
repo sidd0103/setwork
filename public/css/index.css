@@ -31,7 +31,7 @@
 }
 @font-face {
   font-family: 'adamcg';
-  src: url(../fonts/ADAM.CG.otf) format('opentype');
+  src: url(../fonts/adam.cg-webfont.woff) format('woff');
 }
 
 .material-icons {
@@ -520,54 +520,168 @@ section.sowhat .top-slant {
     font-family: Poppins;
     color: rgba(0,0,0,.3);
 }
-@media only screen and (max-width: 1115px) {
-    div.main .content {
-        display: block;
-    }
-    .content .catch-phrase {
-        margin: 0 auto;
-        text-align: center;
-    }
-     .catch-phrase .m {
-        font-size: 60;
-    }
-    .catch-phrase .s {
-        font-size: 30;
-    }
-    .login-container {
-        margin: 0 auto;
-        margin-top: 40;
-        width: auto;
-        max-width: 580;
-        margin-bottom: 100;
-        display: block;
-    }
-    .login, .signup {
-        width: auto;
-    }
+/*responsive-view*/
+.responsive-enable {
+    display: none;
 }
-@media only screen and (max-width: 750px) {
-     .catch-phrase .m {
-        font-size: 10vw
+.alternateLogin {
+    font-size: 15;
+    padding: 20;
+    padding-top: 15;
+    padding-bottom: 15;
+    margin-top: 15;
+    height: 35;
+    max-width: 200;
+    position: relative;
+    font-family: Poppins;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+.bottom-slant {
+    position: absolute;
+    width: 100%;
+    height: 30;
+    left: 0;
+    bottom: -20;
+    transform: skewY(3deg);
+    background-color: rgb(254,0,2);
+}
+.phrase {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.header-message .top-slant {
+    position: absolute;
+    width: 100%;
+    height: 40;
+    left: 0;
+    top: -0;
+    transform: skewY(-3deg);
+    background-color: rgb(254,0,2);
+}
+@media only screen and (max-width: 970px) {
+    /*login box area and hero*/
+    .login-box {
+        display: none;
     }
-    .catch-phrase .s {
-        font-size: 4vw
+    div.main .header {
+        height: 550;
     }
-    .content .catch-phrase {
-        max-width: 400;
-        width: auto;
-        padding: 30;
+    /*header message*/
+    .header-message,.header-desc {
+        width: 100%;
+    }
+    .header-desc {
+        margin-top: 30;
+    }
+    .thumb {
         display: block;
         height: auto;
     }
-    .login-container {
-        max-width: 480;
+    .thumb .right-slant {
+        top: 50%;
+        transform: skewY(-3deg);
+        left: 0;
+        width: 100%;
+        height: 70%;
+    }
+    .red-bg {
+        width: 100%;
+    }
+    .thumb .left-side, .thumb .right-side {
+        width: 100%;
+        max-width: 100%;
+    }
+    .thumb .right-side {
+        padding-top: 40;
+    }
+    .thumb .left-side {
+        padding-bottom: 20;
+    }
+    section.universal {
+        margin-top: -40;
+    }
+    /*how cards*/
+    .info-card {
+        width: 100%;
+    }
+    /*account type*/
+    .split-view {
+        flex-direction: column;
+    }
+    .left-view, .right-view {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .responsive-disable {
+        display: none;
+    }
+    .responsive-enable {
+        display: block;
+        margin-bottom: 40;
+    }
+    .example  {
+        margin-top: 50;
+    }
+    .getstartedbtn {
+        margin-left: 0;
     }
 }
-@media only screen and (max-width: 480px) {
-    .catch-phrase .s {
-        max-width: 260;
-        display: block;
-        margin: 0 auto;
+/*text will begin to get smaller at this point*/
+@media only screen and (max-width: 600px) { 
+    div.main .header {
+        height: 500;
+    }
+    .header-message {
+        font-size: 9vw;
+    }
+    .header-message .s {
+        font-size: 50%;
+    }
+
+}
+/*all widgets will stretch to full size*/
+@media only screen and (max-width: 450px) { 
+
+    .example {
+        padding-left: 20;
+        padding-right: 20;
+        height: 430;
+        padding-top: 40;
+    }
+    .switchbtn {
+        right: 20;
+        top: 20;
+    }
+    .example .ex1, .example .ex2 {
+        width: calc(100% - 40px);
+    }
+    .thumb .l {
+        font-size: 18;
+    }
+    .thumb .s {
+        margin-top: 5;
+        font-size: 14;
+    }
+    .right-side {
+        margin-top: 0;
+        text-align: left;
+    }
+    .right-side .s {
+        float: none;
+        padding-bottom: 0;
+    }
+    .right-side .l {
+        padding-top:40;
+    }
+    .thumb .right-slant {
+        top: 50%;
+    }
+    .post {
+        height: auto!important;
     }
 }
