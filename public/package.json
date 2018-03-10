@@ -14,7 +14,6 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "bricks.js": "^1.8.0",
-    "material-ui": "^1.0.0-beta.35",
     "material-ui-icons": "^1.0.0-beta.35",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

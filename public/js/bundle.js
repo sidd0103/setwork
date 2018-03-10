@@ -18640,8 +18640,124 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ThumbNail = function (_React$Component) {
-    _inherits(ThumbNail, _React$Component);
+var FeedCatagory = function (_React$Component) {
+    _inherits(FeedCatagory, _React$Component);
+
+    function FeedCatagory() {
+        _classCallCheck(this, FeedCatagory);
+
+        return _possibleConstructorReturn(this, (FeedCatagory.__proto__ || Object.getPrototypeOf(FeedCatagory)).apply(this, arguments));
+    }
+
+    _createClass(FeedCatagory, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "hoverUp z-depth-1 feed-catagory" },
+                this.props.text
+            );
+        }
+    }]);
+
+    return FeedCatagory;
+}(_react2.default.Component);
+
+var FeedCatagories = function (_React$Component2) {
+    _inherits(FeedCatagories, _React$Component2);
+
+    function FeedCatagories() {
+        _classCallCheck(this, FeedCatagories);
+
+        return _possibleConstructorReturn(this, (FeedCatagories.__proto__ || Object.getPrototypeOf(FeedCatagories)).apply(this, arguments));
+    }
+
+    _createClass(FeedCatagories, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "feed-catagories" },
+                this.props.children
+            );
+        }
+    }]);
+
+    return FeedCatagories;
+}(_react2.default.Component);
+
+var FeedSearch = function (_React$Component3) {
+    _inherits(FeedSearch, _React$Component3);
+
+    function FeedSearch(props) {
+        _classCallCheck(this, FeedSearch);
+
+        var _this3 = _possibleConstructorReturn(this, (FeedSearch.__proto__ || Object.getPrototypeOf(FeedSearch)).call(this, props));
+
+        _this3.state = { value: '' };
+        _this3.handleChange = _this3.handleChange.bind(_this3);
+        return _this3;
+    }
+
+    _createClass(FeedSearch, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "search-field input-field" },
+                _react2.default.createElement(
+                    "i",
+                    { className: "material-icons" },
+                    "search"
+                ),
+                _react2.default.createElement("input", { type: "text", placeholder: "Search for jobs, internships, or employers.", onChange: this.handleChange, value: this.state.value })
+            );
+        }
+    }, {
+        key: "handleChange",
+        value: function handleChange(event) {
+            this.setState({ value: event.target.value });
+        }
+    }]);
+
+    return FeedSearch;
+}(_react2.default.Component);
+
+var FeedNav = function (_React$Component4) {
+    _inherits(FeedNav, _React$Component4);
+
+    function FeedNav() {
+        _classCallCheck(this, FeedNav);
+
+        return _possibleConstructorReturn(this, (FeedNav.__proto__ || Object.getPrototypeOf(FeedNav)).apply(this, arguments));
+    }
+
+    _createClass(FeedNav, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "FeedNav" },
+                _react2.default.createElement(FeedSearch, null),
+                _react2.default.createElement(
+                    FeedCatagories,
+                    null,
+                    _react2.default.createElement(FeedCatagory, { text: "Yard-Work" }),
+                    _react2.default.createElement(FeedCatagory, { text: "Tutoring" }),
+                    _react2.default.createElement(FeedCatagory, { text: "Babysitting" }),
+                    _react2.default.createElement(FeedCatagory, { text: "Car Washing" }),
+                    _react2.default.createElement(FeedCatagory, { text: "House Cleaning" }),
+                    _react2.default.createElement(FeedCatagory, { text: "Internships" })
+                )
+            );
+        }
+    }]);
+
+    return FeedNav;
+}(_react2.default.Component);
+
+var ThumbNail = function (_React$Component5) {
+    _inherits(ThumbNail, _React$Component5);
 
     function ThumbNail() {
         _classCallCheck(this, ThumbNail);
@@ -18654,7 +18770,7 @@ var ThumbNail = function (_React$Component) {
         value: function render() {
             var bgImage = this.props.bgImage;
             var style = {
-                backgroundImage: "url(" + { bgImage: bgImage } + ")"
+                backgroundImage: "url(" + bgImage + ")"
             };
             if (bgImage != null) {
                 return _react2.default.createElement("div", { style: style, className: "thumbNail" });
@@ -18666,22 +18782,22 @@ var ThumbNail = function (_React$Component) {
     return ThumbNail;
 }(_react2.default.Component);
 
-var Quality = function (_React$Component2) {
-    _inherits(Quality, _React$Component2);
+var Quality = function (_React$Component6) {
+    _inherits(Quality, _React$Component6);
 
     function Quality(props) {
         _classCallCheck(this, Quality);
 
-        var _this2 = _possibleConstructorReturn(this, (Quality.__proto__ || Object.getPrototypeOf(Quality)).call(this, props));
+        var _this6 = _possibleConstructorReturn(this, (Quality.__proto__ || Object.getPrototypeOf(Quality)).call(this, props));
 
-        if (_this2.props.leftDivider == true) {
-            _this2.divider = _react2.default.createElement(
+        if (_this6.props.leftDivider == true) {
+            _this6.divider = _react2.default.createElement(
                 "div",
                 { className: "vertDivider" },
                 "|"
             );
         }
-        return _this2;
+        return _this6;
     }
 
     _createClass(Quality, [{
@@ -18708,13 +18824,19 @@ var Quality = function (_React$Component2) {
     return Quality;
 }(_react2.default.Component);
 
-var Post = function (_React$Component3) {
-    _inherits(Post, _React$Component3);
+var Post = function (_React$Component7) {
+    _inherits(Post, _React$Component7);
 
-    function Post() {
+    function Post(props) {
         _classCallCheck(this, Post);
 
-        return _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).apply(this, arguments));
+        var _this7 = _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).call(this, props));
+
+        _this7.state = _this7.props.data;
+        if (_this7.state == null) {
+            _this7.state = { bgImage: null };
+        }
+        return _this7;
     }
 
     _createClass(Post, [{
@@ -18723,7 +18845,7 @@ var Post = function (_React$Component3) {
             return _react2.default.createElement(
                 "div",
                 { className: "hoverUp animated fadeIn post" },
-                _react2.default.createElement(ThumbNail, null),
+                _react2.default.createElement(ThumbNail, { bgImage: this.state.bgImage }),
                 _react2.default.createElement(
                     "div",
                     { className: "header" },
@@ -18775,8 +18897,8 @@ var Post = function (_React$Component3) {
     return Post;
 }(_react2.default.Component);
 
-var Feed = function (_React$Component4) {
-    _inherits(Feed, _React$Component4);
+var Feed = function (_React$Component8) {
+    _inherits(Feed, _React$Component8);
 
     function Feed() {
         _classCallCheck(this, Feed);
@@ -18793,11 +18915,16 @@ var Feed = function (_React$Component4) {
                 _react2.default.createElement(_Header2.default, { headerText: "Welcome to your feed.", subText: "We've curated some great jobs for you." }),
                 _react2.default.createElement(
                     "div",
-                    { className: "feed" },
-                    _react2.default.createElement(Post, null),
-                    _react2.default.createElement(Post, null),
-                    _react2.default.createElement(Post, null),
-                    _react2.default.createElement(Post, null)
+                    { className: "feed-container" },
+                    _react2.default.createElement(FeedNav, null),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "feed" },
+                        _react2.default.createElement(Post, null),
+                        _react2.default.createElement(Post, { data: { bgImage: './media/lawnmowing.jpg' } }),
+                        _react2.default.createElement(Post, { data: { bgImage: './media/work.jpeg' } }),
+                        _react2.default.createElement(Post, null)
+                    )
                 )
             );
         }
@@ -18808,7 +18935,7 @@ var Feed = function (_React$Component4) {
             this.bricksInstance = (0, _bricks2.default)({
                 container: '.feed',
                 packed: 'data-packed',
-                sizes: [{ mq: '500px', columns: 1, gutter: 25 }, { mq: '702px', columns: 2, gutter: 25 }, { mq: '992px', columns: 2, gutter: 25 }, { mq: '1500px', columns: 3, gutter: 25 }],
+                sizes: [{ mq: '500px', columns: 1, gutter: 25 }, { mq: '702px', columns: 2, gutter: 25 }, { mq: '992px', columns: 2, gutter: 25 }, { mq: '1000px', columns: 2, gutter: 25 }, { mq: '1250px', columns: 3, gutter: 25 }, { mq: '1500px', columns: 3, gutter: 25 }],
                 position: true
             });
             this.bricksInstance.resize(true).pack();

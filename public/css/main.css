@@ -20,6 +20,7 @@
 }
 body {
     font-family: Poppins;
+    overflow-x: hidden;
     background-color: white;
 }
 /*navigation*/
@@ -112,11 +113,16 @@ body {
 }
 /*feed*/
 .nav-responsive-container {
-    padding: 50px;
-    padding-left: 300px;
-    padding-top: 80px;
+    padding-left: 250px;
     position: relative;
     width: 100%;
+}
+.feed-container {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    top: 340px;
+    padding: 50px;
 }
 .feed {
     max-width: 1000px;
@@ -126,25 +132,26 @@ body {
 
 /*post*/
 .post {
-    width: 300px;
+    width: 290px;
     box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
     border-radius: 4px;
     background-color: white;
 }
 .post .thumbNail {
     height: 200px;
-    background-image: url("../media/lawnmowing.jpg");
     background-size: cover;
 }
 .post .header {
     display: flex;
     padding: 20px;
-    color: rgb(254,0,2);
-    padding-bottom: 5px;
+    padding-top: 25px;
+    color: black;
+    font-weight: 500;
+    padding-bottom: 6px;
 }
 .post .description {
     padding: 20px;
-    padding-top: 0px;
+    padding-top: 5px;
     color: gray;
     font-size: 12px;
 }
@@ -180,7 +187,9 @@ body {
     color: rgba(254,0,2, .6);
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 8px;
+    border-bottom: 1px solid rgb(246, 249, 252);
+    padding-bottom: 17px;
+    margin-bottom: 10px;
 }
 .post .qualities .quality {
     display: flex;
@@ -197,24 +206,22 @@ body {
 }
 /*header section*/
 .pageHeader {
-    padding-left: 20px;
     font-size: 50px;
     display: flex;
     height: 340px;
     align-items: center;
     font-weight: 700;
-    margin-bottom: 50px;
-    position: relative;
+    position: fixed;
+    width: calc(100% - 200px);
     background: #D31027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #EA384D, rgb(254,0,2));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #EA384D, rgb(254,0,2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: url("../media/sapharii-bg.png");
+
     -webkit-background-size: cover;
     background-position: center;
     background-size: cover;
     justify-content: center;
-    margin-left: -50px;
-    margin-right: -50px;
-    margin-top: -80px;
 }
 .pageHeader > div > div{
     color: white;
@@ -235,11 +242,58 @@ body {
     left: 0;
     width: 100%;
 }
+/*feed nav*/
+.feedNav {
+    margin-bottom: 40px;
+}
+.feed-catagories {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.feed-catagory {
+    padding: 7px;
+    background-image: linear-gradient(to right, rgba(254,0,2,1), rgba(254,0,2,.2));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  /* <- here it is */
+    margin: 7px;
+    margin-top: 20px;
+    color: rgb(246, 249, 252);
+    padding-left: 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    padding-right: 12px;
+}
+.search-field {
+    padding: 30px;
+    background-color: rgb(246, 249, 252);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+.search-field i {
+    margin-right: 10px;
+}
+.input-field input[type=text] {
+    border-bottom: none;
+    box-shadow: none;
+    margin-bottom: 0px!important;
+}
+.input-field input[type=text]:focus {
+    border-bottom: none!important;
+    box-shadow: none!important;
+}
 /*responsive*/
 @media only screen and (max-width: 992px) {
     .nav-responsive-container {
         padding-left: 0px;
         padding-right: 0px;
+    }
+    .pageHeader {
+        width: calc(100%)!important;
     }
     .logo {
         display: none;
@@ -247,4 +301,5 @@ body {
     .navBarBtn {
         display: block!important;
     }
+
 }

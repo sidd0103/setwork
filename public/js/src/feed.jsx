@@ -3,12 +3,61 @@ import Bricks from "bricks.js";
 import Header from "./Header.jsx";
 import ResponsiveWrapper from "./ResponsiveWrapper.jsx";
 
+class FeedCatagory extends React.Component {
+    render() {
+        return (
+            <div className={"z-depth-1 feed-catagory"}>{this.props.text}</div>
+        )
+    }
+}
+class FeedCatagories extends React.Component {
+    render() {
+        return (
+            <div className={"feed-catagories"}>{this.props.children}</div>
+        )
+    }
+}
+class FeedSearch extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {value : ''};
+        this.handleChange = this.handleChange.bind(this);
+    }
+    render() {
+        return (
+            <div className={"search-field input-field"}>
+                <i className={"material-icons"}>search</i>
+                <input type={"text"} placeholder="Search for jobs, internships, or employers." onChange={this.handleChange} value={this.state.value}/>
+            </div>
+        )
+    }
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
 
+}
+class FeedNav extends React.Component {
+    render() {
+        return (
+            <div className={"FeedNav"}>
+                <FeedSearch/>
+                <FeedCatagories>
+                    <FeedCatagory text={"Yard-Work"}/>
+                    <FeedCatagory text={"Tutoring"}/>
+                    <FeedCatagory text={"Babysitting"}/>
+                    <FeedCatagory text={"Car Washing"}/>
+                    <FeedCatagory text={"House Cleaning"}/>
+                    <FeedCatagory text={"Internships"}/>
+                </FeedCatagories>
+            </div>
+        )
+    }
+}
 class ThumbNail extends React.Component {
     render() {
         var bgImage = this.props.bgImage;
         var style = {
-            backgroundImage: "url(" + { bgImage } + ")"
+            backgroundImage: "url(" +  bgImage  + ")"
         };
         if (bgImage != null) {
             return (
@@ -37,10 +86,17 @@ class Quality extends React.Component {
     }
 }
 class Post extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = this.props.data;
+        if (this.state == null) {
+            this.state = {bgImage: null};
+        }
+    }
     render() {
         return (
             <div className="hoverUp animated fadeIn post">
-                <ThumbNail/>
+                <ThumbNail bgImage={this.state.bgImage}/>
                 <div className="header">
                     <div className="title">Mowing my Lawn.</div>
                     <div className="fee">$5</div>
@@ -66,11 +122,14 @@ class Feed extends React.Component {
         return (
             <ResponsiveWrapper>
                 <Header headerText={"Welcome to your feed."} subText={"We've curated some great jobs for you."}/>
-                <div className={"feed"}>
-                    <Post/>
-                    <Post/>
-                    <Post/>
-                    <Post/>
+                <div className={"feed-container"}>
+                    <FeedNav/>
+                    <div className={"feed"}>
+                        <Post />
+                        <Post data={{bgImage: './media/lawnmowing.jpg'}}/>
+                        <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post/>
+                    </div>
                 </div>
             </ResponsiveWrapper>
         )
@@ -84,6 +143,8 @@ class Feed extends React.Component {
                     { mq: '500px', columns: 1, gutter: 25 },
                     { mq: '702px', columns: 2, gutter: 25 },
                     { mq: '992px', columns: 2, gutter: 25 },
+                    { mq: '1000px', columns: 2, gutter: 25 },
+                    { mq: '1250px', columns: 3, gutter: 25 },
                     { mq: '1500px', columns: 3, gutter: 25 }
                 ],
             position: true
