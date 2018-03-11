@@ -2,57 +2,10 @@ import React from "react";
 import Bricks from "bricks.js";
 import Header from "./Header.jsx";
 import ResponsiveWrapper from "./ResponsiveWrapper.jsx";
+import ReactDOM from "react-dom";
+import SweetScroll from 'sweet-scroll';
+import FeedNav from "./FeedNav.jsx"
 
-class FeedCatagory extends React.Component {
-    render() {
-        return (
-            <div className={"z-depth-1 feed-catagory"}>{this.props.text}</div>
-        )
-    }
-}
-class FeedCatagories extends React.Component {
-    render() {
-        return (
-            <div className={"feed-catagories"}>{this.props.children}</div>
-        )
-    }
-}
-class FeedSearch extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {value : ''};
-        this.handleChange = this.handleChange.bind(this);
-    }
-    render() {
-        return (
-            <div className={"search-field input-field"}>
-                <i className={"material-icons"}>search</i>
-                <input type={"text"} placeholder="Search for jobs, internships, or employers." onChange={this.handleChange} value={this.state.value}/>
-            </div>
-        )
-    }
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-
-}
-class FeedNav extends React.Component {
-    render() {
-        return (
-            <div className={"FeedNav"}>
-                <FeedSearch/>
-                <FeedCatagories>
-                    <FeedCatagory text={"Yard-Work"}/>
-                    <FeedCatagory text={"Tutoring"}/>
-                    <FeedCatagory text={"Babysitting"}/>
-                    <FeedCatagory text={"Car Washing"}/>
-                    <FeedCatagory text={"House Cleaning"}/>
-                    <FeedCatagory text={"Internships"}/>
-                </FeedCatagories>
-            </div>
-        )
-    }
-}
 class ThumbNail extends React.Component {
     render() {
         var bgImage = this.props.bgImage;
@@ -128,6 +81,12 @@ class Feed extends React.Component {
                         <Post />
                         <Post data={{bgImage: './media/lawnmowing.jpg'}}/>
                         <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post/>
+                        <Post/>
+                        <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post/>
+                        <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post/>
                         <Post/>
                     </div>
                 </div>

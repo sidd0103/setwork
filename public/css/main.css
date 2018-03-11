@@ -245,20 +245,35 @@ body {
 /*feed nav*/
 .feedNav {
     margin-bottom: 40px;
+    max-width: 1000px;
+    position: relative;
+    margin: 0 auto;
 }
 .feed-catagories {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    overflow-x: auto;
+    flex-shrink: 0;
+    position: relative;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.feed-catagories::before, .feed-catagories::after {
+    content: '';
+    margin: auto;
+}
+.feed-catagories::-webkit-scrollbar {
+    display: none;
 }
 .feed-catagory {
     padding: 7px;
-    background-image: linear-gradient(to right, rgba(254,0,2,1), rgba(254,0,2,.2));
+    background-image: linear-gradient(to right, rgba(254,0,2,1), rgba(254,0,2,.3));
     background-size: cover;
     background-position: center;
     background-attachment: fixed;  /* <- here it is */
     margin: 7px;
     margin-top: 20px;
+    white-space: nowrap;
     color: rgb(246, 249, 252);
     padding-left: 12px;
     cursor: pointer;
@@ -286,6 +301,48 @@ body {
     border-bottom: none!important;
     box-shadow: none!important;
 }
+.catagory-advance {
+    top: 83px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 10;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+}
+
+.catagory-advance#chevron_left {
+    position: absolute;
+    left: 0px;
+}
+.catagory-advance#chevron_right {
+    position: absolute;
+    right: 0px;
+
+}
+.catagory-advance .gradient {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+}
+/*animations for react css group*/
+.btn-anim-enter {
+    opacity: .01;
+    transition: opacity .2s;
+}
+.btn-anim-enter.btn-anim-enter-active {
+    opacity: 1;
+    transition: opacity .2s;
+}
+.btn-anim-leave {
+    opacity: 1;
+    transition: opacity .2s;
+}
+.btn-anim-leave.btn-anim-leave-active {
+    opacity: .01;
+    transition: opacity .2s;
+}
 /*responsive*/
 @media only screen and (max-width: 992px) {
     .nav-responsive-container {
@@ -302,4 +359,17 @@ body {
         display: block!important;
     }
 
+}
+@media only screen and (max-width: 1200px) {
+    .catagory-advance {
+        top: 80px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .catagory-advance {
+        top: 80px;
+    }
+    .pageHeader {
+        font-size: 40px;
+    }
 }

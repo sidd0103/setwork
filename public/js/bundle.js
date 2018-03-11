@@ -18632,6 +18632,18 @@ var _ResponsiveWrapper = __webpack_require__(34);
 
 var _ResponsiveWrapper2 = _interopRequireDefault(_ResponsiveWrapper);
 
+var _reactDom = __webpack_require__(7);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _sweetScroll = __webpack_require__(35);
+
+var _sweetScroll2 = _interopRequireDefault(_sweetScroll);
+
+var _FeedNav = __webpack_require__(36);
+
+var _FeedNav2 = _interopRequireDefault(_FeedNav);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18640,124 +18652,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var FeedCatagory = function (_React$Component) {
-    _inherits(FeedCatagory, _React$Component);
-
-    function FeedCatagory() {
-        _classCallCheck(this, FeedCatagory);
-
-        return _possibleConstructorReturn(this, (FeedCatagory.__proto__ || Object.getPrototypeOf(FeedCatagory)).apply(this, arguments));
-    }
-
-    _createClass(FeedCatagory, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "hoverUp z-depth-1 feed-catagory" },
-                this.props.text
-            );
-        }
-    }]);
-
-    return FeedCatagory;
-}(_react2.default.Component);
-
-var FeedCatagories = function (_React$Component2) {
-    _inherits(FeedCatagories, _React$Component2);
-
-    function FeedCatagories() {
-        _classCallCheck(this, FeedCatagories);
-
-        return _possibleConstructorReturn(this, (FeedCatagories.__proto__ || Object.getPrototypeOf(FeedCatagories)).apply(this, arguments));
-    }
-
-    _createClass(FeedCatagories, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "feed-catagories" },
-                this.props.children
-            );
-        }
-    }]);
-
-    return FeedCatagories;
-}(_react2.default.Component);
-
-var FeedSearch = function (_React$Component3) {
-    _inherits(FeedSearch, _React$Component3);
-
-    function FeedSearch(props) {
-        _classCallCheck(this, FeedSearch);
-
-        var _this3 = _possibleConstructorReturn(this, (FeedSearch.__proto__ || Object.getPrototypeOf(FeedSearch)).call(this, props));
-
-        _this3.state = { value: '' };
-        _this3.handleChange = _this3.handleChange.bind(_this3);
-        return _this3;
-    }
-
-    _createClass(FeedSearch, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "search-field input-field" },
-                _react2.default.createElement(
-                    "i",
-                    { className: "material-icons" },
-                    "search"
-                ),
-                _react2.default.createElement("input", { type: "text", placeholder: "Search for jobs, internships, or employers.", onChange: this.handleChange, value: this.state.value })
-            );
-        }
-    }, {
-        key: "handleChange",
-        value: function handleChange(event) {
-            this.setState({ value: event.target.value });
-        }
-    }]);
-
-    return FeedSearch;
-}(_react2.default.Component);
-
-var FeedNav = function (_React$Component4) {
-    _inherits(FeedNav, _React$Component4);
-
-    function FeedNav() {
-        _classCallCheck(this, FeedNav);
-
-        return _possibleConstructorReturn(this, (FeedNav.__proto__ || Object.getPrototypeOf(FeedNav)).apply(this, arguments));
-    }
-
-    _createClass(FeedNav, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "div",
-                { className: "FeedNav" },
-                _react2.default.createElement(FeedSearch, null),
-                _react2.default.createElement(
-                    FeedCatagories,
-                    null,
-                    _react2.default.createElement(FeedCatagory, { text: "Yard-Work" }),
-                    _react2.default.createElement(FeedCatagory, { text: "Tutoring" }),
-                    _react2.default.createElement(FeedCatagory, { text: "Babysitting" }),
-                    _react2.default.createElement(FeedCatagory, { text: "Car Washing" }),
-                    _react2.default.createElement(FeedCatagory, { text: "House Cleaning" }),
-                    _react2.default.createElement(FeedCatagory, { text: "Internships" })
-                )
-            );
-        }
-    }]);
-
-    return FeedNav;
-}(_react2.default.Component);
-
-var ThumbNail = function (_React$Component5) {
-    _inherits(ThumbNail, _React$Component5);
+var ThumbNail = function (_React$Component) {
+    _inherits(ThumbNail, _React$Component);
 
     function ThumbNail() {
         _classCallCheck(this, ThumbNail);
@@ -18782,22 +18678,22 @@ var ThumbNail = function (_React$Component5) {
     return ThumbNail;
 }(_react2.default.Component);
 
-var Quality = function (_React$Component6) {
-    _inherits(Quality, _React$Component6);
+var Quality = function (_React$Component2) {
+    _inherits(Quality, _React$Component2);
 
     function Quality(props) {
         _classCallCheck(this, Quality);
 
-        var _this6 = _possibleConstructorReturn(this, (Quality.__proto__ || Object.getPrototypeOf(Quality)).call(this, props));
+        var _this2 = _possibleConstructorReturn(this, (Quality.__proto__ || Object.getPrototypeOf(Quality)).call(this, props));
 
-        if (_this6.props.leftDivider == true) {
-            _this6.divider = _react2.default.createElement(
+        if (_this2.props.leftDivider == true) {
+            _this2.divider = _react2.default.createElement(
                 "div",
                 { className: "vertDivider" },
                 "|"
             );
         }
-        return _this6;
+        return _this2;
     }
 
     _createClass(Quality, [{
@@ -18824,19 +18720,19 @@ var Quality = function (_React$Component6) {
     return Quality;
 }(_react2.default.Component);
 
-var Post = function (_React$Component7) {
-    _inherits(Post, _React$Component7);
+var Post = function (_React$Component3) {
+    _inherits(Post, _React$Component3);
 
     function Post(props) {
         _classCallCheck(this, Post);
 
-        var _this7 = _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).call(this, props));
+        var _this3 = _possibleConstructorReturn(this, (Post.__proto__ || Object.getPrototypeOf(Post)).call(this, props));
 
-        _this7.state = _this7.props.data;
-        if (_this7.state == null) {
-            _this7.state = { bgImage: null };
+        _this3.state = _this3.props.data;
+        if (_this3.state == null) {
+            _this3.state = { bgImage: null };
         }
-        return _this7;
+        return _this3;
     }
 
     _createClass(Post, [{
@@ -18897,8 +18793,8 @@ var Post = function (_React$Component7) {
     return Post;
 }(_react2.default.Component);
 
-var Feed = function (_React$Component8) {
-    _inherits(Feed, _React$Component8);
+var Feed = function (_React$Component4) {
+    _inherits(Feed, _React$Component4);
 
     function Feed() {
         _classCallCheck(this, Feed);
@@ -18916,13 +18812,19 @@ var Feed = function (_React$Component8) {
                 _react2.default.createElement(
                     "div",
                     { className: "feed-container" },
-                    _react2.default.createElement(FeedNav, null),
+                    _react2.default.createElement(_FeedNav2.default, null),
                     _react2.default.createElement(
                         "div",
                         { className: "feed" },
                         _react2.default.createElement(Post, null),
                         _react2.default.createElement(Post, { data: { bgImage: './media/lawnmowing.jpg' } }),
                         _react2.default.createElement(Post, { data: { bgImage: './media/work.jpeg' } }),
+                        _react2.default.createElement(Post, null),
+                        _react2.default.createElement(Post, null),
+                        _react2.default.createElement(Post, { data: { bgImage: './media/work.jpeg' } }),
+                        _react2.default.createElement(Post, null),
+                        _react2.default.createElement(Post, { data: { bgImage: './media/work.jpeg' } }),
+                        _react2.default.createElement(Post, null),
                         _react2.default.createElement(Post, null)
                     )
                 )
@@ -19406,6 +19308,2787 @@ var ResponsiveWrapper = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = ResponsiveWrapper;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*! @preserve sweet-scroll v3.0.0 - tsuyoshiwada | MIT License */
+(function (global, factory) {
+	 true ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.SweetScroll = factory());
+}(this, (function () { 'use strict';
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+
+
+var __assign = Object.assign || function __assign(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+};
+
+// @link https://github.com/JedWatson/exenv/blob/master/index.js
+var canUseDOM = !!(typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement);
+var canUseHistory = !canUseDOM
+    ? false
+    : (window.history &&
+        'pushState' in window.history &&
+        window.location.protocol !== 'file:');
+var canUsePassiveOption = (function () {
+    var support = false;
+    if (!canUseDOM) {
+        return support;
+    }
+    /* tslint:disable:no-empty */
+    try {
+        window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+            get: function () {
+                support = true;
+            },
+        }));
+    }
+    catch (e) { }
+    /* tslint:enable */
+    return support;
+})();
+
+var isString = function (obj) { return typeof obj === 'string'; };
+var isFunction = function (obj) { return typeof obj === 'function'; };
+var isArray = function (obj) { return Array.isArray(obj); };
+var isNumeric = function (obj) { return !isArray(obj) && ((obj - parseFloat(obj)) + 1) >= 0; };
+var isElement = function (obj) { return obj instanceof Element; };
+var hasProp = function (obj, key) { return (obj && obj.hasOwnProperty(key)); };
+
+var raf = canUseDOM ? window.requestAnimationFrame.bind(window) : null;
+var caf = canUseDOM ? window.cancelAnimationFrame.bind(window) : null;
+
+/* tslint:disable:curly */
+/* tslint:disable:no-conditional-assignment */
+var cos = Math.cos;
+var sin = Math.sin;
+var pow = Math.pow;
+var sqrt = Math.sqrt;
+var PI = Math.PI;
+var easings = {
+    linear: function (p) { return p; },
+    easeInQuad: function (_, t, b, c, d) { return (c * (t /= d) * t + b); },
+    easeOutQuad: function (_, t, b, c, d) { return (-c * (t /= d) * (t - 2) + b); },
+    easeInOutQuad: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t + b : -c / 2 * ((--t) * (t - 2) - 1) + b); },
+    easeInCubic: function (_, t, b, c, d) { return (c * (t /= d) * t * t + b); },
+    easeOutCubic: function (_, t, b, c, d) { return (c * ((t = t / d - 1) * t * t + 1) + b); },
+    easeInOutCubic: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t + b : c / 2 * ((t -= 2) * t * t + 2) + b); },
+    easeInQuart: function (_, t, b, c, d) { return (c * (t /= d) * t * t * t + b); },
+    easeOutQuart: function (_, t, b, c, d) { return (-c * ((t = t / d - 1) * t * t * t - 1) + b); },
+    easeInOutQuart: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t * t + b : -c / 2 * ((t -= 2) * t * t * t - 2) + b); },
+    easeInQuint: function (_, t, b, c, d) { return (c * (t /= d) * t * t * t * t + b); },
+    easeOutQuint: function (_, t, b, c, d) { return (c * ((t = t / d - 1) * t * t * t * t + 1) + b); },
+    easeInOutQuint: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t * t * t + b : c / 2 * ((t -= 2) * t * t * t * t + 2) + b); },
+    easeInSine: function (_, t, b, c, d) { return (-c * cos(t / d * (PI / 2)) + c + b); },
+    easeOutSine: function (_, t, b, c, d) { return (c * sin(t / d * (PI / 2)) + b); },
+    easeInOutSine: function (_, t, b, c, d) { return (-c / 2 * (cos(PI * t / d) - 1) + b); },
+    easeInExpo: function (_, t, b, c, d) { return ((t === 0) ? b : c * pow(2, 10 * (t / d - 1)) + b); },
+    easeOutExpo: function (_, t, b, c, d) { return ((t === d) ? b + c : c * (-pow(2, -10 * t / d) + 1) + b); },
+    easeInOutExpo: function (_, t, b, c, d) {
+        if (t === 0)
+            return b;
+        if (t === d)
+            return b + c;
+        if ((t /= d / 2) < 1)
+            return c / 2 * pow(2, 10 * (t - 1)) + b;
+        return c / 2 * (-pow(2, -10 * --t) + 2) + b;
+    },
+    easeInCirc: function (_, t, b, c, d) { return (-c * (sqrt(1 - (t /= d) * t) - 1) + b); },
+    easeOutCirc: function (_, t, b, c, d) { return (c * sqrt(1 - (t = t / d - 1) * t) + b); },
+    easeInOutCirc: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? -c / 2 * (sqrt(1 - t * t) - 1) + b : c / 2 * (sqrt(1 - (t -= 2) * t) + 1) + b); },
+};
+
+var directionMethodMap = {
+    y: 'scrollTop',
+    x: 'scrollLeft',
+};
+var directionPropMap = {
+    y: 'pageYOffset',
+    x: 'pageXOffset',
+};
+var getScroll = function ($el, direction) { return ($el[directionMethodMap[direction]]); };
+var setScroll = function ($el, offset, direction) {
+    $el[directionMethodMap[direction]] = offset;
+};
+var getOffset = function ($el, $context) {
+    var rect = $el.getBoundingClientRect();
+    if (rect.width || rect.height) {
+        var scroll_1 = { top: 0, left: 0 };
+        var $ctx = void 0;
+        if (isRootContainer($context)) {
+            $ctx = document.documentElement;
+            scroll_1.top = window[directionPropMap.y];
+            scroll_1.left = window[directionPropMap.x];
+        }
+        else {
+            $ctx = $context;
+            var cRect = $ctx.getBoundingClientRect();
+            scroll_1.top = (cRect.top * -1) + $ctx[directionMethodMap.y];
+            scroll_1.left = (cRect.left * -1) + $ctx[directionMethodMap.x];
+        }
+        return {
+            top: (rect.top + scroll_1.top) - $ctx.clientTop,
+            left: (rect.left + scroll_1.left) - $ctx.clientLeft,
+        };
+    }
+    return rect;
+};
+
+var $$ = function (selector) { return (Array.prototype.slice.call((!selector ? [] : document.querySelectorAll(selector)))); };
+var $ = function (selector) { return ($$(selector).shift() || null); };
+var matches = function ($el, selector) {
+    if (isElement(selector)) {
+        return $el === selector;
+    }
+    var results = $$(selector);
+    var i = results.length;
+    // tslint:disable-next-line no-empty
+    while (--i >= 0 && results[i] !== $el) { }
+    return i > -1;
+};
+var isRootContainer = function ($el) { return ($el === document.documentElement || $el === document.body); };
+var findScrollable = function (selectors, direction) {
+    var method = directionMethodMap[direction];
+    var $elements = isElement(selectors) ? [selectors] : $$(selectors);
+    var $div = document.createElement('div');
+    for (var i = 0; i < $elements.length; i += 1) {
+        var $el = $elements[i];
+        var $result = null;
+        if ($el[method] > 0) {
+            $result = $el;
+        }
+        else {
+            var outerWidth_1 = window.outerWidth, innerWidth_1 = window.innerWidth;
+            var zoom = outerWidth_1 ? outerWidth_1 / innerWidth_1 : 1;
+            $div.style.width = $el.clientWidth + 1 + "px";
+            $div.style.height = $el.clientHeight + 1 + "px";
+            $el.appendChild($div);
+            $el[method] = 1.5 / zoom;
+            if ($el[method] > 0) {
+                $result = $el;
+            }
+            $el[method] = 0;
+            $el.removeChild($div);
+        }
+        if ($result) {
+            return $result;
+        }
+    }
+    return null;
+};
+
+var getHeight = function ($el) { return (Math.max($el.scrollHeight, $el.clientHeight, $el.offsetHeight)); };
+var getWidth = function ($el) { return (Math.max($el.scrollWidth, $el.clientWidth, $el.offsetWidth)); };
+var getSize = function ($el) { return ({
+    width: getWidth($el),
+    height: getHeight($el),
+}); };
+var getViewportAndElementSizes = function ($el) {
+    var isRoot = isRootContainer($el);
+    return {
+        viewport: {
+            width: isRoot
+                ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+                : $el.clientWidth,
+            height: isRoot ? window.innerHeight : $el.clientHeight,
+        },
+        size: isRoot
+            ? {
+                width: Math.max(getWidth(document.body), getWidth(document.documentElement)),
+                height: Math.max(getHeight(document.body), getHeight(document.documentElement)),
+            }
+            : getSize($el),
+    };
+};
+
+var wheelEventName = (function () {
+    if (!canUseDOM) {
+        return 'wheel';
+    }
+    return 'onwheel' in document ? 'wheel' : 'mousewheel';
+})();
+var eventName = function (name) { return (name === 'wheel' ? wheelEventName : name); };
+var apply = function ($el, method, event, listener, passive) {
+    event.split(' ').forEach(function (name) {
+        $el[method](eventName(name), listener, canUsePassiveOption ? { passive: passive } : false);
+    });
+};
+var addEvent = function ($el, event, listener, passive) {
+    apply($el, 'addEventListener', event, listener, passive);
+};
+var removeEvent = function ($el, event, listener, passive) {
+    apply($el, 'removeEventListener', event, listener, passive);
+};
+
+var reRelativeToken = /^(\+|-)=(\d+(?:\.\d+)?)$/;
+var parseCoordinate = function (coordinate, enableVertical) {
+    var res = { top: 0, left: 0, relative: false };
+    // Object ({ top: {n}, left: {n} })
+    if (hasProp(coordinate, 'top') || hasProp(coordinate, 'left')) {
+        res = __assign({}, res, coordinate);
+        // Array ([{n}, [{n}])
+    }
+    else if (isArray(coordinate)) {
+        if (coordinate.length > 1) {
+            res.top = coordinate[0];
+            res.left = coordinate[1];
+        }
+        else if (coordinate.length === 1) {
+            res.top = enableVertical ? coordinate[0] : 0;
+            res.left = !enableVertical ? coordinate[0] : 0;
+        }
+        else {
+            return null;
+        }
+        // Number
+    }
+    else if (isNumeric(coordinate)) {
+        if (enableVertical) {
+            res.top = coordinate;
+        }
+        else {
+            res.left = coordinate;
+        }
+        // String ('+={n}', '-={n}')
+    }
+    else if (isString(coordinate)) {
+        var m = coordinate.trim().match(reRelativeToken);
+        if (!m) {
+            return null;
+        }
+        var op = m[1];
+        var val = parseInt(m[2], 10);
+        if (op === '+') {
+            res.top = enableVertical ? val : 0;
+            res.left = !enableVertical ? val : 0;
+        }
+        else {
+            res.top = enableVertical ? -val : 0;
+            res.left = !enableVertical ? -val : 0;
+        }
+        res.relative = true;
+    }
+    else {
+        return null;
+    }
+    return res;
+};
+
+var defaultOptions = {
+    trigger: '[data-scroll]',
+    header: '[data-scroll-header]',
+    duration: 1000,
+    easing: 'easeOutQuint',
+    offset: 0,
+    vertical: true,
+    horizontal: false,
+    cancellable: true,
+    updateURL: false,
+    preventDefault: true,
+    stopPropagation: true,
+    quickMode: false,
+    // Callbacks
+    before: null,
+    after: null,
+    cancel: null,
+    complete: null,
+    step: null,
+};
+
+var CONTAINER_CLICK_EVENT = 'click';
+var CONTAINER_STOP_EVENT = 'wheel touchstart touchmove';
+var SweetScroll = /** @class */ (function () {
+    /**
+     * Constructor
+     */
+    function SweetScroll(options, container) {
+        var _this = this;
+        this.ctx = {
+            $trigger: null,
+            opts: null,
+            progress: false,
+            pos: null,
+            startPos: null,
+            easing: null,
+            start: 0,
+            id: 0,
+            cancel: false,
+            hash: null,
+        };
+        /**
+         * Handle each frame of the animation.
+         */
+        this.loop = function (time) {
+            var _a = _this, $el = _a.$el, ctx = _a.ctx;
+            if (!ctx.start) {
+                ctx.start = time;
+            }
+            if (!ctx.progress || !$el) {
+                _this.stop();
+                return;
+            }
+            var options = ctx.opts;
+            var offset = ctx.pos;
+            var start = ctx.start;
+            var startOffset = ctx.startPos;
+            var easing = ctx.easing;
+            var duration = options.duration;
+            var directionMap = { top: 'y', left: 'x' };
+            var timeElapsed = time - start;
+            var t = Math.min(1, Math.max(timeElapsed / duration, 0));
+            Object.keys(offset).forEach(function (key) {
+                var value = offset[key];
+                var initial = startOffset[key];
+                var delta = value - initial;
+                if (delta !== 0) {
+                    var val = easing(t, duration * t, 0, 1, duration);
+                    setScroll($el, Math.round(initial + delta * val), directionMap[key]);
+                }
+            });
+            if (timeElapsed <= duration) {
+                _this.hook(options, 'step', t);
+                ctx.id = SweetScroll.raf(_this.loop);
+            }
+            else {
+                _this.stop(true);
+            }
+        };
+        /**
+         * Handling of container click event.
+         */
+        this.handleClick = function (e) {
+            var opts = _this.opts;
+            var $el = e.target;
+            for (; $el && $el !== document; $el = $el.parentNode) {
+                if (!matches($el, opts.trigger)) {
+                    continue;
+                }
+                var dataOptions = JSON.parse($el.getAttribute('data-scroll-options') || '{}');
+                var data = $el.getAttribute('data-scroll');
+                var to = data || $el.getAttribute('href');
+                var options = __assign({}, opts, dataOptions);
+                var preventDefault = options.preventDefault, stopPropagation = options.stopPropagation, vertical = options.vertical, horizontal = options.horizontal;
+                if (preventDefault) {
+                    e.preventDefault();
+                }
+                if (stopPropagation) {
+                    e.stopPropagation();
+                }
+                // Passes the trigger element to callback
+                _this.ctx.$trigger = $el;
+                if (horizontal && vertical) {
+                    _this.to(to, options);
+                }
+                else if (vertical) {
+                    _this.toTop(to, options);
+                }
+                else if (horizontal) {
+                    _this.toLeft(to, options);
+                }
+            }
+        };
+        /**
+         * Handling of container stop events.
+         */
+        this.handleStop = function (e) {
+            var ctx = _this.ctx;
+            var opts = ctx.opts;
+            if (opts && opts.cancellable) {
+                ctx.cancel = true;
+                _this.stop();
+            }
+            else {
+                e.preventDefault();
+            }
+        };
+        var opts = __assign({}, defaultOptions, (options || {}));
+        var vertical = opts.vertical, horizontal = opts.horizontal;
+        var selector = container === undefined ? 'body,html' : container;
+        var $container = null;
+        if (canUseDOM) {
+            if (vertical) {
+                $container = findScrollable(selector, 'y');
+            }
+            if (!$container && horizontal) {
+                $container = findScrollable(selector, 'x');
+            }
+        }
+        if ($container) {
+            this.opts = opts;
+            this.$el = $container;
+            this.bind(true, false);
+        }
+    }
+    /**
+     * SweetScroll instance factory.
+     */
+    SweetScroll.create = function (options, container) {
+        return new SweetScroll(options, container);
+    };
+    /**
+     * Scroll animation to the specified position.
+     */
+    SweetScroll.prototype.to = function (distance, options) {
+        if (!canUseDOM) {
+            return;
+        }
+        var _a = this, $el = _a.$el, ctx = _a.ctx, currentOptions = _a.opts;
+        var $trigger = ctx.$trigger;
+        var opts = __assign({}, currentOptions, options || {});
+        var optOffset = opts.offset, vertical = opts.vertical, horizontal = opts.horizontal;
+        var $header = isElement(opts.header) ? opts.header : $(opts.header);
+        var hash = isString(distance) && /^#/.test(distance) ? distance : null;
+        ctx.opts = opts; // Temporary options
+        ctx.cancel = false; // Disable the call flag of `cancel`
+        ctx.hash = hash;
+        // Stop current animation
+        this.stop();
+        // Does not move if the container is not found
+        if (!$el) {
+            return;
+        }
+        // Get scroll offset
+        var offset = parseCoordinate(optOffset, vertical);
+        var coordinate = parseCoordinate(distance, vertical);
+        var scroll = { top: 0, left: 0 };
+        if (coordinate) {
+            if (coordinate.relative) {
+                var current = getScroll($el, vertical ? 'y' : 'x');
+                scroll.top = vertical ? current + coordinate.top : coordinate.top;
+                scroll.left = !vertical ? current + coordinate.left : coordinate.left;
+            }
+            else {
+                scroll = coordinate;
+            }
+        }
+        else if (isString(distance) && distance !== '#') {
+            var $target = $(distance);
+            if (!$target) {
+                return;
+            }
+            scroll = getOffset($target, $el);
+        }
+        if (offset) {
+            scroll.top += offset.top;
+            scroll.left += offset.left;
+        }
+        if ($header) {
+            scroll.top = Math.max(0, scroll.top - getSize($header).height);
+        }
+        // Normalize scroll offset
+        var _b = getViewportAndElementSizes($el), viewport = _b.viewport, size = _b.size;
+        scroll.top = vertical
+            ? Math.max(0, Math.min(size.height - viewport.height, scroll.top))
+            : getScroll($el, 'y');
+        scroll.left = horizontal
+            ? Math.max(0, Math.min(size.width - viewport.width, scroll.left))
+            : getScroll($el, 'x');
+        // Call `before`
+        // Stop scrolling when it returns false
+        if (this.hook(opts, 'before', scroll, $trigger) === false) {
+            ctx.opts = null;
+            return;
+        }
+        // Set offset
+        ctx.pos = scroll;
+        // Run animation!!
+        this.start(opts);
+        // Bind stop events
+        this.bind(false, true);
+    };
+    /**
+     * Scroll animation to specified left position.
+     */
+    SweetScroll.prototype.toTop = function (distance, options) {
+        this.to(distance, __assign({}, options || {}, { vertical: true, horizontal: false }));
+    };
+    /**
+     * Scroll animation to specified top position.
+     */
+    SweetScroll.prototype.toLeft = function (distance, options) {
+        this.to(distance, __assign({}, options || {}, { vertical: false, horizontal: true }));
+    };
+    /**
+     * Scroll animation to specified element.
+     */
+    SweetScroll.prototype.toElement = function ($element, options) {
+        var $el = this.$el;
+        if (!canUseDOM || !$el) {
+            return;
+        }
+        this.to(getOffset($element, $el), options || {});
+    };
+    /**
+     * Stop the current scroll animation.
+     */
+    SweetScroll.prototype.stop = function (gotoEnd) {
+        if (gotoEnd === void 0) { gotoEnd = false; }
+        var _a = this, $el = _a.$el, ctx = _a.ctx;
+        var pos = ctx.pos;
+        if (!$el || !ctx.progress) {
+            return;
+        }
+        SweetScroll.caf(ctx.id);
+        ctx.progress = false;
+        ctx.start = 0;
+        ctx.id = 0;
+        if (gotoEnd && pos) {
+            setScroll($el, pos.left, 'x');
+            setScroll($el, pos.top, 'y');
+        }
+        this.complete();
+    };
+    /**
+     * Update options.
+     */
+    SweetScroll.prototype.update = function (options) {
+        if (this.$el) {
+            var opts = __assign({}, this.opts, options);
+            this.stop();
+            this.unbind(true, true);
+            this.opts = opts;
+            this.bind(true, false);
+        }
+    };
+    /**
+     * Destroy instance.
+     */
+    SweetScroll.prototype.destroy = function () {
+        if (this.$el) {
+            this.stop();
+            this.unbind(true, true);
+            this.$el = null;
+        }
+    };
+    /**
+     * Callback methods.
+     */
+    /* tslint:disable:no-empty */
+    SweetScroll.prototype.onBefore = function (_, __) { return true; };
+    SweetScroll.prototype.onStep = function (_) { };
+    SweetScroll.prototype.onAfter = function (_, __) { };
+    SweetScroll.prototype.onCancel = function () { };
+    SweetScroll.prototype.onComplete = function (_) { };
+    /* tslint:enable */
+    /**
+     * Start scrolling animation.
+     */
+    SweetScroll.prototype.start = function (opts) {
+        var ctx = this.ctx;
+        ctx.opts = opts;
+        ctx.progress = true;
+        ctx.easing = isFunction(opts.easing)
+            ? opts.easing
+            : easings[opts.easing];
+        // Update start offset.
+        var $container = this.$el;
+        var offset = ctx.pos;
+        var start = {
+            top: getScroll($container, 'y'),
+            left: getScroll($container, 'x'),
+        };
+        if (opts.quickMode) {
+            var _a = getViewportAndElementSizes($container).viewport, width = _a.width, height = _a.height;
+            if (Math.abs(start.top - offset.top) > height) {
+                start.top = start.top > offset.top ? offset.top + height : offset.top - height;
+            }
+            if (Math.abs(start.left - offset.left) > width) {
+                start.left = start.left > offset.left ? offset.left + width : offset.left - width;
+            }
+        }
+        ctx.startPos = start;
+        // Loop
+        ctx.id = SweetScroll.raf(this.loop);
+    };
+    /**
+     * Handle the completion of scrolling animation.
+     */
+    SweetScroll.prototype.complete = function () {
+        var _a = this, $el = _a.$el, ctx = _a.ctx;
+        var hash = ctx.hash, cancel = ctx.cancel, opts = ctx.opts, pos = ctx.pos, $trigger = ctx.$trigger;
+        if (!$el || !opts) {
+            return;
+        }
+        if (hash != null && hash !== window.location.hash) {
+            var updateURL = opts.updateURL;
+            if (canUseDOM && canUseHistory && updateURL !== false) {
+                window.history[updateURL === 'replace' ? 'replaceState' : 'pushState'](null, '', hash);
+            }
+        }
+        this.unbind(false, true);
+        ctx.opts = null;
+        ctx.$trigger = null;
+        if (cancel) {
+            this.hook(opts, 'cancel');
+        }
+        else {
+            this.hook(opts, 'after', pos, $trigger);
+        }
+        this.hook(opts, 'complete', cancel);
+    };
+    /**
+     * Callback function and method call.
+     */
+    SweetScroll.prototype.hook = function (options, type) {
+        var args = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
+        }
+        var callback = options[type];
+        var callbackResult;
+        var methodResult;
+        // callback
+        if (isFunction(callback)) {
+            callbackResult = callback.apply(this, args.concat([this]));
+        }
+        // method
+        methodResult = this["on" + (type[0].toUpperCase() + type.slice(1))].apply(this, args);
+        return callbackResult !== undefined ? callbackResult : methodResult;
+    };
+    /**
+     * Bind events of container element.
+     */
+    SweetScroll.prototype.bind = function (click, stop) {
+        var _a = this, $el = _a.$el, opts = _a.ctx.opts;
+        if ($el) {
+            if (click) {
+                addEvent($el, CONTAINER_CLICK_EVENT, this.handleClick, false);
+            }
+            if (stop) {
+                addEvent($el, CONTAINER_STOP_EVENT, this.handleStop, opts ? opts.cancellable : true);
+            }
+        }
+    };
+    /**
+     * Unbind events of container element.
+     */
+    SweetScroll.prototype.unbind = function (click, stop) {
+        var _a = this, $el = _a.$el, opts = _a.ctx.opts;
+        if ($el) {
+            if (click) {
+                removeEvent($el, CONTAINER_CLICK_EVENT, this.handleClick, false);
+            }
+            if (stop) {
+                removeEvent($el, CONTAINER_STOP_EVENT, this.handleStop, opts ? opts.cancellable : true);
+            }
+        }
+    };
+    /**
+     * You can set Polyfill (or Ponyfill) for browsers that do not support requestAnimationFrame.
+     */
+    SweetScroll.raf = raf;
+    SweetScroll.caf = caf;
+    return SweetScroll;
+}());
+
+return SweetScroll;
+
+})));
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _sweetScroll = __webpack_require__(35);
+
+var _sweetScroll2 = _interopRequireDefault(_sweetScroll);
+
+var _reactTransitionGroup = __webpack_require__(41);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var CatagoryToggle = function (_React$Component) {
+    _inherits(CatagoryToggle, _React$Component);
+
+    function CatagoryToggle(props) {
+        _classCallCheck(this, CatagoryToggle);
+
+        return _possibleConstructorReturn(this, (CatagoryToggle.__proto__ || Object.getPrototypeOf(CatagoryToggle)).call(this, props));
+    }
+
+    _createClass(CatagoryToggle, [{
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                "div",
+                { id: this.props.children, onClick: function onClick() {
+                        return _this2.props.toggleMethod(_this2.props.children);
+                    }, className: "waves-effect material-icons catagory-advance" },
+                _react2.default.createElement(
+                    "div",
+                    null,
+                    this.props.children
+                )
+            );
+        }
+    }]);
+
+    return CatagoryToggle;
+}(_react2.default.Component);
+
+var FeedCatagory = function (_React$Component2) {
+    _inherits(FeedCatagory, _React$Component2);
+
+    function FeedCatagory() {
+        _classCallCheck(this, FeedCatagory);
+
+        return _possibleConstructorReturn(this, (FeedCatagory.__proto__ || Object.getPrototypeOf(FeedCatagory)).apply(this, arguments));
+    }
+
+    _createClass(FeedCatagory, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "z-depth-1 feed-catagory" },
+                this.props.children
+            );
+        }
+    }]);
+
+    return FeedCatagory;
+}(_react2.default.Component);
+
+var FeedCatagories = function (_React$Component3) {
+    _inherits(FeedCatagories, _React$Component3);
+
+    function FeedCatagories(props) {
+        _classCallCheck(this, FeedCatagories);
+
+        var _this4 = _possibleConstructorReturn(this, (FeedCatagories.__proto__ || Object.getPrototypeOf(FeedCatagories)).call(this, props));
+
+        _this4.toggle = _this4.toggle.bind(_this4);
+        _this4.state = {
+            leftToggle: null,
+            rightToggle: _react2.default.createElement(
+                CatagoryToggle,
+                { key: "right", toggleMethod: _this4.toggle },
+                "chevron_right"
+            )
+        };
+        return _this4;
+    }
+
+    _createClass(FeedCatagories, [{
+        key: "render",
+        value: function render() {
+            var _this5 = this;
+
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                    _reactTransitionGroup.CSSTransitionGroup,
+                    { transitionName: "btn-anim", transitionEnterTimeout: 200, transitionLeaveTimeout: 200 },
+                    this.state.leftToggle,
+                    this.state.rightToggle
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { ref: function ref(slider) {
+                            _this5.categorySlider = slider;
+                        }, className: "feed-catagories" },
+                    this.props.children
+                )
+            );
+        }
+    }, {
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var _this6 = this;
+
+            this.scroller = new _sweetScroll2.default.create({
+                horizontal: true,
+                vertical: false,
+                duration: 900,
+                easing: 'easeOutQuint',
+                after: function after(offset) {
+                    if (offset.left > 10) {
+                        _this6.state.leftToggle = _react2.default.createElement(
+                            CatagoryToggle,
+                            { key: "left", toggleMethod: _this6.toggle },
+                            "chevron_left"
+                        );
+                        _this6.setState(_this6.state);
+                    } else if (offset.left < 10) {
+                        _this6.state.leftToggle = null;
+                        _this6.setState(_this6.state);
+                    }
+                    if (_this6.categorySlider.offsetWidth + _this6.categorySlider.scrollLeft === _this6.categorySlider.scrollWidth) {
+                        _this6.state.rightToggle = null;
+                        _this6.setState(_this6.state);
+                    } else {
+                        _this6.state.rightToggle = _react2.default.createElement(
+                            CatagoryToggle,
+                            { key: "right", toggleMethod: _this6.toggle },
+                            "chevron_right"
+                        );
+                        _this6.setState(_this6.state);
+                    }
+                }
+            }, this.categorySlider);
+        }
+    }, {
+        key: "toggle",
+        value: function toggle(type) {
+            console.log("toggle!");
+            if (type === 'chevron_right') {
+                this.scroller.to('+=300');
+            }
+            if (type === 'chevron_left') {
+                this.scroller.to('-=300');
+            }
+        }
+    }]);
+
+    return FeedCatagories;
+}(_react2.default.Component);
+
+var FeedSearch = function (_React$Component4) {
+    _inherits(FeedSearch, _React$Component4);
+
+    function FeedSearch(props) {
+        _classCallCheck(this, FeedSearch);
+
+        var _this7 = _possibleConstructorReturn(this, (FeedSearch.__proto__ || Object.getPrototypeOf(FeedSearch)).call(this, props));
+
+        _this7.state = { value: '' };
+        _this7.handleChange = _this7.handleChange.bind(_this7);
+        return _this7;
+    }
+
+    _createClass(FeedSearch, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "search-field input-field" },
+                _react2.default.createElement(
+                    "i",
+                    { className: "material-icons" },
+                    "search"
+                ),
+                _react2.default.createElement("input", { type: "text", placeholder: "Search for jobs, internships, or employers.", onChange: this.handleChange, value: this.state.value })
+            );
+        }
+    }, {
+        key: "handleChange",
+        value: function handleChange(event) {
+            this.setState({ value: event.target.value });
+        }
+    }]);
+
+    return FeedSearch;
+}(_react2.default.Component);
+
+var FeedNav = function (_React$Component5) {
+    _inherits(FeedNav, _React$Component5);
+
+    function FeedNav() {
+        _classCallCheck(this, FeedNav);
+
+        return _possibleConstructorReturn(this, (FeedNav.__proto__ || Object.getPrototypeOf(FeedNav)).apply(this, arguments));
+    }
+
+    _createClass(FeedNav, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                { className: "FeedNav" },
+                _react2.default.createElement(FeedSearch, null),
+                _react2.default.createElement(
+                    FeedCatagories,
+                    null,
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Yard-Work"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Tutoring"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Internships"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Babysitting"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Car Washing"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Dog Walking"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "House Cleaning"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Website Building"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Movers"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Construction"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Graphics Design"
+                    ),
+                    _react2.default.createElement(
+                        FeedCatagory,
+                        null,
+                        "Life Guard"
+                    )
+                )
+            );
+        }
+    }]);
+
+    return FeedNav;
+}(_react2.default.Component);
+
+exports.default = FeedNav;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(43)(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(44)();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _chainFunction = __webpack_require__(45);
+
+var _chainFunction2 = _interopRequireDefault(_chainFunction);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(37);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _warning = __webpack_require__(46);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _ChildMapping = __webpack_require__(47);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propTypes = {
+  component: _propTypes2.default.any,
+  childFactory: _propTypes2.default.func,
+  children: _propTypes2.default.node
+};
+
+var defaultProps = {
+  component: 'span',
+  childFactory: function childFactory(child) {
+    return child;
+  }
+};
+
+var TransitionGroup = function (_React$Component) {
+  _inherits(TransitionGroup, _React$Component);
+
+  function TransitionGroup(props, context) {
+    _classCallCheck(this, TransitionGroup);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    _this.performAppear = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillAppear) {
+        component.componentWillAppear(_this._handleDoneAppearing.bind(_this, key, component));
+      } else {
+        _this._handleDoneAppearing(key, component);
+      }
+    };
+
+    _this._handleDoneAppearing = function (key, component) {
+      if (component.componentDidAppear) {
+        component.componentDidAppear();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+        // This was removed before it had fully appeared. Remove it.
+        _this.performLeave(key, component);
+      }
+    };
+
+    _this.performEnter = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillEnter) {
+        component.componentWillEnter(_this._handleDoneEntering.bind(_this, key, component));
+      } else {
+        _this._handleDoneEntering(key, component);
+      }
+    };
+
+    _this._handleDoneEntering = function (key, component) {
+      if (component.componentDidEnter) {
+        component.componentDidEnter();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+        // This was removed before it had fully entered. Remove it.
+        _this.performLeave(key, component);
+      }
+    };
+
+    _this.performLeave = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillLeave) {
+        component.componentWillLeave(_this._handleDoneLeaving.bind(_this, key, component));
+      } else {
+        // Note that this is somewhat dangerous b/c it calls setState()
+        // again, effectively mutating the component before all the work
+        // is done.
+        _this._handleDoneLeaving(key, component);
+      }
+    };
+
+    _this._handleDoneLeaving = function (key, component) {
+      if (component.componentDidLeave) {
+        component.componentDidLeave();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+        // This entered again before it fully left. Add it again.
+        _this.keysToEnter.push(key);
+      } else {
+        _this.setState(function (state) {
+          var newChildren = _extends({}, state.children);
+          delete newChildren[key];
+          return { children: newChildren };
+        });
+      }
+    };
+
+    _this.childRefs = Object.create(null);
+
+    _this.state = {
+      children: (0, _ChildMapping.getChildMapping)(props.children)
+    };
+    return _this;
+  }
+
+  TransitionGroup.prototype.componentWillMount = function componentWillMount() {
+    this.currentlyTransitioningKeys = {};
+    this.keysToEnter = [];
+    this.keysToLeave = [];
+  };
+
+  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
+    var initialChildMapping = this.state.children;
+    for (var key in initialChildMapping) {
+      if (initialChildMapping[key]) {
+        this.performAppear(key, this.childRefs[key]);
+      }
+    }
+  };
+
+  TransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    var nextChildMapping = (0, _ChildMapping.getChildMapping)(nextProps.children);
+    var prevChildMapping = this.state.children;
+
+    this.setState({
+      children: (0, _ChildMapping.mergeChildMappings)(prevChildMapping, nextChildMapping)
+    });
+
+    for (var key in nextChildMapping) {
+      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+        this.keysToEnter.push(key);
+      }
+    }
+
+    for (var _key in prevChildMapping) {
+      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(_key);
+      if (prevChildMapping[_key] && !hasNext && !this.currentlyTransitioningKeys[_key]) {
+        this.keysToLeave.push(_key);
+      }
+    }
+
+    // If we want to someday check for reordering, we could do it here.
+  };
+
+  TransitionGroup.prototype.componentDidUpdate = function componentDidUpdate() {
+    var _this2 = this;
+
+    var keysToEnter = this.keysToEnter;
+    this.keysToEnter = [];
+    keysToEnter.forEach(function (key) {
+      return _this2.performEnter(key, _this2.childRefs[key]);
+    });
+
+    var keysToLeave = this.keysToLeave;
+    this.keysToLeave = [];
+    keysToLeave.forEach(function (key) {
+      return _this2.performLeave(key, _this2.childRefs[key]);
+    });
+  };
+
+  TransitionGroup.prototype.render = function render() {
+    var _this3 = this;
+
+    // TODO: we could get rid of the need for the wrapper node
+    // by cloning a single child
+    var childrenToRender = [];
+
+    var _loop = function _loop(key) {
+      var child = _this3.state.children[key];
+      if (child) {
+        var isCallbackRef = typeof child.ref !== 'string';
+        var factoryChild = _this3.props.childFactory(child);
+        var ref = function ref(r) {
+          _this3.childRefs[key] = r;
+        };
+
+        process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(isCallbackRef, 'string refs are not supported on children of TransitionGroup and will be ignored. ' + 'Please use a callback ref instead: https://facebook.github.io/react/docs/refs-and-the-dom.html#the-ref-callback-attribute') : void 0;
+
+        // Always chaining the refs leads to problems when the childFactory
+        // wraps the child. The child ref callback gets called twice with the
+        // wrapper and the child. So we only need to chain the ref if the
+        // factoryChild is not different from child.
+        if (factoryChild === child && isCallbackRef) {
+          ref = (0, _chainFunction2.default)(child.ref, ref);
+        }
+
+        // You may need to apply reactive updates to a child as it is leaving.
+        // The normal React way to do it won't work since the child will have
+        // already been removed. In case you need this behavior you can provide
+        // a childFactory function to wrap every child, even the ones that are
+        // leaving.
+        childrenToRender.push(_react2.default.cloneElement(factoryChild, {
+          key: key,
+          ref: ref
+        }));
+      }
+    };
+
+    for (var key in this.state.children) {
+      _loop(key);
+    }
+
+    // Do not forward TransitionGroup props to primitive DOM nodes
+    var props = _extends({}, this.props);
+    delete props.transitionLeave;
+    delete props.transitionName;
+    delete props.transitionAppear;
+    delete props.transitionEnter;
+    delete props.childFactory;
+    delete props.transitionLeaveTimeout;
+    delete props.transitionEnterTimeout;
+    delete props.transitionAppearTimeout;
+    delete props.component;
+
+    return _react2.default.createElement(this.props.component, props, childrenToRender);
+  };
+
+  return TransitionGroup;
+}(_react2.default.Component);
+
+TransitionGroup.displayName = 'TransitionGroup';
+
+
+TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+TransitionGroup.defaultProps = defaultProps;
+
+exports.default = TransitionGroup;
+module.exports = exports['default'];
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+module.exports = exports['default'];
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.nameShape = undefined;
+exports.transitionTimeout = transitionTimeout;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(37);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function transitionTimeout(transitionType) {
+  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+  var enabledPropName = 'transition' + transitionType;
+
+  return function (props) {
+    // If the transition is enabled
+    if (props[enabledPropName]) {
+      // If no timeout duration is provided
+      if (props[timeoutPropName] == null) {
+        return new Error(timeoutPropName + ' wasn\'t supplied to CSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+        // If the duration isn't a number
+      } else if (typeof props[timeoutPropName] !== 'number') {
+        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+      }
+    }
+
+    return null;
+  };
+}
+
+var nameShape = exports.nameShape = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  leave: _propTypes2.default.string,
+  active: _propTypes2.default.string
+}), _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  enterActive: _propTypes2.default.string,
+  leave: _propTypes2.default.string,
+  leaveActive: _propTypes2.default.string,
+  appear: _propTypes2.default.string,
+  appearActive: _propTypes2.default.string
+})]);
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _CSSTransitionGroup = __webpack_require__(42);
+
+var _CSSTransitionGroup2 = _interopRequireDefault(_CSSTransitionGroup);
+
+var _TransitionGroup = __webpack_require__(38);
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  TransitionGroup: _TransitionGroup2.default,
+  CSSTransitionGroup: _CSSTransitionGroup2.default
+};
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(37);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _TransitionGroup = __webpack_require__(38);
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+var _CSSTransitionGroupChild = __webpack_require__(48);
+
+var _CSSTransitionGroupChild2 = _interopRequireDefault(_CSSTransitionGroupChild);
+
+var _PropTypes = __webpack_require__(40);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propTypes = {
+  transitionName: _PropTypes.nameShape.isRequired,
+
+  transitionAppear: _propTypes2.default.bool,
+  transitionEnter: _propTypes2.default.bool,
+  transitionLeave: _propTypes2.default.bool,
+  transitionAppearTimeout: (0, _PropTypes.transitionTimeout)('Appear'),
+  transitionEnterTimeout: (0, _PropTypes.transitionTimeout)('Enter'),
+  transitionLeaveTimeout: (0, _PropTypes.transitionTimeout)('Leave')
+};
+
+var defaultProps = {
+  transitionAppear: false,
+  transitionEnter: true,
+  transitionLeave: true
+};
+
+var CSSTransitionGroup = function (_React$Component) {
+  _inherits(CSSTransitionGroup, _React$Component);
+
+  function CSSTransitionGroup() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CSSTransitionGroup);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this._wrapChild = function (child) {
+      return _react2.default.createElement(_CSSTransitionGroupChild2.default, {
+        name: _this.props.transitionName,
+        appear: _this.props.transitionAppear,
+        enter: _this.props.transitionEnter,
+        leave: _this.props.transitionLeave,
+        appearTimeout: _this.props.transitionAppearTimeout,
+        enterTimeout: _this.props.transitionEnterTimeout,
+        leaveTimeout: _this.props.transitionLeaveTimeout
+      }, child);
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  // We need to provide this childFactory so that
+  // ReactCSSTransitionGroupChild can receive updates to name, enter, and
+  // leave while it is leaving.
+
+
+  CSSTransitionGroup.prototype.render = function render() {
+    return _react2.default.createElement(_TransitionGroup2.default, _extends({}, this.props, { childFactory: this._wrapChild }));
+  };
+
+  return CSSTransitionGroup;
+}(_react2.default.Component);
+
+CSSTransitionGroup.displayName = 'CSSTransitionGroup';
+
+
+CSSTransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+CSSTransitionGroup.defaultProps = defaultProps;
+
+exports.default = CSSTransitionGroup;
+module.exports = exports['default'];
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var emptyFunction = __webpack_require__(2);
+var invariant = __webpack_require__(5);
+var warning = __webpack_require__(6);
+var assign = __webpack_require__(3);
+
+var ReactPropTypesSecret = __webpack_require__(18);
+var checkPropTypes = __webpack_require__(8);
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (process.env.NODE_ENV !== 'production') {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          invariant(
+            false,
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+        } else if (process.env.NODE_ENV !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            warning(
+              false,
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `%s` prop on `%s`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.',
+              propFullName,
+              componentName
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunction.thatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+      process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOf, expected an instance of array.') : void 0;
+      return emptyFunction.thatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues);
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (propValue.hasOwnProperty(key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+      process.env.NODE_ENV !== 'production' ? warning(false, 'Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      return emptyFunction.thatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        warning(
+          false,
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received %s at index %s.',
+          getPostfixForTypeWarning(checker),
+          i
+        );
+        return emptyFunction.thatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var emptyFunction = __webpack_require__(2);
+var invariant = __webpack_require__(5);
+var ReactPropTypesSecret = __webpack_require__(18);
+
+module.exports = function() {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+    invariant(
+      false,
+      'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+      'Use PropTypes.checkPropTypes() to call them. ' +
+      'Read more at http://fb.me/use-check-prop-types'
+    );
+  };
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  };
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim,
+    exact: getShim
+  };
+
+  ReactPropTypes.checkPropTypes = emptyFunction;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+
+module.exports = function chain(){
+  var len = arguments.length
+  var args = [];
+
+  for (var i = 0; i < len; i++)
+    args[i] = arguments[i]
+
+  args = args.filter(function(fn){ return fn != null })
+
+  if (args.length === 0) return undefined
+  if (args.length === 1) return args[0]
+
+  return args.reduce(function(current, next){
+    return function chainedFunction() {
+      current.apply(this, arguments);
+      next.apply(this, arguments);
+    };
+  })
+}
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright 2014-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = function() {};
+
+if (process.env.NODE_ENV !== 'production') {
+  warning = function(condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error(
+        '`warning(condition, format, ...args)` requires a warning ' +
+        'message argument'
+      );
+    }
+
+    if (format.length < 10 || (/^[s\W]*$/).test(format)) {
+      throw new Error(
+        'The warning format should be able to uniquely identify this ' +
+        'warning. Please, use a more descriptive format than: ' + format
+      );
+    }
+
+    if (!condition) {
+      var argIndex = 0;
+      var message = 'Warning: ' +
+        format.replace(/%s/g, function() {
+          return args[argIndex++];
+        });
+      if (typeof console !== 'undefined') {
+        console.error(message);
+      }
+      try {
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+      } catch(x) {}
+    }
+  };
+}
+
+module.exports = warning;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.getChildMapping = getChildMapping;
+exports.mergeChildMappings = mergeChildMappings;
+
+var _react = __webpack_require__(0);
+
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */
+function getChildMapping(children) {
+  if (!children) {
+    return children;
+  }
+  var result = {};
+  _react.Children.map(children, function (child) {
+    return child;
+  }).forEach(function (child) {
+    result[child.key] = child;
+  });
+  return result;
+}
+
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */
+function mergeChildMappings(prev, next) {
+  prev = prev || {};
+  next = next || {};
+
+  function getValueForKey(key) {
+    if (next.hasOwnProperty(key)) {
+      return next[key];
+    }
+
+    return prev[key];
+  }
+
+  // For each key of `next`, the list of keys to insert before that key in
+  // the combined list
+  var nextKeysPending = {};
+
+  var pendingKeys = [];
+  for (var prevKey in prev) {
+    if (next.hasOwnProperty(prevKey)) {
+      if (pendingKeys.length) {
+        nextKeysPending[prevKey] = pendingKeys;
+        pendingKeys = [];
+      }
+    } else {
+      pendingKeys.push(prevKey);
+    }
+  }
+
+  var i = void 0;
+  var childMapping = {};
+  for (var nextKey in next) {
+    if (nextKeysPending.hasOwnProperty(nextKey)) {
+      for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+        var pendingNextKey = nextKeysPending[nextKey][i];
+        childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+      }
+    }
+    childMapping[nextKey] = getValueForKey(nextKey);
+  }
+
+  // Finally, add the keys which didn't appear before any key in `next`
+  for (i = 0; i < pendingKeys.length; i++) {
+    childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+  }
+
+  return childMapping;
+}
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _addClass = __webpack_require__(49);
+
+var _addClass2 = _interopRequireDefault(_addClass);
+
+var _removeClass = __webpack_require__(51);
+
+var _removeClass2 = _interopRequireDefault(_removeClass);
+
+var _requestAnimationFrame = __webpack_require__(52);
+
+var _requestAnimationFrame2 = _interopRequireDefault(_requestAnimationFrame);
+
+var _properties = __webpack_require__(53);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(37);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactDom = __webpack_require__(7);
+
+var _PropTypes = __webpack_require__(40);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var events = [];
+if (_properties.transitionEnd) events.push(_properties.transitionEnd);
+if (_properties.animationEnd) events.push(_properties.animationEnd);
+
+function addEndListener(node, listener) {
+  if (events.length) {
+    events.forEach(function (e) {
+      return node.addEventListener(e, listener, false);
+    });
+  } else {
+    setTimeout(listener, 0);
+  }
+
+  return function () {
+    if (!events.length) return;
+    events.forEach(function (e) {
+      return node.removeEventListener(e, listener, false);
+    });
+  };
+}
+
+var propTypes = {
+  children: _propTypes2.default.node,
+  name: _PropTypes.nameShape.isRequired,
+
+  // Once we require timeouts to be specified, we can remove the
+  // boolean flags (appear etc.) and just accept a number
+  // or a bool for the timeout flags (appearTimeout etc.)
+  appear: _propTypes2.default.bool,
+  enter: _propTypes2.default.bool,
+  leave: _propTypes2.default.bool,
+  appearTimeout: _propTypes2.default.number,
+  enterTimeout: _propTypes2.default.number,
+  leaveTimeout: _propTypes2.default.number
+};
+
+var CSSTransitionGroupChild = function (_React$Component) {
+  _inherits(CSSTransitionGroupChild, _React$Component);
+
+  function CSSTransitionGroupChild() {
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, CSSTransitionGroupChild);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.componentWillAppear = function (done) {
+      if (_this.props.appear) {
+        _this.transition('appear', done, _this.props.appearTimeout);
+      } else {
+        done();
+      }
+    }, _this.componentWillEnter = function (done) {
+      if (_this.props.enter) {
+        _this.transition('enter', done, _this.props.enterTimeout);
+      } else {
+        done();
+      }
+    }, _this.componentWillLeave = function (done) {
+      if (_this.props.leave) {
+        _this.transition('leave', done, _this.props.leaveTimeout);
+      } else {
+        done();
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  CSSTransitionGroupChild.prototype.componentWillMount = function componentWillMount() {
+    this.classNameAndNodeQueue = [];
+    this.transitionTimeouts = [];
+  };
+
+  CSSTransitionGroupChild.prototype.componentWillUnmount = function componentWillUnmount() {
+    this.unmounted = true;
+
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+    this.transitionTimeouts.forEach(function (timeout) {
+      clearTimeout(timeout);
+    });
+
+    this.classNameAndNodeQueue.length = 0;
+  };
+
+  CSSTransitionGroupChild.prototype.transition = function transition(animationType, finishCallback, timeout) {
+    var node = (0, _reactDom.findDOMNode)(this);
+
+    if (!node) {
+      if (finishCallback) {
+        finishCallback();
+      }
+      return;
+    }
+
+    var className = this.props.name[animationType] || this.props.name + '-' + animationType;
+    var activeClassName = this.props.name[animationType + 'Active'] || className + '-active';
+    var timer = null;
+    var removeListeners = void 0;
+
+    (0, _addClass2.default)(node, className);
+
+    // Need to do this to actually trigger a transition.
+    this.queueClassAndNode(activeClassName, node);
+
+    // Clean-up the animation after the specified delay
+    var finish = function finish(e) {
+      if (e && e.target !== node) {
+        return;
+      }
+
+      clearTimeout(timer);
+      if (removeListeners) removeListeners();
+
+      (0, _removeClass2.default)(node, className);
+      (0, _removeClass2.default)(node, activeClassName);
+
+      if (removeListeners) removeListeners();
+
+      // Usually this optional callback is used for informing an owner of
+      // a leave animation and telling it to remove the child.
+      if (finishCallback) {
+        finishCallback();
+      }
+    };
+
+    if (timeout) {
+      timer = setTimeout(finish, timeout);
+      this.transitionTimeouts.push(timer);
+    } else if (_properties.transitionEnd) {
+      removeListeners = addEndListener(node, finish);
+    }
+  };
+
+  CSSTransitionGroupChild.prototype.queueClassAndNode = function queueClassAndNode(className, node) {
+    var _this2 = this;
+
+    this.classNameAndNodeQueue.push({
+      className: className,
+      node: node
+    });
+
+    if (!this.rafHandle) {
+      this.rafHandle = (0, _requestAnimationFrame2.default)(function () {
+        return _this2.flushClassNameAndNodeQueue();
+      });
+    }
+  };
+
+  CSSTransitionGroupChild.prototype.flushClassNameAndNodeQueue = function flushClassNameAndNodeQueue() {
+    if (!this.unmounted) {
+      this.classNameAndNodeQueue.forEach(function (obj) {
+        // This is for to force a repaint,
+        // which is necessary in order to transition styles when adding a class name.
+        /* eslint-disable no-unused-expressions */
+        obj.node.scrollTop;
+        /* eslint-enable no-unused-expressions */
+        (0, _addClass2.default)(obj.node, obj.className);
+      });
+    }
+    this.classNameAndNodeQueue.length = 0;
+    this.rafHandle = null;
+  };
+
+  CSSTransitionGroupChild.prototype.render = function render() {
+    var props = _extends({}, this.props);
+    delete props.name;
+    delete props.appear;
+    delete props.enter;
+    delete props.leave;
+    delete props.appearTimeout;
+    delete props.enterTimeout;
+    delete props.leaveTimeout;
+    delete props.children;
+    return _react2.default.cloneElement(_react2.default.Children.only(this.props.children), props);
+  };
+
+  return CSSTransitionGroupChild;
+}(_react2.default.Component);
+
+CSSTransitionGroupChild.displayName = 'CSSTransitionGroupChild';
+
+
+CSSTransitionGroupChild.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+
+exports.default = CSSTransitionGroupChild;
+module.exports = exports['default'];
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = addClass;
+
+var _hasClass = __webpack_require__(50);
+
+var _hasClass2 = _interopRequireDefault(_hasClass);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function addClass(element, className) {
+  if (element.classList) element.classList.add(className);else if (!(0, _hasClass2.default)(element, className)) if (typeof element.className === 'string') element.className = element.className + ' ' + className;else element.setAttribute('class', (element.className && element.className.baseVal || '') + ' ' + className);
+}
+module.exports = exports['default'];
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = hasClass;
+function hasClass(element, className) {
+  if (element.classList) return !!className && element.classList.contains(className);else return (" " + (element.className.baseVal || element.className) + " ").indexOf(" " + className + " ") !== -1;
+}
+module.exports = exports["default"];
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function replaceClassName(origClass, classToRemove) {
+  return origClass.replace(new RegExp('(^|\\s)' + classToRemove + '(?:\\s|$)', 'g'), '$1').replace(/\s+/g, ' ').replace(/^\s*|\s*$/g, '');
+}
+
+module.exports = function removeClass(element, className) {
+  if (element.classList) element.classList.remove(className);else if (typeof element.className === 'string') element.className = replaceClassName(element.className, className);else element.setAttribute('class', replaceClassName(element.className && element.className.baseVal || '', className));
+};
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _inDOM = __webpack_require__(39);
+
+var _inDOM2 = _interopRequireDefault(_inDOM);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var vendors = ['', 'webkit', 'moz', 'o', 'ms'];
+var cancel = 'clearTimeout';
+var raf = fallback;
+var compatRaf = void 0;
+
+var getKey = function getKey(vendor, k) {
+  return vendor + (!vendor ? k : k[0].toUpperCase() + k.substr(1)) + 'AnimationFrame';
+};
+
+if (_inDOM2.default) {
+  vendors.some(function (vendor) {
+    var rafKey = getKey(vendor, 'request');
+
+    if (rafKey in window) {
+      cancel = getKey(vendor, 'cancel');
+      return raf = function raf(cb) {
+        return window[rafKey](cb);
+      };
+    }
+  });
+}
+
+/* https://github.com/component/raf */
+var prev = new Date().getTime();
+function fallback(fn) {
+  var curr = new Date().getTime(),
+      ms = Math.max(0, 16 - (curr - prev)),
+      req = setTimeout(fn, ms);
+
+  prev = curr;
+  return req;
+}
+
+compatRaf = function compatRaf(cb) {
+  return raf(cb);
+};
+compatRaf.cancel = function (id) {
+  window[cancel] && typeof window[cancel] === 'function' && window[cancel](id);
+};
+exports.default = compatRaf;
+module.exports = exports['default'];
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.animationEnd = exports.animationDelay = exports.animationTiming = exports.animationDuration = exports.animationName = exports.transitionEnd = exports.transitionDuration = exports.transitionDelay = exports.transitionTiming = exports.transitionProperty = exports.transform = undefined;
+
+var _inDOM = __webpack_require__(39);
+
+var _inDOM2 = _interopRequireDefault(_inDOM);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var transform = 'transform';
+var prefix = void 0,
+    transitionEnd = void 0,
+    animationEnd = void 0;
+var transitionProperty = void 0,
+    transitionDuration = void 0,
+    transitionTiming = void 0,
+    transitionDelay = void 0;
+var animationName = void 0,
+    animationDuration = void 0,
+    animationTiming = void 0,
+    animationDelay = void 0;
+
+if (_inDOM2.default) {
+  var _getTransitionPropert = getTransitionProperties();
+
+  prefix = _getTransitionPropert.prefix;
+  exports.transitionEnd = transitionEnd = _getTransitionPropert.transitionEnd;
+  exports.animationEnd = animationEnd = _getTransitionPropert.animationEnd;
+
+
+  exports.transform = transform = prefix + '-' + transform;
+  exports.transitionProperty = transitionProperty = prefix + '-transition-property';
+  exports.transitionDuration = transitionDuration = prefix + '-transition-duration';
+  exports.transitionDelay = transitionDelay = prefix + '-transition-delay';
+  exports.transitionTiming = transitionTiming = prefix + '-transition-timing-function';
+
+  exports.animationName = animationName = prefix + '-animation-name';
+  exports.animationDuration = animationDuration = prefix + '-animation-duration';
+  exports.animationTiming = animationTiming = prefix + '-animation-delay';
+  exports.animationDelay = animationDelay = prefix + '-animation-timing-function';
+}
+
+exports.transform = transform;
+exports.transitionProperty = transitionProperty;
+exports.transitionTiming = transitionTiming;
+exports.transitionDelay = transitionDelay;
+exports.transitionDuration = transitionDuration;
+exports.transitionEnd = transitionEnd;
+exports.animationName = animationName;
+exports.animationDuration = animationDuration;
+exports.animationTiming = animationTiming;
+exports.animationDelay = animationDelay;
+exports.animationEnd = animationEnd;
+exports.default = {
+  transform: transform,
+  end: transitionEnd,
+  property: transitionProperty,
+  timing: transitionTiming,
+  delay: transitionDelay,
+  duration: transitionDuration
+};
+
+
+function getTransitionProperties() {
+  var style = document.createElement('div').style;
+
+  var vendorMap = {
+    O: function O(e) {
+      return 'o' + e.toLowerCase();
+    },
+    Moz: function Moz(e) {
+      return e.toLowerCase();
+    },
+    Webkit: function Webkit(e) {
+      return 'webkit' + e;
+    },
+    ms: function ms(e) {
+      return 'MS' + e;
+    }
+  };
+
+  var vendors = Object.keys(vendorMap);
+
+  var transitionEnd = void 0,
+      animationEnd = void 0;
+  var prefix = '';
+
+  for (var i = 0; i < vendors.length; i++) {
+    var vendor = vendors[i];
+
+    if (vendor + 'TransitionProperty' in style) {
+      prefix = '-' + vendor.toLowerCase();
+      transitionEnd = vendorMap[vendor]('TransitionEnd');
+      animationEnd = vendorMap[vendor]('AnimationEnd');
+      break;
+    }
+  }
+
+  if (!transitionEnd && 'transitionProperty' in style) transitionEnd = 'transitionend';
+
+  if (!animationEnd && 'animationName' in style) animationEnd = 'animationend';
+
+  style = null;
+
+  return { animationEnd: animationEnd, transitionEnd: transitionEnd, prefix: prefix };
+}
 
 /***/ })
 /******/ ]);
