@@ -251,7 +251,7 @@ body {
 }
 .feed-catagories {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     flex-shrink: 0;
     position: relative;
     margin-bottom: 30px;
@@ -267,13 +267,10 @@ body {
 }
 .feed-catagory {
     padding: 7px;
-    background-image: linear-gradient(to right, rgba(254,0,2,1), rgba(254,0,2,.3));
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;  /* <- here it is */
     margin: 7px;
     margin-top: 20px;
     white-space: nowrap;
+    background: linear-gradient(to right, #cb356b, #bd3f32); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: rgb(246, 249, 252);
     padding-left: 12px;
     cursor: pointer;

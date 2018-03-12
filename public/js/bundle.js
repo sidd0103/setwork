@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 15);
+/******/ 	return __webpack_require__(__webpack_require__.s = 21);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(22);
 } else {
-  module.exports = __webpack_require__(17);
+  module.exports = __webpack_require__(23);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -422,30 +422,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 
-var emptyObject = {};
-
-if (process.env.NODE_ENV !== 'production') {
-  Object.freeze(emptyObject);
-}
-
-module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
 /**
  * Use invariant() to assert state which your program assumes to be true.
  *
@@ -492,7 +468,77 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (process.env.NODE_ENV !== 'production') {
+    // This branch is unreachable because this function is only called
+    // in production, but the condition is true only in development.
+    // Therefore if the branch is still here, dead code elimination wasn't
+    // properly applied.
+    // Don't change the message. React DevTools relies on it. Also make sure
+    // this message doesn't occur elsewhere in this function, or it will cause
+    // a false positive.
+    throw new Error('^_^');
+  }
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(24);
+} else {
+  module.exports = __webpack_require__(27);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
 /* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ */
+
+
+
+var emptyObject = {};
+
+if (process.env.NODE_ENV !== 'production') {
+  Object.freeze(emptyObject);
+}
+
+module.exports = emptyObject;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -561,53 +607,42 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+/* WEBPACK VAR INJECTION */(function(process) {/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (process.env.NODE_ENV !== 'production') {
-    // This branch is unreachable because this function is only called
-    // in production, but the condition is true only in development.
-    // Therefore if the branch is still here, dead code elimination wasn't
-    // properly applied.
-    // Don't change the message. React DevTools relies on it. Also make sure
-    // this message doesn't occur elsewhere in this function, or it will cause
-    // a false positive.
-    throw new Error('^_^');
-  }
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
+if (process.env.NODE_ENV !== 'production') {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
 
-if (process.env.NODE_ENV === 'production') {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(19);
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(43)(isValidElement, throwOnDirectAccess);
 } else {
-  module.exports = __webpack_require__(22);
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__(44)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -621,9 +656,9 @@ if (process.env.NODE_ENV === 'production') {
 
 
 if (process.env.NODE_ENV !== 'production') {
-  var invariant = __webpack_require__(5);
-  var warning = __webpack_require__(6);
-  var ReactPropTypesSecret = __webpack_require__(18);
+  var invariant = __webpack_require__(4);
+  var warning = __webpack_require__(7);
+  var ReactPropTypesSecret = __webpack_require__(10);
   var loggedTypeFailures = {};
 }
 
@@ -674,7 +709,26 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 9 */
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -713,7 +767,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -794,7 +848,7 @@ module.exports = EventListener;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -836,7 +890,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -907,7 +961,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -922,7 +976,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(20);
+var isTextNode = __webpack_require__(25);
 
 /*eslint-disable no-bitwise */
 
@@ -950,7 +1004,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -980,7 +1034,1053 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 15 */
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*! @preserve sweet-scroll v3.0.0 - tsuyoshiwada | MIT License */
+(function (global, factory) {
+	 true ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global.SweetScroll = factory());
+}(this, (function () { 'use strict';
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+
+
+var __assign = Object.assign || function __assign(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+    }
+    return t;
+};
+
+// @link https://github.com/JedWatson/exenv/blob/master/index.js
+var canUseDOM = !!(typeof window !== 'undefined' &&
+    window.document &&
+    window.document.createElement);
+var canUseHistory = !canUseDOM
+    ? false
+    : (window.history &&
+        'pushState' in window.history &&
+        window.location.protocol !== 'file:');
+var canUsePassiveOption = (function () {
+    var support = false;
+    if (!canUseDOM) {
+        return support;
+    }
+    /* tslint:disable:no-empty */
+    try {
+        window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
+            get: function () {
+                support = true;
+            },
+        }));
+    }
+    catch (e) { }
+    /* tslint:enable */
+    return support;
+})();
+
+var isString = function (obj) { return typeof obj === 'string'; };
+var isFunction = function (obj) { return typeof obj === 'function'; };
+var isArray = function (obj) { return Array.isArray(obj); };
+var isNumeric = function (obj) { return !isArray(obj) && ((obj - parseFloat(obj)) + 1) >= 0; };
+var isElement = function (obj) { return obj instanceof Element; };
+var hasProp = function (obj, key) { return (obj && obj.hasOwnProperty(key)); };
+
+var raf = canUseDOM ? window.requestAnimationFrame.bind(window) : null;
+var caf = canUseDOM ? window.cancelAnimationFrame.bind(window) : null;
+
+/* tslint:disable:curly */
+/* tslint:disable:no-conditional-assignment */
+var cos = Math.cos;
+var sin = Math.sin;
+var pow = Math.pow;
+var sqrt = Math.sqrt;
+var PI = Math.PI;
+var easings = {
+    linear: function (p) { return p; },
+    easeInQuad: function (_, t, b, c, d) { return (c * (t /= d) * t + b); },
+    easeOutQuad: function (_, t, b, c, d) { return (-c * (t /= d) * (t - 2) + b); },
+    easeInOutQuad: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t + b : -c / 2 * ((--t) * (t - 2) - 1) + b); },
+    easeInCubic: function (_, t, b, c, d) { return (c * (t /= d) * t * t + b); },
+    easeOutCubic: function (_, t, b, c, d) { return (c * ((t = t / d - 1) * t * t + 1) + b); },
+    easeInOutCubic: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t + b : c / 2 * ((t -= 2) * t * t + 2) + b); },
+    easeInQuart: function (_, t, b, c, d) { return (c * (t /= d) * t * t * t + b); },
+    easeOutQuart: function (_, t, b, c, d) { return (-c * ((t = t / d - 1) * t * t * t - 1) + b); },
+    easeInOutQuart: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t * t + b : -c / 2 * ((t -= 2) * t * t * t - 2) + b); },
+    easeInQuint: function (_, t, b, c, d) { return (c * (t /= d) * t * t * t * t + b); },
+    easeOutQuint: function (_, t, b, c, d) { return (c * ((t = t / d - 1) * t * t * t * t + 1) + b); },
+    easeInOutQuint: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t * t * t + b : c / 2 * ((t -= 2) * t * t * t * t + 2) + b); },
+    easeInSine: function (_, t, b, c, d) { return (-c * cos(t / d * (PI / 2)) + c + b); },
+    easeOutSine: function (_, t, b, c, d) { return (c * sin(t / d * (PI / 2)) + b); },
+    easeInOutSine: function (_, t, b, c, d) { return (-c / 2 * (cos(PI * t / d) - 1) + b); },
+    easeInExpo: function (_, t, b, c, d) { return ((t === 0) ? b : c * pow(2, 10 * (t / d - 1)) + b); },
+    easeOutExpo: function (_, t, b, c, d) { return ((t === d) ? b + c : c * (-pow(2, -10 * t / d) + 1) + b); },
+    easeInOutExpo: function (_, t, b, c, d) {
+        if (t === 0)
+            return b;
+        if (t === d)
+            return b + c;
+        if ((t /= d / 2) < 1)
+            return c / 2 * pow(2, 10 * (t - 1)) + b;
+        return c / 2 * (-pow(2, -10 * --t) + 2) + b;
+    },
+    easeInCirc: function (_, t, b, c, d) { return (-c * (sqrt(1 - (t /= d) * t) - 1) + b); },
+    easeOutCirc: function (_, t, b, c, d) { return (c * sqrt(1 - (t = t / d - 1) * t) + b); },
+    easeInOutCirc: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? -c / 2 * (sqrt(1 - t * t) - 1) + b : c / 2 * (sqrt(1 - (t -= 2) * t) + 1) + b); },
+};
+
+var directionMethodMap = {
+    y: 'scrollTop',
+    x: 'scrollLeft',
+};
+var directionPropMap = {
+    y: 'pageYOffset',
+    x: 'pageXOffset',
+};
+var getScroll = function ($el, direction) { return ($el[directionMethodMap[direction]]); };
+var setScroll = function ($el, offset, direction) {
+    $el[directionMethodMap[direction]] = offset;
+};
+var getOffset = function ($el, $context) {
+    var rect = $el.getBoundingClientRect();
+    if (rect.width || rect.height) {
+        var scroll_1 = { top: 0, left: 0 };
+        var $ctx = void 0;
+        if (isRootContainer($context)) {
+            $ctx = document.documentElement;
+            scroll_1.top = window[directionPropMap.y];
+            scroll_1.left = window[directionPropMap.x];
+        }
+        else {
+            $ctx = $context;
+            var cRect = $ctx.getBoundingClientRect();
+            scroll_1.top = (cRect.top * -1) + $ctx[directionMethodMap.y];
+            scroll_1.left = (cRect.left * -1) + $ctx[directionMethodMap.x];
+        }
+        return {
+            top: (rect.top + scroll_1.top) - $ctx.clientTop,
+            left: (rect.left + scroll_1.left) - $ctx.clientLeft,
+        };
+    }
+    return rect;
+};
+
+var $$ = function (selector) { return (Array.prototype.slice.call((!selector ? [] : document.querySelectorAll(selector)))); };
+var $ = function (selector) { return ($$(selector).shift() || null); };
+var matches = function ($el, selector) {
+    if (isElement(selector)) {
+        return $el === selector;
+    }
+    var results = $$(selector);
+    var i = results.length;
+    // tslint:disable-next-line no-empty
+    while (--i >= 0 && results[i] !== $el) { }
+    return i > -1;
+};
+var isRootContainer = function ($el) { return ($el === document.documentElement || $el === document.body); };
+var findScrollable = function (selectors, direction) {
+    var method = directionMethodMap[direction];
+    var $elements = isElement(selectors) ? [selectors] : $$(selectors);
+    var $div = document.createElement('div');
+    for (var i = 0; i < $elements.length; i += 1) {
+        var $el = $elements[i];
+        var $result = null;
+        if ($el[method] > 0) {
+            $result = $el;
+        }
+        else {
+            var outerWidth_1 = window.outerWidth, innerWidth_1 = window.innerWidth;
+            var zoom = outerWidth_1 ? outerWidth_1 / innerWidth_1 : 1;
+            $div.style.width = $el.clientWidth + 1 + "px";
+            $div.style.height = $el.clientHeight + 1 + "px";
+            $el.appendChild($div);
+            $el[method] = 1.5 / zoom;
+            if ($el[method] > 0) {
+                $result = $el;
+            }
+            $el[method] = 0;
+            $el.removeChild($div);
+        }
+        if ($result) {
+            return $result;
+        }
+    }
+    return null;
+};
+
+var getHeight = function ($el) { return (Math.max($el.scrollHeight, $el.clientHeight, $el.offsetHeight)); };
+var getWidth = function ($el) { return (Math.max($el.scrollWidth, $el.clientWidth, $el.offsetWidth)); };
+var getSize = function ($el) { return ({
+    width: getWidth($el),
+    height: getHeight($el),
+}); };
+var getViewportAndElementSizes = function ($el) {
+    var isRoot = isRootContainer($el);
+    return {
+        viewport: {
+            width: isRoot
+                ? Math.min(window.innerWidth, document.documentElement.clientWidth)
+                : $el.clientWidth,
+            height: isRoot ? window.innerHeight : $el.clientHeight,
+        },
+        size: isRoot
+            ? {
+                width: Math.max(getWidth(document.body), getWidth(document.documentElement)),
+                height: Math.max(getHeight(document.body), getHeight(document.documentElement)),
+            }
+            : getSize($el),
+    };
+};
+
+var wheelEventName = (function () {
+    if (!canUseDOM) {
+        return 'wheel';
+    }
+    return 'onwheel' in document ? 'wheel' : 'mousewheel';
+})();
+var eventName = function (name) { return (name === 'wheel' ? wheelEventName : name); };
+var apply = function ($el, method, event, listener, passive) {
+    event.split(' ').forEach(function (name) {
+        $el[method](eventName(name), listener, canUsePassiveOption ? { passive: passive } : false);
+    });
+};
+var addEvent = function ($el, event, listener, passive) {
+    apply($el, 'addEventListener', event, listener, passive);
+};
+var removeEvent = function ($el, event, listener, passive) {
+    apply($el, 'removeEventListener', event, listener, passive);
+};
+
+var reRelativeToken = /^(\+|-)=(\d+(?:\.\d+)?)$/;
+var parseCoordinate = function (coordinate, enableVertical) {
+    var res = { top: 0, left: 0, relative: false };
+    // Object ({ top: {n}, left: {n} })
+    if (hasProp(coordinate, 'top') || hasProp(coordinate, 'left')) {
+        res = __assign({}, res, coordinate);
+        // Array ([{n}, [{n}])
+    }
+    else if (isArray(coordinate)) {
+        if (coordinate.length > 1) {
+            res.top = coordinate[0];
+            res.left = coordinate[1];
+        }
+        else if (coordinate.length === 1) {
+            res.top = enableVertical ? coordinate[0] : 0;
+            res.left = !enableVertical ? coordinate[0] : 0;
+        }
+        else {
+            return null;
+        }
+        // Number
+    }
+    else if (isNumeric(coordinate)) {
+        if (enableVertical) {
+            res.top = coordinate;
+        }
+        else {
+            res.left = coordinate;
+        }
+        // String ('+={n}', '-={n}')
+    }
+    else if (isString(coordinate)) {
+        var m = coordinate.trim().match(reRelativeToken);
+        if (!m) {
+            return null;
+        }
+        var op = m[1];
+        var val = parseInt(m[2], 10);
+        if (op === '+') {
+            res.top = enableVertical ? val : 0;
+            res.left = !enableVertical ? val : 0;
+        }
+        else {
+            res.top = enableVertical ? -val : 0;
+            res.left = !enableVertical ? -val : 0;
+        }
+        res.relative = true;
+    }
+    else {
+        return null;
+    }
+    return res;
+};
+
+var defaultOptions = {
+    trigger: '[data-scroll]',
+    header: '[data-scroll-header]',
+    duration: 1000,
+    easing: 'easeOutQuint',
+    offset: 0,
+    vertical: true,
+    horizontal: false,
+    cancellable: true,
+    updateURL: false,
+    preventDefault: true,
+    stopPropagation: true,
+    quickMode: false,
+    // Callbacks
+    before: null,
+    after: null,
+    cancel: null,
+    complete: null,
+    step: null,
+};
+
+var CONTAINER_CLICK_EVENT = 'click';
+var CONTAINER_STOP_EVENT = 'wheel touchstart touchmove';
+var SweetScroll = /** @class */ (function () {
+    /**
+     * Constructor
+     */
+    function SweetScroll(options, container) {
+        var _this = this;
+        this.ctx = {
+            $trigger: null,
+            opts: null,
+            progress: false,
+            pos: null,
+            startPos: null,
+            easing: null,
+            start: 0,
+            id: 0,
+            cancel: false,
+            hash: null,
+        };
+        /**
+         * Handle each frame of the animation.
+         */
+        this.loop = function (time) {
+            var _a = _this, $el = _a.$el, ctx = _a.ctx;
+            if (!ctx.start) {
+                ctx.start = time;
+            }
+            if (!ctx.progress || !$el) {
+                _this.stop();
+                return;
+            }
+            var options = ctx.opts;
+            var offset = ctx.pos;
+            var start = ctx.start;
+            var startOffset = ctx.startPos;
+            var easing = ctx.easing;
+            var duration = options.duration;
+            var directionMap = { top: 'y', left: 'x' };
+            var timeElapsed = time - start;
+            var t = Math.min(1, Math.max(timeElapsed / duration, 0));
+            Object.keys(offset).forEach(function (key) {
+                var value = offset[key];
+                var initial = startOffset[key];
+                var delta = value - initial;
+                if (delta !== 0) {
+                    var val = easing(t, duration * t, 0, 1, duration);
+                    setScroll($el, Math.round(initial + delta * val), directionMap[key]);
+                }
+            });
+            if (timeElapsed <= duration) {
+                _this.hook(options, 'step', t);
+                ctx.id = SweetScroll.raf(_this.loop);
+            }
+            else {
+                _this.stop(true);
+            }
+        };
+        /**
+         * Handling of container click event.
+         */
+        this.handleClick = function (e) {
+            var opts = _this.opts;
+            var $el = e.target;
+            for (; $el && $el !== document; $el = $el.parentNode) {
+                if (!matches($el, opts.trigger)) {
+                    continue;
+                }
+                var dataOptions = JSON.parse($el.getAttribute('data-scroll-options') || '{}');
+                var data = $el.getAttribute('data-scroll');
+                var to = data || $el.getAttribute('href');
+                var options = __assign({}, opts, dataOptions);
+                var preventDefault = options.preventDefault, stopPropagation = options.stopPropagation, vertical = options.vertical, horizontal = options.horizontal;
+                if (preventDefault) {
+                    e.preventDefault();
+                }
+                if (stopPropagation) {
+                    e.stopPropagation();
+                }
+                // Passes the trigger element to callback
+                _this.ctx.$trigger = $el;
+                if (horizontal && vertical) {
+                    _this.to(to, options);
+                }
+                else if (vertical) {
+                    _this.toTop(to, options);
+                }
+                else if (horizontal) {
+                    _this.toLeft(to, options);
+                }
+            }
+        };
+        /**
+         * Handling of container stop events.
+         */
+        this.handleStop = function (e) {
+            var ctx = _this.ctx;
+            var opts = ctx.opts;
+            if (opts && opts.cancellable) {
+                ctx.cancel = true;
+                _this.stop();
+            }
+            else {
+                e.preventDefault();
+            }
+        };
+        var opts = __assign({}, defaultOptions, (options || {}));
+        var vertical = opts.vertical, horizontal = opts.horizontal;
+        var selector = container === undefined ? 'body,html' : container;
+        var $container = null;
+        if (canUseDOM) {
+            if (vertical) {
+                $container = findScrollable(selector, 'y');
+            }
+            if (!$container && horizontal) {
+                $container = findScrollable(selector, 'x');
+            }
+        }
+        if ($container) {
+            this.opts = opts;
+            this.$el = $container;
+            this.bind(true, false);
+        }
+    }
+    /**
+     * SweetScroll instance factory.
+     */
+    SweetScroll.create = function (options, container) {
+        return new SweetScroll(options, container);
+    };
+    /**
+     * Scroll animation to the specified position.
+     */
+    SweetScroll.prototype.to = function (distance, options) {
+        if (!canUseDOM) {
+            return;
+        }
+        var _a = this, $el = _a.$el, ctx = _a.ctx, currentOptions = _a.opts;
+        var $trigger = ctx.$trigger;
+        var opts = __assign({}, currentOptions, options || {});
+        var optOffset = opts.offset, vertical = opts.vertical, horizontal = opts.horizontal;
+        var $header = isElement(opts.header) ? opts.header : $(opts.header);
+        var hash = isString(distance) && /^#/.test(distance) ? distance : null;
+        ctx.opts = opts; // Temporary options
+        ctx.cancel = false; // Disable the call flag of `cancel`
+        ctx.hash = hash;
+        // Stop current animation
+        this.stop();
+        // Does not move if the container is not found
+        if (!$el) {
+            return;
+        }
+        // Get scroll offset
+        var offset = parseCoordinate(optOffset, vertical);
+        var coordinate = parseCoordinate(distance, vertical);
+        var scroll = { top: 0, left: 0 };
+        if (coordinate) {
+            if (coordinate.relative) {
+                var current = getScroll($el, vertical ? 'y' : 'x');
+                scroll.top = vertical ? current + coordinate.top : coordinate.top;
+                scroll.left = !vertical ? current + coordinate.left : coordinate.left;
+            }
+            else {
+                scroll = coordinate;
+            }
+        }
+        else if (isString(distance) && distance !== '#') {
+            var $target = $(distance);
+            if (!$target) {
+                return;
+            }
+            scroll = getOffset($target, $el);
+        }
+        if (offset) {
+            scroll.top += offset.top;
+            scroll.left += offset.left;
+        }
+        if ($header) {
+            scroll.top = Math.max(0, scroll.top - getSize($header).height);
+        }
+        // Normalize scroll offset
+        var _b = getViewportAndElementSizes($el), viewport = _b.viewport, size = _b.size;
+        scroll.top = vertical
+            ? Math.max(0, Math.min(size.height - viewport.height, scroll.top))
+            : getScroll($el, 'y');
+        scroll.left = horizontal
+            ? Math.max(0, Math.min(size.width - viewport.width, scroll.left))
+            : getScroll($el, 'x');
+        // Call `before`
+        // Stop scrolling when it returns false
+        if (this.hook(opts, 'before', scroll, $trigger) === false) {
+            ctx.opts = null;
+            return;
+        }
+        // Set offset
+        ctx.pos = scroll;
+        // Run animation!!
+        this.start(opts);
+        // Bind stop events
+        this.bind(false, true);
+    };
+    /**
+     * Scroll animation to specified left position.
+     */
+    SweetScroll.prototype.toTop = function (distance, options) {
+        this.to(distance, __assign({}, options || {}, { vertical: true, horizontal: false }));
+    };
+    /**
+     * Scroll animation to specified top position.
+     */
+    SweetScroll.prototype.toLeft = function (distance, options) {
+        this.to(distance, __assign({}, options || {}, { vertical: false, horizontal: true }));
+    };
+    /**
+     * Scroll animation to specified element.
+     */
+    SweetScroll.prototype.toElement = function ($element, options) {
+        var $el = this.$el;
+        if (!canUseDOM || !$el) {
+            return;
+        }
+        this.to(getOffset($element, $el), options || {});
+    };
+    /**
+     * Stop the current scroll animation.
+     */
+    SweetScroll.prototype.stop = function (gotoEnd) {
+        if (gotoEnd === void 0) { gotoEnd = false; }
+        var _a = this, $el = _a.$el, ctx = _a.ctx;
+        var pos = ctx.pos;
+        if (!$el || !ctx.progress) {
+            return;
+        }
+        SweetScroll.caf(ctx.id);
+        ctx.progress = false;
+        ctx.start = 0;
+        ctx.id = 0;
+        if (gotoEnd && pos) {
+            setScroll($el, pos.left, 'x');
+            setScroll($el, pos.top, 'y');
+        }
+        this.complete();
+    };
+    /**
+     * Update options.
+     */
+    SweetScroll.prototype.update = function (options) {
+        if (this.$el) {
+            var opts = __assign({}, this.opts, options);
+            this.stop();
+            this.unbind(true, true);
+            this.opts = opts;
+            this.bind(true, false);
+        }
+    };
+    /**
+     * Destroy instance.
+     */
+    SweetScroll.prototype.destroy = function () {
+        if (this.$el) {
+            this.stop();
+            this.unbind(true, true);
+            this.$el = null;
+        }
+    };
+    /**
+     * Callback methods.
+     */
+    /* tslint:disable:no-empty */
+    SweetScroll.prototype.onBefore = function (_, __) { return true; };
+    SweetScroll.prototype.onStep = function (_) { };
+    SweetScroll.prototype.onAfter = function (_, __) { };
+    SweetScroll.prototype.onCancel = function () { };
+    SweetScroll.prototype.onComplete = function (_) { };
+    /* tslint:enable */
+    /**
+     * Start scrolling animation.
+     */
+    SweetScroll.prototype.start = function (opts) {
+        var ctx = this.ctx;
+        ctx.opts = opts;
+        ctx.progress = true;
+        ctx.easing = isFunction(opts.easing)
+            ? opts.easing
+            : easings[opts.easing];
+        // Update start offset.
+        var $container = this.$el;
+        var offset = ctx.pos;
+        var start = {
+            top: getScroll($container, 'y'),
+            left: getScroll($container, 'x'),
+        };
+        if (opts.quickMode) {
+            var _a = getViewportAndElementSizes($container).viewport, width = _a.width, height = _a.height;
+            if (Math.abs(start.top - offset.top) > height) {
+                start.top = start.top > offset.top ? offset.top + height : offset.top - height;
+            }
+            if (Math.abs(start.left - offset.left) > width) {
+                start.left = start.left > offset.left ? offset.left + width : offset.left - width;
+            }
+        }
+        ctx.startPos = start;
+        // Loop
+        ctx.id = SweetScroll.raf(this.loop);
+    };
+    /**
+     * Handle the completion of scrolling animation.
+     */
+    SweetScroll.prototype.complete = function () {
+        var _a = this, $el = _a.$el, ctx = _a.ctx;
+        var hash = ctx.hash, cancel = ctx.cancel, opts = ctx.opts, pos = ctx.pos, $trigger = ctx.$trigger;
+        if (!$el || !opts) {
+            return;
+        }
+        if (hash != null && hash !== window.location.hash) {
+            var updateURL = opts.updateURL;
+            if (canUseDOM && canUseHistory && updateURL !== false) {
+                window.history[updateURL === 'replace' ? 'replaceState' : 'pushState'](null, '', hash);
+            }
+        }
+        this.unbind(false, true);
+        ctx.opts = null;
+        ctx.$trigger = null;
+        if (cancel) {
+            this.hook(opts, 'cancel');
+        }
+        else {
+            this.hook(opts, 'after', pos, $trigger);
+        }
+        this.hook(opts, 'complete', cancel);
+    };
+    /**
+     * Callback function and method call.
+     */
+    SweetScroll.prototype.hook = function (options, type) {
+        var args = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            args[_i - 2] = arguments[_i];
+        }
+        var callback = options[type];
+        var callbackResult;
+        var methodResult;
+        // callback
+        if (isFunction(callback)) {
+            callbackResult = callback.apply(this, args.concat([this]));
+        }
+        // method
+        methodResult = this["on" + (type[0].toUpperCase() + type.slice(1))].apply(this, args);
+        return callbackResult !== undefined ? callbackResult : methodResult;
+    };
+    /**
+     * Bind events of container element.
+     */
+    SweetScroll.prototype.bind = function (click, stop) {
+        var _a = this, $el = _a.$el, opts = _a.ctx.opts;
+        if ($el) {
+            if (click) {
+                addEvent($el, CONTAINER_CLICK_EVENT, this.handleClick, false);
+            }
+            if (stop) {
+                addEvent($el, CONTAINER_STOP_EVENT, this.handleStop, opts ? opts.cancellable : true);
+            }
+        }
+    };
+    /**
+     * Unbind events of container element.
+     */
+    SweetScroll.prototype.unbind = function (click, stop) {
+        var _a = this, $el = _a.$el, opts = _a.ctx.opts;
+        if ($el) {
+            if (click) {
+                removeEvent($el, CONTAINER_CLICK_EVENT, this.handleClick, false);
+            }
+            if (stop) {
+                removeEvent($el, CONTAINER_STOP_EVENT, this.handleStop, opts ? opts.cancellable : true);
+            }
+        }
+    };
+    /**
+     * You can set Polyfill (or Ponyfill) for browsers that do not support requestAnimationFrame.
+     */
+    SweetScroll.raf = raf;
+    SweetScroll.caf = caf;
+    return SweetScroll;
+}());
+
+return SweetScroll;
+
+})));
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _chainFunction = __webpack_require__(45);
+
+var _chainFunction2 = _interopRequireDefault(_chainFunction);
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(8);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _warning = __webpack_require__(46);
+
+var _warning2 = _interopRequireDefault(_warning);
+
+var _ChildMapping = __webpack_require__(47);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var propTypes = {
+  component: _propTypes2.default.any,
+  childFactory: _propTypes2.default.func,
+  children: _propTypes2.default.node
+};
+
+var defaultProps = {
+  component: 'span',
+  childFactory: function childFactory(child) {
+    return child;
+  }
+};
+
+var TransitionGroup = function (_React$Component) {
+  _inherits(TransitionGroup, _React$Component);
+
+  function TransitionGroup(props, context) {
+    _classCallCheck(this, TransitionGroup);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    _this.performAppear = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillAppear) {
+        component.componentWillAppear(_this._handleDoneAppearing.bind(_this, key, component));
+      } else {
+        _this._handleDoneAppearing(key, component);
+      }
+    };
+
+    _this._handleDoneAppearing = function (key, component) {
+      if (component.componentDidAppear) {
+        component.componentDidAppear();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+        // This was removed before it had fully appeared. Remove it.
+        _this.performLeave(key, component);
+      }
+    };
+
+    _this.performEnter = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillEnter) {
+        component.componentWillEnter(_this._handleDoneEntering.bind(_this, key, component));
+      } else {
+        _this._handleDoneEntering(key, component);
+      }
+    };
+
+    _this._handleDoneEntering = function (key, component) {
+      if (component.componentDidEnter) {
+        component.componentDidEnter();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
+        // This was removed before it had fully entered. Remove it.
+        _this.performLeave(key, component);
+      }
+    };
+
+    _this.performLeave = function (key, component) {
+      _this.currentlyTransitioningKeys[key] = true;
+
+      if (component.componentWillLeave) {
+        component.componentWillLeave(_this._handleDoneLeaving.bind(_this, key, component));
+      } else {
+        // Note that this is somewhat dangerous b/c it calls setState()
+        // again, effectively mutating the component before all the work
+        // is done.
+        _this._handleDoneLeaving(key, component);
+      }
+    };
+
+    _this._handleDoneLeaving = function (key, component) {
+      if (component.componentDidLeave) {
+        component.componentDidLeave();
+      }
+
+      delete _this.currentlyTransitioningKeys[key];
+
+      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
+
+      if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
+        // This entered again before it fully left. Add it again.
+        _this.keysToEnter.push(key);
+      } else {
+        _this.setState(function (state) {
+          var newChildren = _extends({}, state.children);
+          delete newChildren[key];
+          return { children: newChildren };
+        });
+      }
+    };
+
+    _this.childRefs = Object.create(null);
+
+    _this.state = {
+      children: (0, _ChildMapping.getChildMapping)(props.children)
+    };
+    return _this;
+  }
+
+  TransitionGroup.prototype.componentWillMount = function componentWillMount() {
+    this.currentlyTransitioningKeys = {};
+    this.keysToEnter = [];
+    this.keysToLeave = [];
+  };
+
+  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
+    var initialChildMapping = this.state.children;
+    for (var key in initialChildMapping) {
+      if (initialChildMapping[key]) {
+        this.performAppear(key, this.childRefs[key]);
+      }
+    }
+  };
+
+  TransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+    var nextChildMapping = (0, _ChildMapping.getChildMapping)(nextProps.children);
+    var prevChildMapping = this.state.children;
+
+    this.setState({
+      children: (0, _ChildMapping.mergeChildMappings)(prevChildMapping, nextChildMapping)
+    });
+
+    for (var key in nextChildMapping) {
+      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
+      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
+        this.keysToEnter.push(key);
+      }
+    }
+
+    for (var _key in prevChildMapping) {
+      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(_key);
+      if (prevChildMapping[_key] && !hasNext && !this.currentlyTransitioningKeys[_key]) {
+        this.keysToLeave.push(_key);
+      }
+    }
+
+    // If we want to someday check for reordering, we could do it here.
+  };
+
+  TransitionGroup.prototype.componentDidUpdate = function componentDidUpdate() {
+    var _this2 = this;
+
+    var keysToEnter = this.keysToEnter;
+    this.keysToEnter = [];
+    keysToEnter.forEach(function (key) {
+      return _this2.performEnter(key, _this2.childRefs[key]);
+    });
+
+    var keysToLeave = this.keysToLeave;
+    this.keysToLeave = [];
+    keysToLeave.forEach(function (key) {
+      return _this2.performLeave(key, _this2.childRefs[key]);
+    });
+  };
+
+  TransitionGroup.prototype.render = function render() {
+    var _this3 = this;
+
+    // TODO: we could get rid of the need for the wrapper node
+    // by cloning a single child
+    var childrenToRender = [];
+
+    var _loop = function _loop(key) {
+      var child = _this3.state.children[key];
+      if (child) {
+        var isCallbackRef = typeof child.ref !== 'string';
+        var factoryChild = _this3.props.childFactory(child);
+        var ref = function ref(r) {
+          _this3.childRefs[key] = r;
+        };
+
+        process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(isCallbackRef, 'string refs are not supported on children of TransitionGroup and will be ignored. ' + 'Please use a callback ref instead: https://facebook.github.io/react/docs/refs-and-the-dom.html#the-ref-callback-attribute') : void 0;
+
+        // Always chaining the refs leads to problems when the childFactory
+        // wraps the child. The child ref callback gets called twice with the
+        // wrapper and the child. So we only need to chain the ref if the
+        // factoryChild is not different from child.
+        if (factoryChild === child && isCallbackRef) {
+          ref = (0, _chainFunction2.default)(child.ref, ref);
+        }
+
+        // You may need to apply reactive updates to a child as it is leaving.
+        // The normal React way to do it won't work since the child will have
+        // already been removed. In case you need this behavior you can provide
+        // a childFactory function to wrap every child, even the ones that are
+        // leaving.
+        childrenToRender.push(_react2.default.cloneElement(factoryChild, {
+          key: key,
+          ref: ref
+        }));
+      }
+    };
+
+    for (var key in this.state.children) {
+      _loop(key);
+    }
+
+    // Do not forward TransitionGroup props to primitive DOM nodes
+    var props = _extends({}, this.props);
+    delete props.transitionLeave;
+    delete props.transitionName;
+    delete props.transitionAppear;
+    delete props.transitionEnter;
+    delete props.childFactory;
+    delete props.transitionLeaveTimeout;
+    delete props.transitionEnterTimeout;
+    delete props.transitionAppearTimeout;
+    delete props.component;
+
+    return _react2.default.createElement(this.props.component, props, childrenToRender);
+  };
+
+  return TransitionGroup;
+}(_react2.default.Component);
+
+TransitionGroup.displayName = 'TransitionGroup';
+
+
+TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
+TransitionGroup.defaultProps = defaultProps;
+
+exports.default = TransitionGroup;
+module.exports = exports['default'];
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+module.exports = exports['default'];
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.nameShape = undefined;
+exports.transitionTimeout = transitionTimeout;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(8);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function transitionTimeout(transitionType) {
+  var timeoutPropName = 'transition' + transitionType + 'Timeout';
+  var enabledPropName = 'transition' + transitionType;
+
+  return function (props) {
+    // If the transition is enabled
+    if (props[enabledPropName]) {
+      // If no timeout duration is provided
+      if (props[timeoutPropName] == null) {
+        return new Error(timeoutPropName + ' wasn\'t supplied to CSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
+
+        // If the duration isn't a number
+      } else if (typeof props[timeoutPropName] !== 'number') {
+        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
+      }
+    }
+
+    return null;
+  };
+}
+
+var nameShape = exports.nameShape = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  leave: _propTypes2.default.string,
+  active: _propTypes2.default.string
+}), _propTypes2.default.shape({
+  enter: _propTypes2.default.string,
+  enterActive: _propTypes2.default.string,
+  leave: _propTypes2.default.string,
+  leaveActive: _propTypes2.default.string,
+  appear: _propTypes2.default.string,
+  appearActive: _propTypes2.default.string
+})]);
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -990,18 +2090,18 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(7);
+var _reactDom = __webpack_require__(5);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _mainReact = __webpack_require__(27);
+var _mainReact = __webpack_require__(32);
 
 var _mainReact2 = _interopRequireDefault(_mainReact);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 16 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1014,7 +2114,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(3),n=__webpack_require__(6),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -1029,7 +2129,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 17 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1051,11 +2151,11 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var _assign = __webpack_require__(3);
-var emptyObject = __webpack_require__(4);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
+var emptyObject = __webpack_require__(6);
+var invariant = __webpack_require__(4);
+var warning = __webpack_require__(7);
 var emptyFunction = __webpack_require__(2);
-var checkPropTypes = __webpack_require__(8);
+var checkPropTypes = __webpack_require__(9);
 
 // TODO: this is special because it gets imported during build.
 
@@ -2394,26 +3494,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
-
-module.exports = ReactPropTypesSecret;
-
-
-/***/ }),
-/* 19 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2429,7 +3510,7 @@ module.exports = ReactPropTypesSecret;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(0),l=__webpack_require__(9),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(10),da=__webpack_require__(11),ea=__webpack_require__(12),fa=__webpack_require__(13),ia=__webpack_require__(14),D=__webpack_require__(4);
+var aa=__webpack_require__(0),l=__webpack_require__(11),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(12),da=__webpack_require__(13),ea=__webpack_require__(14),fa=__webpack_require__(15),ia=__webpack_require__(16),D=__webpack_require__(6);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2649,7 +3730,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 20 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2664,7 +3745,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(21);
+var isNode = __webpack_require__(26);
 
 /**
  * @param {*} object The object to check.
@@ -2677,7 +3758,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 21 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2705,7 +3786,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 22 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2727,20 +3808,20 @@ if (process.env.NODE_ENV !== "production") {
 'use strict';
 
 var React = __webpack_require__(0);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
-var ExecutionEnvironment = __webpack_require__(9);
+var invariant = __webpack_require__(4);
+var warning = __webpack_require__(7);
+var ExecutionEnvironment = __webpack_require__(11);
 var _assign = __webpack_require__(3);
 var emptyFunction = __webpack_require__(2);
-var EventListener = __webpack_require__(10);
-var getActiveElement = __webpack_require__(11);
-var shallowEqual = __webpack_require__(12);
-var containsNode = __webpack_require__(13);
-var focusNode = __webpack_require__(14);
-var emptyObject = __webpack_require__(4);
-var checkPropTypes = __webpack_require__(8);
-var hyphenateStyleName = __webpack_require__(23);
-var camelizeStyleName = __webpack_require__(25);
+var EventListener = __webpack_require__(12);
+var getActiveElement = __webpack_require__(13);
+var shallowEqual = __webpack_require__(14);
+var containsNode = __webpack_require__(15);
+var focusNode = __webpack_require__(16);
+var emptyObject = __webpack_require__(6);
+var checkPropTypes = __webpack_require__(9);
+var hyphenateStyleName = __webpack_require__(28);
+var camelizeStyleName = __webpack_require__(30);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -18107,7 +19188,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 23 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18122,7 +19203,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(24);
+var hyphenate = __webpack_require__(29);
 
 var msPattern = /^ms-/;
 
@@ -18149,7 +19230,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 24 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18185,7 +19266,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 25 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18200,7 +19281,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(26);
+var camelize = __webpack_require__(31);
 
 var msPattern = /^-ms-/;
 
@@ -18228,7 +19309,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 26 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18263,7 +19344,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 27 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18275,19 +19356,19 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(7);
+var _reactDom = __webpack_require__(5);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _SideBar = __webpack_require__(28);
+var _SideBar = __webpack_require__(33);
 
 var _SideBar2 = _interopRequireDefault(_SideBar);
 
-var _TopBar = __webpack_require__(29);
+var _TopBar = __webpack_require__(34);
 
 var _TopBar2 = _interopRequireDefault(_TopBar);
 
-var _feed = __webpack_require__(30);
+var _feed = __webpack_require__(35);
 
 var _feed2 = _interopRequireDefault(_feed);
 
@@ -18350,7 +19431,7 @@ var Page = function (_React$Component) {
 _reactDom2.default.render(_react2.default.createElement(Page, null), document.getElementById('root'));
 
 /***/ }),
-/* 28 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18529,7 +19610,7 @@ var Nav = function (_React$Component3) {
 exports.default = Nav;
 
 /***/ }),
-/* 29 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18545,7 +19626,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(7);
+var _reactDom = __webpack_require__(5);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -18604,7 +19685,7 @@ var NavTopBar = function (_React$Component) {
 exports.default = NavTopBar;
 
 /***/ }),
-/* 30 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18620,27 +19701,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _bricks = __webpack_require__(31);
+var _bricks = __webpack_require__(36);
 
 var _bricks2 = _interopRequireDefault(_bricks);
 
-var _Header = __webpack_require__(32);
+var _Header = __webpack_require__(37);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _ResponsiveWrapper = __webpack_require__(34);
+var _ResponsiveWrapper = __webpack_require__(39);
 
 var _ResponsiveWrapper2 = _interopRequireDefault(_ResponsiveWrapper);
 
-var _reactDom = __webpack_require__(7);
+var _reactDom = __webpack_require__(5);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _sweetScroll = __webpack_require__(35);
+var _sweetScroll = __webpack_require__(17);
 
 var _sweetScroll2 = _interopRequireDefault(_sweetScroll);
 
-var _FeedNav = __webpack_require__(36);
+var _FeedNav = __webpack_require__(40);
 
 var _FeedNav2 = _interopRequireDefault(_FeedNav);
 
@@ -18850,7 +19931,7 @@ var Feed = function (_React$Component4) {
 exports.default = Feed;
 
 /***/ }),
-/* 31 */
+/* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19135,7 +20216,7 @@ var bricks = function bricks() {
 
 
 /***/ }),
-/* 32 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19150,10 +20231,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _TransitionTo = __webpack_require__(33);
-
-var _TransitionTo2 = _interopRequireDefault(_TransitionTo);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19211,56 +20288,8 @@ var Header = function (_React$Component) {
 exports.default = Header;
 
 /***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TransitionTo = function (_React$Component) {
-    _inherits(TransitionTo, _React$Component);
-
-    function TransitionTo() {
-        _classCallCheck(this, TransitionTo);
-
-        return _possibleConstructorReturn(this, (TransitionTo.__proto__ || Object.getPrototypeOf(TransitionTo)).apply(this, arguments));
-    }
-
-    _createClass(TransitionTo, [{
-        key: "render",
-        value: function render() {
-            var style = {
-                background: "linear-gradient(transparent, " + this.props.color + ")"
-            };
-            return _react2.default.createElement("div", { style: style, className: "transitionTo" });
-        }
-    }]);
-
-    return TransitionTo;
-}(_react2.default.Component);
-
-exports.default = TransitionTo;
-
-/***/ }),
-/* 34 */
+/* 38 */,
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19310,709 +20339,7 @@ var ResponsiveWrapper = function (_React$Component) {
 exports.default = ResponsiveWrapper;
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/*! @preserve sweet-scroll v3.0.0 - tsuyoshiwada | MIT License */
-(function (global, factory) {
-	 true ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.SweetScroll = factory());
-}(this, (function () { 'use strict';
-
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
-/* global Reflect, Promise */
-
-
-
-var __assign = Object.assign || function __assign(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-    }
-    return t;
-};
-
-// @link https://github.com/JedWatson/exenv/blob/master/index.js
-var canUseDOM = !!(typeof window !== 'undefined' &&
-    window.document &&
-    window.document.createElement);
-var canUseHistory = !canUseDOM
-    ? false
-    : (window.history &&
-        'pushState' in window.history &&
-        window.location.protocol !== 'file:');
-var canUsePassiveOption = (function () {
-    var support = false;
-    if (!canUseDOM) {
-        return support;
-    }
-    /* tslint:disable:no-empty */
-    try {
-        window.addEventListener('test', null, Object.defineProperty({}, 'passive', {
-            get: function () {
-                support = true;
-            },
-        }));
-    }
-    catch (e) { }
-    /* tslint:enable */
-    return support;
-})();
-
-var isString = function (obj) { return typeof obj === 'string'; };
-var isFunction = function (obj) { return typeof obj === 'function'; };
-var isArray = function (obj) { return Array.isArray(obj); };
-var isNumeric = function (obj) { return !isArray(obj) && ((obj - parseFloat(obj)) + 1) >= 0; };
-var isElement = function (obj) { return obj instanceof Element; };
-var hasProp = function (obj, key) { return (obj && obj.hasOwnProperty(key)); };
-
-var raf = canUseDOM ? window.requestAnimationFrame.bind(window) : null;
-var caf = canUseDOM ? window.cancelAnimationFrame.bind(window) : null;
-
-/* tslint:disable:curly */
-/* tslint:disable:no-conditional-assignment */
-var cos = Math.cos;
-var sin = Math.sin;
-var pow = Math.pow;
-var sqrt = Math.sqrt;
-var PI = Math.PI;
-var easings = {
-    linear: function (p) { return p; },
-    easeInQuad: function (_, t, b, c, d) { return (c * (t /= d) * t + b); },
-    easeOutQuad: function (_, t, b, c, d) { return (-c * (t /= d) * (t - 2) + b); },
-    easeInOutQuad: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t + b : -c / 2 * ((--t) * (t - 2) - 1) + b); },
-    easeInCubic: function (_, t, b, c, d) { return (c * (t /= d) * t * t + b); },
-    easeOutCubic: function (_, t, b, c, d) { return (c * ((t = t / d - 1) * t * t + 1) + b); },
-    easeInOutCubic: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t + b : c / 2 * ((t -= 2) * t * t + 2) + b); },
-    easeInQuart: function (_, t, b, c, d) { return (c * (t /= d) * t * t * t + b); },
-    easeOutQuart: function (_, t, b, c, d) { return (-c * ((t = t / d - 1) * t * t * t - 1) + b); },
-    easeInOutQuart: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t * t + b : -c / 2 * ((t -= 2) * t * t * t - 2) + b); },
-    easeInQuint: function (_, t, b, c, d) { return (c * (t /= d) * t * t * t * t + b); },
-    easeOutQuint: function (_, t, b, c, d) { return (c * ((t = t / d - 1) * t * t * t * t + 1) + b); },
-    easeInOutQuint: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? c / 2 * t * t * t * t * t + b : c / 2 * ((t -= 2) * t * t * t * t + 2) + b); },
-    easeInSine: function (_, t, b, c, d) { return (-c * cos(t / d * (PI / 2)) + c + b); },
-    easeOutSine: function (_, t, b, c, d) { return (c * sin(t / d * (PI / 2)) + b); },
-    easeInOutSine: function (_, t, b, c, d) { return (-c / 2 * (cos(PI * t / d) - 1) + b); },
-    easeInExpo: function (_, t, b, c, d) { return ((t === 0) ? b : c * pow(2, 10 * (t / d - 1)) + b); },
-    easeOutExpo: function (_, t, b, c, d) { return ((t === d) ? b + c : c * (-pow(2, -10 * t / d) + 1) + b); },
-    easeInOutExpo: function (_, t, b, c, d) {
-        if (t === 0)
-            return b;
-        if (t === d)
-            return b + c;
-        if ((t /= d / 2) < 1)
-            return c / 2 * pow(2, 10 * (t - 1)) + b;
-        return c / 2 * (-pow(2, -10 * --t) + 2) + b;
-    },
-    easeInCirc: function (_, t, b, c, d) { return (-c * (sqrt(1 - (t /= d) * t) - 1) + b); },
-    easeOutCirc: function (_, t, b, c, d) { return (c * sqrt(1 - (t = t / d - 1) * t) + b); },
-    easeInOutCirc: function (_, t, b, c, d) { return ((t /= d / 2) < 1 ? -c / 2 * (sqrt(1 - t * t) - 1) + b : c / 2 * (sqrt(1 - (t -= 2) * t) + 1) + b); },
-};
-
-var directionMethodMap = {
-    y: 'scrollTop',
-    x: 'scrollLeft',
-};
-var directionPropMap = {
-    y: 'pageYOffset',
-    x: 'pageXOffset',
-};
-var getScroll = function ($el, direction) { return ($el[directionMethodMap[direction]]); };
-var setScroll = function ($el, offset, direction) {
-    $el[directionMethodMap[direction]] = offset;
-};
-var getOffset = function ($el, $context) {
-    var rect = $el.getBoundingClientRect();
-    if (rect.width || rect.height) {
-        var scroll_1 = { top: 0, left: 0 };
-        var $ctx = void 0;
-        if (isRootContainer($context)) {
-            $ctx = document.documentElement;
-            scroll_1.top = window[directionPropMap.y];
-            scroll_1.left = window[directionPropMap.x];
-        }
-        else {
-            $ctx = $context;
-            var cRect = $ctx.getBoundingClientRect();
-            scroll_1.top = (cRect.top * -1) + $ctx[directionMethodMap.y];
-            scroll_1.left = (cRect.left * -1) + $ctx[directionMethodMap.x];
-        }
-        return {
-            top: (rect.top + scroll_1.top) - $ctx.clientTop,
-            left: (rect.left + scroll_1.left) - $ctx.clientLeft,
-        };
-    }
-    return rect;
-};
-
-var $$ = function (selector) { return (Array.prototype.slice.call((!selector ? [] : document.querySelectorAll(selector)))); };
-var $ = function (selector) { return ($$(selector).shift() || null); };
-var matches = function ($el, selector) {
-    if (isElement(selector)) {
-        return $el === selector;
-    }
-    var results = $$(selector);
-    var i = results.length;
-    // tslint:disable-next-line no-empty
-    while (--i >= 0 && results[i] !== $el) { }
-    return i > -1;
-};
-var isRootContainer = function ($el) { return ($el === document.documentElement || $el === document.body); };
-var findScrollable = function (selectors, direction) {
-    var method = directionMethodMap[direction];
-    var $elements = isElement(selectors) ? [selectors] : $$(selectors);
-    var $div = document.createElement('div');
-    for (var i = 0; i < $elements.length; i += 1) {
-        var $el = $elements[i];
-        var $result = null;
-        if ($el[method] > 0) {
-            $result = $el;
-        }
-        else {
-            var outerWidth_1 = window.outerWidth, innerWidth_1 = window.innerWidth;
-            var zoom = outerWidth_1 ? outerWidth_1 / innerWidth_1 : 1;
-            $div.style.width = $el.clientWidth + 1 + "px";
-            $div.style.height = $el.clientHeight + 1 + "px";
-            $el.appendChild($div);
-            $el[method] = 1.5 / zoom;
-            if ($el[method] > 0) {
-                $result = $el;
-            }
-            $el[method] = 0;
-            $el.removeChild($div);
-        }
-        if ($result) {
-            return $result;
-        }
-    }
-    return null;
-};
-
-var getHeight = function ($el) { return (Math.max($el.scrollHeight, $el.clientHeight, $el.offsetHeight)); };
-var getWidth = function ($el) { return (Math.max($el.scrollWidth, $el.clientWidth, $el.offsetWidth)); };
-var getSize = function ($el) { return ({
-    width: getWidth($el),
-    height: getHeight($el),
-}); };
-var getViewportAndElementSizes = function ($el) {
-    var isRoot = isRootContainer($el);
-    return {
-        viewport: {
-            width: isRoot
-                ? Math.min(window.innerWidth, document.documentElement.clientWidth)
-                : $el.clientWidth,
-            height: isRoot ? window.innerHeight : $el.clientHeight,
-        },
-        size: isRoot
-            ? {
-                width: Math.max(getWidth(document.body), getWidth(document.documentElement)),
-                height: Math.max(getHeight(document.body), getHeight(document.documentElement)),
-            }
-            : getSize($el),
-    };
-};
-
-var wheelEventName = (function () {
-    if (!canUseDOM) {
-        return 'wheel';
-    }
-    return 'onwheel' in document ? 'wheel' : 'mousewheel';
-})();
-var eventName = function (name) { return (name === 'wheel' ? wheelEventName : name); };
-var apply = function ($el, method, event, listener, passive) {
-    event.split(' ').forEach(function (name) {
-        $el[method](eventName(name), listener, canUsePassiveOption ? { passive: passive } : false);
-    });
-};
-var addEvent = function ($el, event, listener, passive) {
-    apply($el, 'addEventListener', event, listener, passive);
-};
-var removeEvent = function ($el, event, listener, passive) {
-    apply($el, 'removeEventListener', event, listener, passive);
-};
-
-var reRelativeToken = /^(\+|-)=(\d+(?:\.\d+)?)$/;
-var parseCoordinate = function (coordinate, enableVertical) {
-    var res = { top: 0, left: 0, relative: false };
-    // Object ({ top: {n}, left: {n} })
-    if (hasProp(coordinate, 'top') || hasProp(coordinate, 'left')) {
-        res = __assign({}, res, coordinate);
-        // Array ([{n}, [{n}])
-    }
-    else if (isArray(coordinate)) {
-        if (coordinate.length > 1) {
-            res.top = coordinate[0];
-            res.left = coordinate[1];
-        }
-        else if (coordinate.length === 1) {
-            res.top = enableVertical ? coordinate[0] : 0;
-            res.left = !enableVertical ? coordinate[0] : 0;
-        }
-        else {
-            return null;
-        }
-        // Number
-    }
-    else if (isNumeric(coordinate)) {
-        if (enableVertical) {
-            res.top = coordinate;
-        }
-        else {
-            res.left = coordinate;
-        }
-        // String ('+={n}', '-={n}')
-    }
-    else if (isString(coordinate)) {
-        var m = coordinate.trim().match(reRelativeToken);
-        if (!m) {
-            return null;
-        }
-        var op = m[1];
-        var val = parseInt(m[2], 10);
-        if (op === '+') {
-            res.top = enableVertical ? val : 0;
-            res.left = !enableVertical ? val : 0;
-        }
-        else {
-            res.top = enableVertical ? -val : 0;
-            res.left = !enableVertical ? -val : 0;
-        }
-        res.relative = true;
-    }
-    else {
-        return null;
-    }
-    return res;
-};
-
-var defaultOptions = {
-    trigger: '[data-scroll]',
-    header: '[data-scroll-header]',
-    duration: 1000,
-    easing: 'easeOutQuint',
-    offset: 0,
-    vertical: true,
-    horizontal: false,
-    cancellable: true,
-    updateURL: false,
-    preventDefault: true,
-    stopPropagation: true,
-    quickMode: false,
-    // Callbacks
-    before: null,
-    after: null,
-    cancel: null,
-    complete: null,
-    step: null,
-};
-
-var CONTAINER_CLICK_EVENT = 'click';
-var CONTAINER_STOP_EVENT = 'wheel touchstart touchmove';
-var SweetScroll = /** @class */ (function () {
-    /**
-     * Constructor
-     */
-    function SweetScroll(options, container) {
-        var _this = this;
-        this.ctx = {
-            $trigger: null,
-            opts: null,
-            progress: false,
-            pos: null,
-            startPos: null,
-            easing: null,
-            start: 0,
-            id: 0,
-            cancel: false,
-            hash: null,
-        };
-        /**
-         * Handle each frame of the animation.
-         */
-        this.loop = function (time) {
-            var _a = _this, $el = _a.$el, ctx = _a.ctx;
-            if (!ctx.start) {
-                ctx.start = time;
-            }
-            if (!ctx.progress || !$el) {
-                _this.stop();
-                return;
-            }
-            var options = ctx.opts;
-            var offset = ctx.pos;
-            var start = ctx.start;
-            var startOffset = ctx.startPos;
-            var easing = ctx.easing;
-            var duration = options.duration;
-            var directionMap = { top: 'y', left: 'x' };
-            var timeElapsed = time - start;
-            var t = Math.min(1, Math.max(timeElapsed / duration, 0));
-            Object.keys(offset).forEach(function (key) {
-                var value = offset[key];
-                var initial = startOffset[key];
-                var delta = value - initial;
-                if (delta !== 0) {
-                    var val = easing(t, duration * t, 0, 1, duration);
-                    setScroll($el, Math.round(initial + delta * val), directionMap[key]);
-                }
-            });
-            if (timeElapsed <= duration) {
-                _this.hook(options, 'step', t);
-                ctx.id = SweetScroll.raf(_this.loop);
-            }
-            else {
-                _this.stop(true);
-            }
-        };
-        /**
-         * Handling of container click event.
-         */
-        this.handleClick = function (e) {
-            var opts = _this.opts;
-            var $el = e.target;
-            for (; $el && $el !== document; $el = $el.parentNode) {
-                if (!matches($el, opts.trigger)) {
-                    continue;
-                }
-                var dataOptions = JSON.parse($el.getAttribute('data-scroll-options') || '{}');
-                var data = $el.getAttribute('data-scroll');
-                var to = data || $el.getAttribute('href');
-                var options = __assign({}, opts, dataOptions);
-                var preventDefault = options.preventDefault, stopPropagation = options.stopPropagation, vertical = options.vertical, horizontal = options.horizontal;
-                if (preventDefault) {
-                    e.preventDefault();
-                }
-                if (stopPropagation) {
-                    e.stopPropagation();
-                }
-                // Passes the trigger element to callback
-                _this.ctx.$trigger = $el;
-                if (horizontal && vertical) {
-                    _this.to(to, options);
-                }
-                else if (vertical) {
-                    _this.toTop(to, options);
-                }
-                else if (horizontal) {
-                    _this.toLeft(to, options);
-                }
-            }
-        };
-        /**
-         * Handling of container stop events.
-         */
-        this.handleStop = function (e) {
-            var ctx = _this.ctx;
-            var opts = ctx.opts;
-            if (opts && opts.cancellable) {
-                ctx.cancel = true;
-                _this.stop();
-            }
-            else {
-                e.preventDefault();
-            }
-        };
-        var opts = __assign({}, defaultOptions, (options || {}));
-        var vertical = opts.vertical, horizontal = opts.horizontal;
-        var selector = container === undefined ? 'body,html' : container;
-        var $container = null;
-        if (canUseDOM) {
-            if (vertical) {
-                $container = findScrollable(selector, 'y');
-            }
-            if (!$container && horizontal) {
-                $container = findScrollable(selector, 'x');
-            }
-        }
-        if ($container) {
-            this.opts = opts;
-            this.$el = $container;
-            this.bind(true, false);
-        }
-    }
-    /**
-     * SweetScroll instance factory.
-     */
-    SweetScroll.create = function (options, container) {
-        return new SweetScroll(options, container);
-    };
-    /**
-     * Scroll animation to the specified position.
-     */
-    SweetScroll.prototype.to = function (distance, options) {
-        if (!canUseDOM) {
-            return;
-        }
-        var _a = this, $el = _a.$el, ctx = _a.ctx, currentOptions = _a.opts;
-        var $trigger = ctx.$trigger;
-        var opts = __assign({}, currentOptions, options || {});
-        var optOffset = opts.offset, vertical = opts.vertical, horizontal = opts.horizontal;
-        var $header = isElement(opts.header) ? opts.header : $(opts.header);
-        var hash = isString(distance) && /^#/.test(distance) ? distance : null;
-        ctx.opts = opts; // Temporary options
-        ctx.cancel = false; // Disable the call flag of `cancel`
-        ctx.hash = hash;
-        // Stop current animation
-        this.stop();
-        // Does not move if the container is not found
-        if (!$el) {
-            return;
-        }
-        // Get scroll offset
-        var offset = parseCoordinate(optOffset, vertical);
-        var coordinate = parseCoordinate(distance, vertical);
-        var scroll = { top: 0, left: 0 };
-        if (coordinate) {
-            if (coordinate.relative) {
-                var current = getScroll($el, vertical ? 'y' : 'x');
-                scroll.top = vertical ? current + coordinate.top : coordinate.top;
-                scroll.left = !vertical ? current + coordinate.left : coordinate.left;
-            }
-            else {
-                scroll = coordinate;
-            }
-        }
-        else if (isString(distance) && distance !== '#') {
-            var $target = $(distance);
-            if (!$target) {
-                return;
-            }
-            scroll = getOffset($target, $el);
-        }
-        if (offset) {
-            scroll.top += offset.top;
-            scroll.left += offset.left;
-        }
-        if ($header) {
-            scroll.top = Math.max(0, scroll.top - getSize($header).height);
-        }
-        // Normalize scroll offset
-        var _b = getViewportAndElementSizes($el), viewport = _b.viewport, size = _b.size;
-        scroll.top = vertical
-            ? Math.max(0, Math.min(size.height - viewport.height, scroll.top))
-            : getScroll($el, 'y');
-        scroll.left = horizontal
-            ? Math.max(0, Math.min(size.width - viewport.width, scroll.left))
-            : getScroll($el, 'x');
-        // Call `before`
-        // Stop scrolling when it returns false
-        if (this.hook(opts, 'before', scroll, $trigger) === false) {
-            ctx.opts = null;
-            return;
-        }
-        // Set offset
-        ctx.pos = scroll;
-        // Run animation!!
-        this.start(opts);
-        // Bind stop events
-        this.bind(false, true);
-    };
-    /**
-     * Scroll animation to specified left position.
-     */
-    SweetScroll.prototype.toTop = function (distance, options) {
-        this.to(distance, __assign({}, options || {}, { vertical: true, horizontal: false }));
-    };
-    /**
-     * Scroll animation to specified top position.
-     */
-    SweetScroll.prototype.toLeft = function (distance, options) {
-        this.to(distance, __assign({}, options || {}, { vertical: false, horizontal: true }));
-    };
-    /**
-     * Scroll animation to specified element.
-     */
-    SweetScroll.prototype.toElement = function ($element, options) {
-        var $el = this.$el;
-        if (!canUseDOM || !$el) {
-            return;
-        }
-        this.to(getOffset($element, $el), options || {});
-    };
-    /**
-     * Stop the current scroll animation.
-     */
-    SweetScroll.prototype.stop = function (gotoEnd) {
-        if (gotoEnd === void 0) { gotoEnd = false; }
-        var _a = this, $el = _a.$el, ctx = _a.ctx;
-        var pos = ctx.pos;
-        if (!$el || !ctx.progress) {
-            return;
-        }
-        SweetScroll.caf(ctx.id);
-        ctx.progress = false;
-        ctx.start = 0;
-        ctx.id = 0;
-        if (gotoEnd && pos) {
-            setScroll($el, pos.left, 'x');
-            setScroll($el, pos.top, 'y');
-        }
-        this.complete();
-    };
-    /**
-     * Update options.
-     */
-    SweetScroll.prototype.update = function (options) {
-        if (this.$el) {
-            var opts = __assign({}, this.opts, options);
-            this.stop();
-            this.unbind(true, true);
-            this.opts = opts;
-            this.bind(true, false);
-        }
-    };
-    /**
-     * Destroy instance.
-     */
-    SweetScroll.prototype.destroy = function () {
-        if (this.$el) {
-            this.stop();
-            this.unbind(true, true);
-            this.$el = null;
-        }
-    };
-    /**
-     * Callback methods.
-     */
-    /* tslint:disable:no-empty */
-    SweetScroll.prototype.onBefore = function (_, __) { return true; };
-    SweetScroll.prototype.onStep = function (_) { };
-    SweetScroll.prototype.onAfter = function (_, __) { };
-    SweetScroll.prototype.onCancel = function () { };
-    SweetScroll.prototype.onComplete = function (_) { };
-    /* tslint:enable */
-    /**
-     * Start scrolling animation.
-     */
-    SweetScroll.prototype.start = function (opts) {
-        var ctx = this.ctx;
-        ctx.opts = opts;
-        ctx.progress = true;
-        ctx.easing = isFunction(opts.easing)
-            ? opts.easing
-            : easings[opts.easing];
-        // Update start offset.
-        var $container = this.$el;
-        var offset = ctx.pos;
-        var start = {
-            top: getScroll($container, 'y'),
-            left: getScroll($container, 'x'),
-        };
-        if (opts.quickMode) {
-            var _a = getViewportAndElementSizes($container).viewport, width = _a.width, height = _a.height;
-            if (Math.abs(start.top - offset.top) > height) {
-                start.top = start.top > offset.top ? offset.top + height : offset.top - height;
-            }
-            if (Math.abs(start.left - offset.left) > width) {
-                start.left = start.left > offset.left ? offset.left + width : offset.left - width;
-            }
-        }
-        ctx.startPos = start;
-        // Loop
-        ctx.id = SweetScroll.raf(this.loop);
-    };
-    /**
-     * Handle the completion of scrolling animation.
-     */
-    SweetScroll.prototype.complete = function () {
-        var _a = this, $el = _a.$el, ctx = _a.ctx;
-        var hash = ctx.hash, cancel = ctx.cancel, opts = ctx.opts, pos = ctx.pos, $trigger = ctx.$trigger;
-        if (!$el || !opts) {
-            return;
-        }
-        if (hash != null && hash !== window.location.hash) {
-            var updateURL = opts.updateURL;
-            if (canUseDOM && canUseHistory && updateURL !== false) {
-                window.history[updateURL === 'replace' ? 'replaceState' : 'pushState'](null, '', hash);
-            }
-        }
-        this.unbind(false, true);
-        ctx.opts = null;
-        ctx.$trigger = null;
-        if (cancel) {
-            this.hook(opts, 'cancel');
-        }
-        else {
-            this.hook(opts, 'after', pos, $trigger);
-        }
-        this.hook(opts, 'complete', cancel);
-    };
-    /**
-     * Callback function and method call.
-     */
-    SweetScroll.prototype.hook = function (options, type) {
-        var args = [];
-        for (var _i = 2; _i < arguments.length; _i++) {
-            args[_i - 2] = arguments[_i];
-        }
-        var callback = options[type];
-        var callbackResult;
-        var methodResult;
-        // callback
-        if (isFunction(callback)) {
-            callbackResult = callback.apply(this, args.concat([this]));
-        }
-        // method
-        methodResult = this["on" + (type[0].toUpperCase() + type.slice(1))].apply(this, args);
-        return callbackResult !== undefined ? callbackResult : methodResult;
-    };
-    /**
-     * Bind events of container element.
-     */
-    SweetScroll.prototype.bind = function (click, stop) {
-        var _a = this, $el = _a.$el, opts = _a.ctx.opts;
-        if ($el) {
-            if (click) {
-                addEvent($el, CONTAINER_CLICK_EVENT, this.handleClick, false);
-            }
-            if (stop) {
-                addEvent($el, CONTAINER_STOP_EVENT, this.handleStop, opts ? opts.cancellable : true);
-            }
-        }
-    };
-    /**
-     * Unbind events of container element.
-     */
-    SweetScroll.prototype.unbind = function (click, stop) {
-        var _a = this, $el = _a.$el, opts = _a.ctx.opts;
-        if ($el) {
-            if (click) {
-                removeEvent($el, CONTAINER_CLICK_EVENT, this.handleClick, false);
-            }
-            if (stop) {
-                removeEvent($el, CONTAINER_STOP_EVENT, this.handleStop, opts ? opts.cancellable : true);
-            }
-        }
-    };
-    /**
-     * You can set Polyfill (or Ponyfill) for browsers that do not support requestAnimationFrame.
-     */
-    SweetScroll.raf = raf;
-    SweetScroll.caf = caf;
-    return SweetScroll;
-}());
-
-return SweetScroll;
-
-})));
-
-
-/***/ }),
-/* 36 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20028,7 +20355,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _sweetScroll = __webpack_require__(35);
+var _sweetScroll = __webpack_require__(17);
 
 var _sweetScroll2 = _interopRequireDefault(_sweetScroll);
 
@@ -20318,385 +20645,6 @@ var FeedNav = function (_React$Component5) {
 exports.default = FeedNav;
 
 /***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-if (process.env.NODE_ENV !== 'production') {
-  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
-    Symbol.for &&
-    Symbol.for('react.element')) ||
-    0xeac7;
-
-  var isValidElement = function(object) {
-    return typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE;
-  };
-
-  // By explicitly using `prop-types` you are opting into new development behavior.
-  // http://fb.me/prop-types-in-prod
-  var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(43)(isValidElement, throwOnDirectAccess);
-} else {
-  // By explicitly using `prop-types` you are opting into new production behavior.
-  // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(44)();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-exports.__esModule = true;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _chainFunction = __webpack_require__(45);
-
-var _chainFunction2 = _interopRequireDefault(_chainFunction);
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(37);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _warning = __webpack_require__(46);
-
-var _warning2 = _interopRequireDefault(_warning);
-
-var _ChildMapping = __webpack_require__(47);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var propTypes = {
-  component: _propTypes2.default.any,
-  childFactory: _propTypes2.default.func,
-  children: _propTypes2.default.node
-};
-
-var defaultProps = {
-  component: 'span',
-  childFactory: function childFactory(child) {
-    return child;
-  }
-};
-
-var TransitionGroup = function (_React$Component) {
-  _inherits(TransitionGroup, _React$Component);
-
-  function TransitionGroup(props, context) {
-    _classCallCheck(this, TransitionGroup);
-
-    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
-
-    _this.performAppear = function (key, component) {
-      _this.currentlyTransitioningKeys[key] = true;
-
-      if (component.componentWillAppear) {
-        component.componentWillAppear(_this._handleDoneAppearing.bind(_this, key, component));
-      } else {
-        _this._handleDoneAppearing(key, component);
-      }
-    };
-
-    _this._handleDoneAppearing = function (key, component) {
-      if (component.componentDidAppear) {
-        component.componentDidAppear();
-      }
-
-      delete _this.currentlyTransitioningKeys[key];
-
-      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
-
-      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
-        // This was removed before it had fully appeared. Remove it.
-        _this.performLeave(key, component);
-      }
-    };
-
-    _this.performEnter = function (key, component) {
-      _this.currentlyTransitioningKeys[key] = true;
-
-      if (component.componentWillEnter) {
-        component.componentWillEnter(_this._handleDoneEntering.bind(_this, key, component));
-      } else {
-        _this._handleDoneEntering(key, component);
-      }
-    };
-
-    _this._handleDoneEntering = function (key, component) {
-      if (component.componentDidEnter) {
-        component.componentDidEnter();
-      }
-
-      delete _this.currentlyTransitioningKeys[key];
-
-      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
-
-      if (!currentChildMapping || !currentChildMapping.hasOwnProperty(key)) {
-        // This was removed before it had fully entered. Remove it.
-        _this.performLeave(key, component);
-      }
-    };
-
-    _this.performLeave = function (key, component) {
-      _this.currentlyTransitioningKeys[key] = true;
-
-      if (component.componentWillLeave) {
-        component.componentWillLeave(_this._handleDoneLeaving.bind(_this, key, component));
-      } else {
-        // Note that this is somewhat dangerous b/c it calls setState()
-        // again, effectively mutating the component before all the work
-        // is done.
-        _this._handleDoneLeaving(key, component);
-      }
-    };
-
-    _this._handleDoneLeaving = function (key, component) {
-      if (component.componentDidLeave) {
-        component.componentDidLeave();
-      }
-
-      delete _this.currentlyTransitioningKeys[key];
-
-      var currentChildMapping = (0, _ChildMapping.getChildMapping)(_this.props.children);
-
-      if (currentChildMapping && currentChildMapping.hasOwnProperty(key)) {
-        // This entered again before it fully left. Add it again.
-        _this.keysToEnter.push(key);
-      } else {
-        _this.setState(function (state) {
-          var newChildren = _extends({}, state.children);
-          delete newChildren[key];
-          return { children: newChildren };
-        });
-      }
-    };
-
-    _this.childRefs = Object.create(null);
-
-    _this.state = {
-      children: (0, _ChildMapping.getChildMapping)(props.children)
-    };
-    return _this;
-  }
-
-  TransitionGroup.prototype.componentWillMount = function componentWillMount() {
-    this.currentlyTransitioningKeys = {};
-    this.keysToEnter = [];
-    this.keysToLeave = [];
-  };
-
-  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
-    var initialChildMapping = this.state.children;
-    for (var key in initialChildMapping) {
-      if (initialChildMapping[key]) {
-        this.performAppear(key, this.childRefs[key]);
-      }
-    }
-  };
-
-  TransitionGroup.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-    var nextChildMapping = (0, _ChildMapping.getChildMapping)(nextProps.children);
-    var prevChildMapping = this.state.children;
-
-    this.setState({
-      children: (0, _ChildMapping.mergeChildMappings)(prevChildMapping, nextChildMapping)
-    });
-
-    for (var key in nextChildMapping) {
-      var hasPrev = prevChildMapping && prevChildMapping.hasOwnProperty(key);
-      if (nextChildMapping[key] && !hasPrev && !this.currentlyTransitioningKeys[key]) {
-        this.keysToEnter.push(key);
-      }
-    }
-
-    for (var _key in prevChildMapping) {
-      var hasNext = nextChildMapping && nextChildMapping.hasOwnProperty(_key);
-      if (prevChildMapping[_key] && !hasNext && !this.currentlyTransitioningKeys[_key]) {
-        this.keysToLeave.push(_key);
-      }
-    }
-
-    // If we want to someday check for reordering, we could do it here.
-  };
-
-  TransitionGroup.prototype.componentDidUpdate = function componentDidUpdate() {
-    var _this2 = this;
-
-    var keysToEnter = this.keysToEnter;
-    this.keysToEnter = [];
-    keysToEnter.forEach(function (key) {
-      return _this2.performEnter(key, _this2.childRefs[key]);
-    });
-
-    var keysToLeave = this.keysToLeave;
-    this.keysToLeave = [];
-    keysToLeave.forEach(function (key) {
-      return _this2.performLeave(key, _this2.childRefs[key]);
-    });
-  };
-
-  TransitionGroup.prototype.render = function render() {
-    var _this3 = this;
-
-    // TODO: we could get rid of the need for the wrapper node
-    // by cloning a single child
-    var childrenToRender = [];
-
-    var _loop = function _loop(key) {
-      var child = _this3.state.children[key];
-      if (child) {
-        var isCallbackRef = typeof child.ref !== 'string';
-        var factoryChild = _this3.props.childFactory(child);
-        var ref = function ref(r) {
-          _this3.childRefs[key] = r;
-        };
-
-        process.env.NODE_ENV !== 'production' ? (0, _warning2.default)(isCallbackRef, 'string refs are not supported on children of TransitionGroup and will be ignored. ' + 'Please use a callback ref instead: https://facebook.github.io/react/docs/refs-and-the-dom.html#the-ref-callback-attribute') : void 0;
-
-        // Always chaining the refs leads to problems when the childFactory
-        // wraps the child. The child ref callback gets called twice with the
-        // wrapper and the child. So we only need to chain the ref if the
-        // factoryChild is not different from child.
-        if (factoryChild === child && isCallbackRef) {
-          ref = (0, _chainFunction2.default)(child.ref, ref);
-        }
-
-        // You may need to apply reactive updates to a child as it is leaving.
-        // The normal React way to do it won't work since the child will have
-        // already been removed. In case you need this behavior you can provide
-        // a childFactory function to wrap every child, even the ones that are
-        // leaving.
-        childrenToRender.push(_react2.default.cloneElement(factoryChild, {
-          key: key,
-          ref: ref
-        }));
-      }
-    };
-
-    for (var key in this.state.children) {
-      _loop(key);
-    }
-
-    // Do not forward TransitionGroup props to primitive DOM nodes
-    var props = _extends({}, this.props);
-    delete props.transitionLeave;
-    delete props.transitionName;
-    delete props.transitionAppear;
-    delete props.transitionEnter;
-    delete props.childFactory;
-    delete props.transitionLeaveTimeout;
-    delete props.transitionEnterTimeout;
-    delete props.transitionAppearTimeout;
-    delete props.component;
-
-    return _react2.default.createElement(this.props.component, props, childrenToRender);
-  };
-
-  return TransitionGroup;
-}(_react2.default.Component);
-
-TransitionGroup.displayName = 'TransitionGroup';
-
-
-TransitionGroup.propTypes = process.env.NODE_ENV !== "production" ? propTypes : {};
-TransitionGroup.defaultProps = defaultProps;
-
-exports.default = TransitionGroup;
-module.exports = exports['default'];
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-module.exports = exports['default'];
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-exports.nameShape = undefined;
-exports.transitionTimeout = transitionTimeout;
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(37);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function transitionTimeout(transitionType) {
-  var timeoutPropName = 'transition' + transitionType + 'Timeout';
-  var enabledPropName = 'transition' + transitionType;
-
-  return function (props) {
-    // If the transition is enabled
-    if (props[enabledPropName]) {
-      // If no timeout duration is provided
-      if (props[timeoutPropName] == null) {
-        return new Error(timeoutPropName + ' wasn\'t supplied to CSSTransitionGroup: ' + 'this can cause unreliable animations and won\'t be supported in ' + 'a future version of React. See ' + 'https://fb.me/react-animation-transition-group-timeout for more ' + 'information.');
-
-        // If the duration isn't a number
-      } else if (typeof props[timeoutPropName] !== 'number') {
-        return new Error(timeoutPropName + ' must be a number (in milliseconds)');
-      }
-    }
-
-    return null;
-  };
-}
-
-var nameShape = exports.nameShape = _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.shape({
-  enter: _propTypes2.default.string,
-  leave: _propTypes2.default.string,
-  active: _propTypes2.default.string
-}), _propTypes2.default.shape({
-  enter: _propTypes2.default.string,
-  enterActive: _propTypes2.default.string,
-  leave: _propTypes2.default.string,
-  leaveActive: _propTypes2.default.string,
-  appear: _propTypes2.default.string,
-  appearActive: _propTypes2.default.string
-})]);
-
-/***/ }),
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20707,7 +20655,7 @@ var _CSSTransitionGroup = __webpack_require__(42);
 
 var _CSSTransitionGroup2 = _interopRequireDefault(_CSSTransitionGroup);
 
-var _TransitionGroup = __webpack_require__(38);
+var _TransitionGroup = __webpack_require__(18);
 
 var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
 
@@ -20733,11 +20681,11 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(37);
+var _propTypes = __webpack_require__(8);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _TransitionGroup = __webpack_require__(38);
+var _TransitionGroup = __webpack_require__(18);
 
 var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
 
@@ -20745,7 +20693,7 @@ var _CSSTransitionGroupChild = __webpack_require__(48);
 
 var _CSSTransitionGroupChild2 = _interopRequireDefault(_CSSTransitionGroupChild);
 
-var _PropTypes = __webpack_require__(40);
+var _PropTypes = __webpack_require__(20);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -20834,12 +20782,12 @@ module.exports = exports['default'];
 
 
 var emptyFunction = __webpack_require__(2);
-var invariant = __webpack_require__(5);
-var warning = __webpack_require__(6);
+var invariant = __webpack_require__(4);
+var warning = __webpack_require__(7);
 var assign = __webpack_require__(3);
 
-var ReactPropTypesSecret = __webpack_require__(18);
-var checkPropTypes = __webpack_require__(8);
+var ReactPropTypesSecret = __webpack_require__(10);
+var checkPropTypes = __webpack_require__(9);
 
 module.exports = function(isValidElement, throwOnDirectAccess) {
   /* global Symbol */
@@ -21384,8 +21332,8 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 var emptyFunction = __webpack_require__(2);
-var invariant = __webpack_require__(5);
-var ReactPropTypesSecret = __webpack_require__(18);
+var invariant = __webpack_require__(4);
+var ReactPropTypesSecret = __webpack_require__(10);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -21654,13 +21602,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = __webpack_require__(37);
+var _propTypes = __webpack_require__(8);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDom = __webpack_require__(7);
+var _reactDom = __webpack_require__(5);
 
-var _PropTypes = __webpack_require__(40);
+var _PropTypes = __webpack_require__(20);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21926,7 +21874,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _inDOM = __webpack_require__(39);
+var _inDOM = __webpack_require__(19);
 
 var _inDOM2 = _interopRequireDefault(_inDOM);
 
@@ -21986,7 +21934,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.animationEnd = exports.animationDelay = exports.animationTiming = exports.animationDuration = exports.animationName = exports.transitionEnd = exports.transitionDuration = exports.transitionDelay = exports.transitionTiming = exports.transitionProperty = exports.transform = undefined;
 
-var _inDOM = __webpack_require__(39);
+var _inDOM = __webpack_require__(19);
 
 var _inDOM2 = _interopRequireDefault(_inDOM);
 
