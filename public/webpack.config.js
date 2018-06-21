@@ -1,7 +1,11 @@
 module.exports = {
     entry: './src/main.js',
     output: {
+<<<<<<< HEAD
         filename: './prod/js/bundle.js'
+=======
+        filename: './js/dist/bundle.js'
+>>>>>>> da768ec667a09bc3411ee840575b1d58c336c454
     },
     module: {
         rules: [
