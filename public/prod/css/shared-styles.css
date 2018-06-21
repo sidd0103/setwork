@@ -1,0 +1,73 @@
+/*OVERHEAD-BAR*/
+.overhead-bar {
+    height: 80;
+    width: 900;
+    top: -60;
+    -webkit-transform: skewY(-4deg);
+        -ms-transform: skewY(-4deg);
+            transform: skewY(-4deg);
+    position: relative;
+    background-color: white;
+    z-index: 998;
+    position: fixed;
+}
+.logo {
+    position: fixed;
+    z-index: 998;
+    top: 4;
+    left: 15;
+}
+.logo {
+    height: 40;
+    margin-right: 5;
+}
+.logo-text {
+    z-index: 999;
+    position: fixed;
+    font-family: adamcg;
+    color: e53935;
+    left: 60;
+    margin-top: 3;
+    height: 40;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: 900;
+    top: 1;
+    font-size: 20;
+    cursor: pointer;
+}
+/*nav-bar*/
+.side-nav {
+    z-index: 997;
+}
+#sidenav-overlay {
+    z-index: 996!important;
+}
+.nav-open  {
+    position: fixed;
+    background-color: #e53935;
+    margin-left: 14;
+    border-radius: 30px;
+    z-index: 300;
+    margin-top: 6;
+    visibility: hidden;
+    z-index: 1000;
+    padding: 6;
+    color: white;
+}
+.login-section {
+    height: 220;
+    background-color: bisque;
+    -webkit-transform: skewY(4deg);
+        -ms-transform: skewY(4deg);
+            transform: skewY(4deg);
+    margin-bottom: 20;
+    background-color: white;
+    overflow: hidden;
+    border-bottom: #e0e0e0 solid 1px
+   
+}

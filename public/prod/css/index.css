@@ -1,0 +1,687 @@
+/*shadows*/
+.upshadow-1 {
+    -webkit-box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 -2px 2px 0 rgba(0, 0, 0, 0.14), 0 -1px 5px 0 rgba(0, 0, 0, 0.12), 0 -3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.insetshadow-1 {
+    -webkit-box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.14), inset 0 1px 5px 0 rgba(0, 0, 0, 0.12), inset 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.insetshadow-2 {
+    -webkit-box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 4px 5px 0 rgba(0, 0, 0, 0.14), inset 0 1px 10px 0 rgba(0, 0, 0, 0.12), inset 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+/*fonts*/
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/material-icons.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'summer';
+  src: url(../fonts/SummerHearts-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'filler';
+  src: url(../fonts/BLOKKNeue-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'adamcg';
+  src: url(../fonts/adam.cg-webfont.woff) format('woff');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+/*MAIN*/
+div.main {
+    min-height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: block;
+}
+div.main .header {
+    width: 100%;
+    height: 500;
+    background-image: url(../media/lawnmowing.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom;
+    position: relative;
+}
+div.main .slant {
+    position: absolute;
+    width: 100%;
+    transform: skewY(3deg);
+    height: 200;
+    background-color: white;
+    bottom: -100;
+}
+div.main .center-box {
+    max-width: 1000;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 70;
+}
+.header-message{
+    width: 60%;
+    padding: 50;
+    font-family: Poppins;
+    font-size: 50;
+    color: white;
+    position: relative;
+
+}
+.header-message .l {
+    font-weight: 700;
+}
+.s {
+    color: #eee;
+    font-size: 30;
+}
+.darker-layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,.5)
+}
+.login-box {
+    width: 40%;
+    height: 620;
+    padding: 40;
+    margin-right: 50;
+   
+    position: relative;
+    background-color: white;
+}
+.text-header {
+    font-family: Poppins;
+    font-size: 22;
+    
+    color: rgb(254,0,2);
+}
+/*register*/
+.register {
+    font-family: Poppins;
+}
+.register .row, .login .row {
+    margin-left: -10;
+    margin-right: -10;
+}
+.register input, .login input {
+    margin-bottom: 5!important;
+}
+.submit-btn {
+    padding: 8;
+    position: absolute;
+    right: 40;
+    padding-left: 15;
+    background-color: rgb(254,0,2);
+    color: white;
+    font-weight: 700;
+    display: flex;
+    padding-right: 15;
+    width: 140;
+    align-items: center;
+}
+.submit-btn i {
+    margin-left: auto;
+}
+/*login*/
+.login {
+    position: absolute;
+    height: 240;
+    width: 100%;
+    font-family: Poppins;
+    z-index: 10;
+    left: 0;
+    padding: 30;
+    bottom: 0;
+}
+.login-slant {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100;
+    background-color: white;
+    border-top: 1px solid #eee;
+    transform: skewY(3deg);
+    top: -35;
+}
+.login .text-header {
+    position: relative;
+    margin-top: -40;
+}
+/*description*/
+.description {
+    max-width: 1000;
+    margin: 0 auto;
+    margin-top: -90;
+    position: relative;
+}
+.header-desc {
+    padding: 50;
+    font-family: Poppins;
+    width: calc(100% - 450px);
+}
+.header-desc .l {
+    font-size: 30;
+    color: rgba(0,0,0,.7);
+}
+.header-desc .s {
+    font-size: 20;
+    color: rgba(0,0,0,.3);
+}
+/*universal section*/
+section.universal {
+    margin-top: 30; 
+    background-size: cover;
+    position: relative;
+    padding-bottom: 40;
+}
+section > .content {
+    max-width: 1000;
+    margin: 0 auto;
+    padding: 50;
+}
+.thumb {
+    padding: 40;
+    position: relative;
+    width: 100%;
+    padding: 40;
+    overflow: hidden;
+    height: 230;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+    font-family: Poppins;
+    display: flex;
+}
+.red-bg {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 70%;
+    background-color: rgb(254,0,2);
+    top: 0;
+}
+.thumb .left-side {
+    max-width: 50%;
+    position: relative;
+    z-index: 10;
+}
+.thumb .l {
+    position: relative;
+    font-size: 22;
+
+}
+.thumb .s {
+    color: #eee;
+    position: relative;
+    font-size: 15;;
+}
+.thumb .right-slant {
+    width: 55%;
+    height: 100%;
+    position: absolute;
+    right: -100;
+    top: 0;
+    transform: skewX(30deg);
+    overflow: hidden;   
+    background-color: white;
+}
+.right-side {
+    width: 50%;
+    text-align: right;
+    color: rgb(45, 49, 56);
+}
+.right-side .s {
+    max-width: 80%;
+    color: rgba(0,0,0,.5);
+    float: right;
+}
+/*How section*/
+section.how {
+    background-color: rgb(246, 249, 252);
+    overflow: hidden;
+    position: relative;
+}
+.slant-top {
+    height: 100;
+    top: -50;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    transform: skewY(-3deg);
+}
+.how .content {
+    margin-top: 100;
+}
+.how-header {
+    font-family: Poppins;
+
+    font-size: 30;
+    padding: 10;
+    margin: 0 auto;
+    margin-bottom: 40;
+}
+.card-container {
+    margin-top: 20;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.info-card {
+    width: 430;
+    margin-bottom: 40;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+    border-radius: 4px;
+}
+.picture {
+    height: 200;
+    background-image: url(../media/bg.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+.type2 {
+    background-image: url(../media/work.jpeg);
+}
+.info-card > div {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    font-size: 70!important;
+    margin-left: -30;
+    padding: 15;
+    display: flex;
+    height: 90;
+    width: 90;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+    border-radius: 300px;
+    background-color: rgb(254,0,2);
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+    color: white;
+}
+.ctnt {
+    width: calc(100% - 60px);
+    height: %;
+    padding: 30;
+    padding-left: 20;
+}
+.ctnt .l {
+    font-family: Poppins;
+    font-size: 20;
+}
+.ctnt .s {
+    font-size: 13;
+    color: rgba(0,0,0,.5);
+    font-family: Poppins;
+}
+/*ready*/
+.accountType {
+    margin-top: 00;
+
+    position: relative;
+    background-size: cover;
+    background-color: white;
+}
+.accountType .top-slant {
+    width: 100%;
+    position: absolute;
+    top: -50;
+     background-color: rgb(246, 249, 252);
+    height: 130;
+    transform: skewY(3deg);
+}
+.accountType .content {
+    padding-top: 170;
+}
+.ready-header {
+    font-size: 30;
+    color: rgba(0,0,0,.7);
+    font-family: Poppins;
+}
+.split-view {
+    display: flex;
+}
+.left-view {
+    width: 50%;
+    padding-right: 20;
+}
+.accountType .s {
+    color: rgba(0,0,0,.2);
+    font-size: 20;
+    font-family: Poppins;
+}
+.right-view {
+    width: 50%;
+    padding-left: 20;
+}
+.example {
+    height: 440;
+    position: relative;
+    padding: 70;
+    z-index: 10;
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+}
+.example .post {
+    height: 140;
+    overflow: hidden;
+    border-radius: 4px;
+    padding: 30;
+    margin: 0 auto;
+    padding-top: 20;
+    background-color: rgb(254,0,2);
+    background-size: cover;
+    color: white;
+    font-family: filler;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+    margin-bottom: 15;
+}
+.ex1, .ex2 {
+    position: absolute;
+    width: calc(100% - 140px);
+}
+.example.second .ex1 {
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity .2s, transform .1s;
+}
+.example.second .ex2 {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity .2s .2s, transform .1s .1s;
+}
+.switchbtn {
+    position: absolute;
+    z-index: 10;
+    right: 60;
+    top: 50;
+    width: 110;
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+    padding: 10;
+    font-family: Poppins;
+    color: white;
+    background-color: rgb(45, 49, 56);
+    border-radius: 30px;
+    padding-left: 20;
+    padding-right: 20;
+    font-size: 12;
+}
+.ex2 {
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity .2s, transform .1s;
+}
+.ex1 {
+    transition: opacity .2s .2s, transform .1s .1s;
+}
+.post .header-text {
+    font-size: 20;
+}
+.post .sub-text {
+    color: #eee;
+}
+.ex2 .post {
+    background-color: white;
+}
+.ex2 .post .sub-text, .ex2 .post .header-text{
+    color: rgb(254,0,2)!important;
+}
+.down {
+    margin-top: 50;
+    font-size: 25;
+}
+/*sowhatsection*/
+section.sowhat {
+    position: relative;
+    background-color: rgb(246, 249, 252);
+    padding-bottom: 30;
+}
+section.sowhat .top-slant {
+    height: 100;
+    
+    background-color: white;
+    transform: skewY(3deg);
+    top: -50;
+    position: absolute;
+    width: 100%;
+}
+.sowhat .content {
+    padding-top: 130;
+}
+.sowhat-header {
+    font-size: 30;
+    font-family: Poppins;
+    color: rgba(0,0,0,.7);
+}
+.sowhat .s {
+    color: rgba(0,0,0,.2);
+    font-size: 27;
+    font-family: Poppins;
+}
+.getstartedbtn {
+    padding: 15;
+    font-family: Poppins;
+    width: 200;
+    background-color: rgb(254,0,2);
+    color: white;
+    margin-left: auto;
+    margin-top: 15;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 18px 35px rgba(50,50,93,.1), 0 8px 15px rgba(0,0,0,.07);
+}
+.getstartedbtn div {
+    margin-left: 10;
+}
+.hoverUp {
+    transition: transform .2s;
+}
+.hoverUp:hover {
+    transform: translateY(-3px);
+}
+/*footer*/
+.footer {
+    border-top: 2px solid rgba(207,215,223,.25);
+    background-color: rgb(246, 249, 252);
+}
+.footer .content {
+    padding-top: 15;
+    padding-bottom: 15;
+    font-family: Poppins;
+    color: rgba(0,0,0,.3);
+}
+/*responsive-view*/
+.responsive-enable {
+    display: none;
+}
+.alternateLogin {
+    font-size: 15;
+    padding: 20;
+    padding-top: 15;
+    padding-bottom: 15;
+    margin-top: 15;
+    height: 35;
+    max-width: 200;
+    position: relative;
+    font-family: Poppins;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+.bottom-slant {
+    position: absolute;
+    width: 100%;
+    height: 30;
+    left: 0;
+    bottom: -20;
+    transform: skewY(3deg);
+    background-color: rgb(254,0,2);
+}
+.phrase {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.header-message .top-slant {
+    position: absolute;
+    width: 100%;
+    height: 40;
+    left: 0;
+    top: -0;
+    transform: skewY(-3deg);
+    background-color: rgb(254,0,2);
+}
+@media only screen and (max-width: 970px) {
+    /*login box area and hero*/
+    .login-box {
+        display: none;
+    }
+    div.main .header {
+        height: 550;
+    }
+    /*header message*/
+    .header-message,.header-desc {
+        width: 100%;
+    }
+    .header-desc {
+        margin-top: 30;
+    }
+    .thumb {
+        display: block;
+        height: auto;
+    }
+    .thumb .right-slant {
+        top: 50%;
+        transform: skewY(-3deg);
+        left: 0;
+        width: 100%;
+        height: 70%;
+    }
+    .red-bg {
+        width: 100%;
+    }
+    .thumb .left-side, .thumb .right-side {
+        width: 100%;
+        max-width: 100%;
+    }
+    .thumb .right-side {
+        padding-top: 40;
+    }
+    .thumb .left-side {
+        padding-bottom: 20;
+    }
+    section.universal {
+        margin-top: -40;
+    }
+    /*how cards*/
+    .info-card {
+        width: 100%;
+    }
+    /*account type*/
+    .split-view {
+        flex-direction: column;
+    }
+    .left-view, .right-view {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .responsive-disable {
+        display: none;
+    }
+    .responsive-enable {
+        display: block;
+        margin-bottom: 40;
+    }
+    .example  {
+        margin-top: 50;
+    }
+    .getstartedbtn {
+        margin-left: 0;
+    }
+}
+/*text will begin to get smaller at this point*/
+@media only screen and (max-width: 600px) { 
+    div.main .header {
+        height: 500;
+    }
+    .header-message {
+        font-size: 9vw;
+    }
+    .header-message .s {
+        font-size: 50%;
+    }
+
+}
+/*all widgets will stretch to full size*/
+@media only screen and (max-width: 450px) { 
+
+    .example {
+        padding-left: 20;
+        padding-right: 20;
+        height: 430;
+        padding-top: 40;
+    }
+    .switchbtn {
+        right: 20;
+        top: 20;
+    }
+    .example .ex1, .example .ex2 {
+        width: calc(100% - 40px);
+    }
+    .thumb .l {
+        font-size: 18;
+    }
+    .thumb .s {
+        margin-top: 5;
+        font-size: 14;
+    }
+    .right-side {
+        margin-top: 0;
+        text-align: left;
+    }
+    .right-side .s {
+        float: none;
+        padding-bottom: 0;
+    }
+    .right-side .l {
+        padding-top:40;
+    }
+    .thumb .right-slant {
+        top: 50%;
+    }
+    .post {
+        height: auto!important;
+    }
+}

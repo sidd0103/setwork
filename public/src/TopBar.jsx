@@ -7,7 +7,7 @@ class NavTopBar extends React.Component {
             <div className="navBar">
                 <div className={"z-depth-1 slant"}></div>
                 <div data-activates={this.props.sideActivates} className={"z-depth-1 material-icons " + this.props.btnClass}>menu</div>
-                <img data-to="index.html" className="link logo" src="media/logo.png"/>
+                <img data-to="index.html" className="link logo" src="src/media/logo.png"/>
                 <div className="logo-text">SAPHARII</div>
             </div>
         );

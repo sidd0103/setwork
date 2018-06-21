@@ -60,7 +60,7 @@ class Post extends React.Component {
                 </div>
                 <div className={"description"}>My lawn is really messy, recently a group of squirrels attacked my dog and made a huge mess.  I don't have much time to clean it up.  Get it done fast for extra pay!</div>
                 <div className="author">
-                    <img className="circle profilePicture" src={"./media/user.jpg"}/>
+                    <img className="circle profilePicture" src={"prod/media/user.jpg"}/>
                     <div className="author-text">
                         <div className={"name"}>Sidd Iyer</div>
                         <div className={"connection"}>Neighbor</div>
@@ -79,13 +79,13 @@ class Feed extends React.Component {
                     <FeedNav/>
                     <div className={"feed"}>
                         <Post />
-                        <Post data={{bgImage: './media/lawnmowing.jpg'}}/>
-                        <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post data={{bgImage: 'prod/media/lawnmowing.jpg'}}/>
+                        <Post data={{bgImage: 'prod/media/work.jpeg'}}/>
                         <Post/>
                         <Post/>
-                        <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post data={{bgImage: 'prod/media/work.jpeg'}}/>
                         <Post/>
-                        <Post data={{bgImage: './media/work.jpeg'}}/>
+                        <Post data={{bgImage: 'prod/media/work.jpeg'}}/>
                         <Post/>
                         <Post/>
                     </div>

@@ -1,7 +1,7 @@
 module.exports = {
     entry: './src/main.js',
     output: {
-        filename: './js/bundle.js'
+        filename: './prod/js/bundle.js'
     },
     module: {
         rules: [
@@ -28,6 +28,18 @@ module.exports = {
             },{
                 test: /\.css$/,
                 use: [ 'style-loader', 'css-loader' ]
+            },
+            {
+                test: /\.(png|jpg|gif|woff|otf|png|woff2)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath : './prod',
+                            name: '[path][name].[ext]'
+                        }
+                    }
+                ]
             }
         ]
     },
